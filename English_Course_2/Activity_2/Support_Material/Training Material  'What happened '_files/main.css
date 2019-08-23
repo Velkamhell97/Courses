@@ -1,0 +1,175 @@
+/*
+body input[type="text"] {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+*/
+
+body input[type="text"] {
+	width: 105px;
+	height: 37px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+/*tablas pagina 4*/
+
+.titulos {
+	font-size: 24px !important;
+	text-align: center !important;
+	font-weight: bold !important;
+}
+/* CSS Document */
+
+/******************************************************************************************
+ * Clase para las listas desplegables
+ ******************************************************************************************/
+
+.selectIncorrecto {
+	box-shadow: 2px 2px 5px #E40000;
+	-webkit-box-shadow: 2px 2px 5px #E40000;
+	-moz-box-shadow: 2px 2px 5px #E40000;
+	-webkit-filter: shadow(color=#E40000, direction=135, strength=2);
+	filter: shadow(color=#E40000, direction=135, strength=2);
+	text-align: left !important;
+}
+.selectCorrecto {
+	box-shadow: 2px 2px 5px #57E121;
+	-webkit-box-shadow: 2px 2px 5px #57E121;
+	-moz-box-shadow: 2px 2px 5px #57E121;
+	-webkit-filter: shadow(color=#57E121, direction=135, strength=2);
+	filter: shadow(color=#57E121, direction=135, strength=2);
+	text-align: left !important;
+}
+/*.bien {
+    display: block;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 1px 5px 2px rgba(97, 224, 105, 0.9);
+    border-color: #75DD6C !important;
+    text-align: center !important;
+    color: #75DD6C;
+}
+.mal {
+    display: block;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #e60909;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 1px 5px 2px rgba(230, 9, 9, 0.9);
+    border-color: #e60909 !important;
+    text-align: center !important;
+}*/
+
+.bien {
+	display: inline;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	color: #555;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0px 1px 5px 2px rgba(97, 224, 105, 0.9);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	border-color: #75DD6C !important;
+	text-align: center !important;
+}
+.mal {
+	display: inline;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	color: #555;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0px 1px 5px 2px rgba(230, 9, 9, 0.9);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	border-color: #e60909 !important;
+	text-align: center !important;
+}
+/******************************************************************************************
+ * Clase para las tablas
+ ******************************************************************************************/
+
+.classTablas {
+	margin-left:25px;
+	padding: 0px;
+	width: 802px;
+	text-align: center;
+	box-shadow: 6px 6px 5px #888888;
+	border: 1px solid #aad4ff;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.classTablas table {
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100% !important;
+	height:100% !important;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.classTablas tr:last-child td:last-child {
+	border-bottom-right-radius: 10px;
+}
+.classTablas table tr:first-child td:first-child {
+	border-top-left-radius: 10px;
+}
+.classTablas table tr:first-child td:last-child {
+	border-top-right-radius: 10px;
+}
+.classTablas tr:last-child td:first-child {
+	border-bottom-left-radius: 10px;
+}
+.classTablas tr:hover td {} .classTablas tr:nth-child(odd) {
+	background-color: #aad4ff;
+}
+.classTablas td {
+	vertical-align: middle;
+	border: 1px solid #0066a3;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	padding: 7px;
+	font-size: 18px;
+	font-family: Arial;
+	font-weight: normal;
+	color: #000000;
+}
+.classTablas tr:last-child td {
+	border-width: 0px 1px 0px 0px;
+}
+.classTablas tr td:last-child {
+	border-width: 0px 0px 1px 0px;
+}
+.classTablas tr:last-child td:last-child {
+	border-width: 0px 0px 0px 0px;
+}
+.classTablas tr:first-child td:first-child {
+	border-width: 0px 1px 1px 0px;
+}
+.classTablas tr:first-child td:last-child {
+	border-width: 0px 0px 1px 1px;
+}
+.simbPronunciacion {
+	font-family: Doulos SIL !important;
+	font-size: 24px !important;
+	font-weight: bold !important;
+	line-height: 0% !important;
+	text-align: center;
+}
