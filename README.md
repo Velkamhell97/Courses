@@ -1,2 +1,2 @@
 # Courses
-# First modify wit Visual Studio Code
+# First modify from Visual Studio Code
