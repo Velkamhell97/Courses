@@ -48,16 +48,12 @@ class Directory:
                      "*************************************************************"
     _email_text = ("Enter contact Email: ", "Enter the new contact Email: ")
     _phone_text = ("Enter contact Phone: ", "Enter the new contact Phone: ")
+    _buffer_dirs = []
+    _current_dir = None
 
     def __init__(self):
         self._contact_list = []
         self._contact_names = []
-        self._buffer_dirs = []
-        self._current_dir = None
-        with open("users_dirs.txt") as users:
-            users_reader = csv.reader(users, delimiter="\n")
-            for directory in users_reader:
-                self._buffer_dirs.append(directory[0])
 
     def _update_table(self, contact, action="add"):
         table_list = list(self._table)
@@ -102,12 +98,16 @@ class Directory:
         with open("users_dirs.txt", "a", newline='') as users:
             user_writer = csv.writer(users)
             user_writer.writerow([dir_name])
-        self._current_dir = dir_name
-        self._buffer_dirs.append(dir_name)
         print("Directory created !")
+        self._current_dir = dir_name
         print(f"\n**** The actual dir is: {dir_name} ****")
 
     def _home(self):
+        print("")
+        with open("users_dirs.txt") as users:
+            users_reader = csv.reader(users, delimiter="\n")
+            for directory in users_reader:
+                self._buffer_dirs.append(directory[0])
         while True:
             print(self._directory_select)
             try:
@@ -174,27 +174,146 @@ class Directory:
         elif action_option == 7:
             return print("\nThanks for play :)")
 
-    def _validate_data(self, action):
+    def validate_email(self, action):
         email = input(self._email_text[action])
         compiler = re.compile(r"^[\w._*-]+@[\w._*-]+\.[a-zA-Z]+$")
         while True:
             if compiler.match(email):
-                break
+                return email
             elif email == "":
-                return self._actions_screen()
+                break
             else:
                 email = input("Enter a valid E-mail (empty to exit): ")
+        return self._actions_screen()
+
+    def validate_phone(self, action):
         phone = input(self._phone_text[action])
         compiler = re.compile(r"^\d{10}$")
         while True:
             if compiler.match(phone):
-                return email, phone
+                return phone
             elif phone == "":
-                return self._actions_screen()
+                break
             else:
                 phone = input("Enter a valid phone (empty to exit): ")
+        return self._actions_screen()
 
-    def _validate_table(self):
+    def add_contact(self):
+        name = input("\nEnter contact name: ")
+        try:
+            exist_contact = [contact for contact in self._contact_list if contact.get_name() == name][0]
+            self._mark_table(exist_contact)
+            option = input(f"\nThis contact already exist in your directory, do you want to update? (y/n) ")
+            if option.lower() == "y":
+                return self.update_contact(self._contact_list.index(exist_contact))
+            else:
+                return self._actions_screen()
+        except IndexError:
+            email = self.validate_email(0)
+            phone = self.validate_phone(0)
+            new_contact = Contact(name, email, phone)
+            self._contact_list.append(new_contact)
+            with open(f"{self._current_dir}.txt", "a", newline='') as user:
+                user_writer = csv.writer(user)
+                user_writer.writerow([name, email, phone])
+
+            print("\nContact added successfully!\n")
+            self._update_table(new_contact, "add")
+            time.sleep(2)
+            return self._actions_screen()
+
+    def update_contact(self, index_to_update=None):
+        if len(self._contact_list) == 0:
+            print(f"\n{self._table}")
+            option = input("\nThere are no contacts in your directory yet, do you want to add one? (y/n) ")
+            if option.lower() == "y":
+                return self.add_contact()
+            else:
+                return self._actions_screen()
+        else:
+            if index_to_update is None:
+                print(f"\n{self._table}")
+                old_name = input("\nEnter the name of contact that you want update: ")
+                try:
+                    index_to_update = [idx for idx, contact in enumerate(self._contact_list) if contact.get_name() == old_name][0]
+                except IndexError:
+                    option = input("\nContact not found, do you want to add? (y/n) ").lower()
+                    if option == "y":
+                        return self.add_contact()
+                    else:
+                        return self._actions_screen()
+            new_name = input("\nEnter the new contact name: ")
+            new_email = self.validate_email(1)
+            new_phone = self.validate_phone(1)
+            new_contact = Contact(new_name, new_email, new_phone)
+            self._contact_list[index_to_update] = new_contact
+            with open(f"{self._current_dir}.txt", "w", newline='') as user:
+                user_writer = csv.writer(user)
+                new_list = []
+                for contact in self._contact_list:
+                    new_list.append([contact.get_name(), contact.get_email(), contact.get_phone()])
+                user_writer.writerows(new_list)
+            print("\nContact uploaded successfully\n")
+            self._update_table(new_contact, "update")
+            time.sleep(2)
+            return self._actions_screen()
+
+    def search_contact(self):
+        if len(self._contact_list) == 0:
+            print(f"\n{self._table}")
+            option = input("\nThere are no contacts in your directory yet, do you want to add one? (y/n) ")
+            if option.lower() == "y":
+                return self.add_contact()
+            else:
+                return self._actions_screen()
+        else:
+            print(f"\n{self._table}")
+            name_to_search = input("\nEnter the name of the contact that you are looking for: ")
+            try:
+                found_contact = [contact for contact in self._contact_list if contact.get_name() == name_to_search][0]
+                print(f"\n{found_contact}")
+                time.sleep(2)
+                return self._actions_screen()
+            except IndexError:
+                option = input("\nContact not found, do you want to add? (y/n) ")
+                if option.lower() == "y":
+                    return self.add_contact()
+                else:
+                    return self._actions_screen()
+
+    def delete_contact(self):
+        if len(self._contact_list) == 0:
+            print(f"\n{self._table}")
+            option = input("\nThere are no contacts in your directory yet, do you want to add one? (y/n) ")
+            if option.lower() == "y":
+                return self.add_contact()
+            else:
+                return self._actions_screen()
+        else:
+            print(f"\n{self._table}")
+            name_to_delete = input("\nEnter the name of the contact that you want delete: ")
+            try:
+                delete_contact = [contact for contact in self._contact_list if contact.get_name() == name_to_delete][0]
+                self._update_table(delete_contact, "delete")
+                self._contact_list.remove(delete_contact)
+            except IndexError:
+                option = input("\nContact not found, do you want to add? (y/n) ")
+                if option.lower() == "y":
+                    return self.add_contact()
+                else:
+                    return self._actions_screen()
+
+            with open(f"{self._current_dir}.txt", "w", newline='') as user:
+                user_writer = csv.writer(user)
+                new_list = []
+                for contact in self._contact_list:
+                    new_list.append([contact.get_name(), contact.get_email(), contact.get_phone()])
+                user_writer.writerows(new_list)
+            print("\nContact successfully removed")
+            time.sleep(2)
+            return self._actions_screen()
+
+    def list_contacts(self):
         if len(self._contact_list) == 0:
             print(f"\n{self._table}")
             option = input("\nThere are no contacts in your directory yet, do you want to add one? (y/n) ")
@@ -203,94 +322,6 @@ class Directory:
             else:
                 return self._actions_screen()
 
-    def _not_found_contact(self):
-        option = input("\nContact not found, do you want to add? (y/n) ")
-        if option.lower() == "y":
-            return self.add_contact()
-        else:
-            return self._actions_screen()
-
-    def _update_csv(self):
-        with open(f"{self._current_dir}.txt", "w", newline='') as user:
-            user_writer = csv.writer(user)
-            new_list = []
-            for contact in self._contact_list:
-                new_list.append([contact.get_name(), contact.get_email(), contact.get_phone()])
-            user_writer.writerows(new_list)
-
-    def add_contact(self):
-        name = input("\nEnter contact name: ")
-        if name in self._contact_names:
-            index_contact = self._contact_names.index(name)
-            self._mark_table(self._contact_list[index_contact])
-            option = input(f"\nThis contact already exist in your directory, do you want to update? (y/n) ")
-            if option.lower() == "y":
-                return self.update_contact(index_contact)
-            else:
-                return self._actions_screen()
-        else:
-            email, phone = self._validate_data(0)
-            new_contact = Contact(name, email, phone)
-            self._contact_list.append(new_contact)
-            self._contact_names.append(name)
-            self._update_table(new_contact, "add")
-            with open(f"{self._current_dir}.txt", "a", newline='') as user:
-                user_writer = csv.writer(user)
-                user_writer.writerow([name, email, phone])
-            print("\nContact added successfully!\n")
-            time.sleep(2)
-            return self._actions_screen()
-
-    def update_contact(self, update_idx=None):
-        self._validate_table()
-        if update_idx is None:
-            print(f"\n{self._table}")
-            old_name = input("\nEnter the name of contact that you want update: ")
-            if old_name in self._contact_names:
-                update_idx = self._contact_names.index(old_name)
-            else:
-                self._not_found_contact()
-        new_name = input("\nEnter the new contact name: ")
-        new_email, new_phone = self._validate_data(1)
-        updated_contact = Contact(new_name, new_email, new_phone)
-        self._contact_list[update_idx] = updated_contact
-        self._contact_names[update_idx] = new_name
-        self._update_table(updated_contact, "update")
-        self._update_csv()
-        print("\nContact uploaded successfully\n")
-        time.sleep(2)
-        return self._actions_screen()
-
-    def search_contact(self):
-        self._validate_table()
-        print(f"\n{self._table}")
-        name_to_search = input("\nEnter the name of the contact that you are looking for: ")
-        if name_to_search in self._contact_names:
-            contact_index = self._contact_names.index(name_to_search)
-            print(f"\n{self._contact_list[contact_index]}")
-            time.sleep(2)
-            return self._actions_screen()
-        else:
-            self._not_found_contact()
-
-    def delete_contact(self):
-        self._validate_table()
-        print(f"\n{self._table}")
-        name_to_delete = input("\nEnter the name of the contact that you want delete: ")
-        if name_to_delete in self._contact_names:
-            contact_index = self._contact_names.index(name_to_delete)
-            self._contact_list.remove(self._contact_list[contact_index])
-            self._contact_names.remove(name_to_delete)
-            self._update_table(self._contact_list[contact_index], "delete")
-            self._update_csv()
-            print("\nContact successfully removed")
-            time.sleep(2)
-            return self._actions_screen()
-        else:
-            self._not_found_contact()
-
-    def list_contacts(self):
-        self._validate_table()
         print(f"\n{self._table}")
         time.sleep(2)
         return self._actions_screen()
@@ -298,106 +329,3 @@ class Directory:
 
 my_dir = Directory()
 my_dir._home()
-
-
-# def add_contact(self):
-#     name = input("\nEnter contact name: ")
-#     try:
-#         exist_contact = [contact for contact in self._contact_list if contact.get_name() == name][0]
-#         self._mark_table(exist_contact)
-#         option = input(f"\nThis contact already exist in your directory, do you want to update? (y/n) ")
-#         if option.lower() == "y":
-#             return self.update_contact(self._contact_list.index(exist_contact))
-#         else:
-#             return self._actions_screen()
-#     except IndexError:
-#         email = self.validate_email(0)
-#         phone = self.validate_phone(0)
-#         new_contact = Contact(name, email, phone)
-#         self._contact_list.append(new_contact)
-#         with open(f"{self._current_dir}.txt", "a", newline='') as user:
-#             user_writer = csv.writer(user)
-#             user_writer.writerow([name, email, phone])
-#
-#         print("\nContact added successfully!\n")
-#         self._update_table(new_contact, "add")
-#         time.sleep(2)
-#         return self._actions_screen()
-
-# def update_contact(self, index_to_update=None):
-#     if len(self._contact_list) == 0:
-#         print(f"\n{self._table}")
-#         option = input("\nThere are no contacts in your directory yet, do you want to add one? (y/n) ")
-#         if option.lower() == "y":
-#             return self.add_contact()
-#         else:
-#             return self._actions_screen()
-#     else:
-#         if index_to_update is None:
-#             print(f"\n{self._table}")
-#             old_name = input("\nEnter the name of contact that you want update: ")
-#             try:
-#                 index_to_update = \
-#                 [idx for idx, contact in enumerate(self._contact_list) if contact.get_name() == old_name][0]
-#             except IndexError:
-#                 option = input("\nContact not found, do you want to add? (y/n) ").lower()
-#                 if option == "y":
-#                     return self.add_contact()
-#                 else:
-#                     return self._actions_screen()
-#         new_name = input("\nEnter the new contact name: ")
-#         new_email = self.validate_email(1)
-#         new_phone = self.validate_phone(1)
-#         new_contact = Contact(new_name, new_email, new_phone)
-#         self._contact_list[index_to_update] = new_contact
-#         with open(f"{self._current_dir}.txt", "w", newline='') as user:
-#             user_writer = csv.writer(user)
-#             new_list = []
-#             for contact in self._contact_list:
-#                 new_list.append([contact.get_name(), contact.get_email(), contact.get_phone()])
-#             user_writer.writerows(new_list)
-#         print("\nContact uploaded successfully\n")
-#         self._update_table(new_contact, "update")
-#         time.sleep(2)
-#         return self._actions_screen()
-
-# def search_contact(self):
-#     self._validate_table()
-#     print(f"\n{self._table}")
-#     name_to_search = input("\nEnter the name of the contact that you are looking for: ")
-#     try:
-#         found_contact = [contact for contact in self._contact_list if contact.get_name() == name_to_search][0]
-#         print(f"\n{found_contact}")
-#         time.sleep(2)
-#         return self._actions_screen()
-#     except IndexError:
-#         option = input("\nContact not found, do you want to add? (y/n) ")
-#         if option.lower() == "y":
-#             return self.add_contact()
-#         else:
-#             return self._actions_screen
-
-# def validate_email(self, action):
-#     email = input(self._email_text[action])
-#     compiler = re.compile(r"^[\w._*-]+@[\w._*-]+\.[a-zA-Z]+$")
-#     while True:
-#         if compiler.match(email):
-#             return email
-#         elif email == "":
-#             break
-#         else:
-#             email = input("Enter a valid E-mail (empty to exit): ")
-#     return self._actions_screen()
-#
-#
-# def validate_phone(self, action):
-#     phone = input(self._phone_text[action])
-#     compiler = re.compile(r"^\d{10}$")
-#     while True:
-#         if compiler.match(phone):
-#             return phone
-#         elif phone == "":
-#             break
-#         else:
-#             phone = input("Enter a valid phone (empty to exit): ")
-#     return self._actions_screen()
