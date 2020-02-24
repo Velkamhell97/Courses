@@ -107,7 +107,7 @@ class Directory:
         print("Directory created !")
         print(f"\n**** The actual dir is: {dir_name} ****")
 
-    def _home(self):
+    def home(self):
         while True:
             print(self._directory_select)
             try:
@@ -134,7 +134,7 @@ class Directory:
                     time.sleep(2)
                     return self._actions_screen()
                 else:
-                    return self._home()
+                    return self.home()
         else:
             dir_name = input("Enter the name of your new directory: ")
             self._create_dir(dir_name)
@@ -170,7 +170,7 @@ class Directory:
                 self._update_table(contact, "delete")
             self._contact_list.clear()
             self._contact_names.clear()
-            return self._home()
+            return self.home()
         elif action_option == 7:
             return print("\nThanks for play :)")
 
@@ -297,7 +297,7 @@ class Directory:
 
 
 my_dir = Directory()
-my_dir._home()
+my_dir.home()
 
 
 # def add_contact(self):
