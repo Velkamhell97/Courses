@@ -1,3 +1,5 @@
 daniel,daniel@gmail.com,3163168940
-pedro,pedro@gmail.com,3143149944
 camilo,camilo@gmail.com,3153159044
+oscar,oscar@gmail.com,3143148833
+carlitos,carlitos@gmail.com,3143145544
+damian,damian@gmail.com,3143145533

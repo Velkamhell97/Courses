@@ -1,6 +1,7 @@
 import re
 import time
 import csv
+import sys
 
 
 class Contact:
@@ -29,14 +30,17 @@ class Directory:
     _table = "******************************************** CONTACT LIST ********************************************\n" \
              "*                                                                                                    *\n" \
              "******************************************************************************************************"
+    _buffer_table = "******************************************** CONTACT LIST ********************************************\n" \
+                    "*                                                                                                    *\n" \
+                    "******************************************************************************************************"
     _newline = "*                                                                                                    *\n"
-    _directory_select = "***** Hi, welcome to the Directory App, do you have an existing directory or do you want to create one? *****\n" \
+    _directory_select = "\n***** Hi, welcome to the Directory App, do you have an existing directory or do you want to create one? *****\n" \
                         "|                                                                                                           |\n" \
                         "| 1. I already have a directory                                                                             |\n" \
                         "| 2. I want to create a directory                                                                           |\n" \
                         "| 3. Exit                                                                                                   |\n" \
                         "*************************************************************************************************************"
-    _action_select = "***** Welcome to you Directory, what do you want to do? *****\n" \
+    _action_select = "\n***** Welcome to you Directory, what do you want to do? *****\n" \
                      "|                                                           |\n" \
                      "| 1. Add Contact                                            |\n" \
                      "| 2. Update Contact                                         |\n" \
@@ -94,7 +98,7 @@ class Directory:
                 buffer_contact = Contact(contact[0], contact[1], contact[2])
                 self._contact_list.append(buffer_contact)
                 self._contact_names.append(contact[0])
-                self._update_table(contact)
+                self._update_table(buffer_contact)
         print("\nContacts upload successful!")
         print(f"\n**** The actual dir is: {dir_input} ****")
 
@@ -102,9 +106,11 @@ class Directory:
         with open("users_dirs.txt", "a", newline='') as users:
             user_writer = csv.writer(users)
             user_writer.writerow([dir_name])
+            with open(f"{dir_name}.txt", "a", newline='') as user:
+                pass
         self._current_dir = dir_name
         self._buffer_dirs.append(dir_name)
-        print("Directory created !")
+        print("\nDirectory created !")
         print(f"\n**** The actual dir is: {dir_name} ****")
 
     def home(self):
@@ -120,15 +126,16 @@ class Directory:
             except ValueError:
                 print("Please enter a valid input :)")
         if dir_option == 3:
-            return print("Thanks for play :)")
+            print("Thanks for play :)")
+            sys.exit()
         elif dir_option == 1:
-            dir_name = input("Enter the name of your directory: ")
+            dir_name = input("\nEnter the name of your directory: ")
             if dir_name in self._buffer_dirs:
                 self._upload_dir(dir_name)
                 time.sleep(2)
                 return self._actions_screen()
             else:
-                dir_option = input("Directory not found do you want to create? (y/n): ")
+                dir_option = input("\nDirectory not found do you want to create? (y/n): ")
                 if dir_option.lower() == "y":
                     self._create_dir(dir_name)
                     time.sleep(2)
@@ -137,6 +144,14 @@ class Directory:
                     return self.home()
         else:
             dir_name = input("Enter the name of your new directory: ")
+            if dir_name in self._buffer_dirs:
+                option_directory = input("\nThis directory already exist, do you want to use (y/n): ")
+                if option_directory.lower() == "y":
+                    self._upload_dir(dir_name)
+                    time.sleep(2)
+                    return self._actions_screen()
+                else:
+                    return self.home()
             self._create_dir(dir_name)
             time.sleep(2)
             return self._actions_screen()
@@ -166,13 +181,13 @@ class Directory:
         elif action_option == 5:
             return self.list_contacts()
         elif action_option == 6:
-            for contact in self._contact_list:
-                self._update_table(contact, "delete")
+            self._table = self._buffer_table
             self._contact_list.clear()
             self._contact_names.clear()
             return self.home()
         elif action_option == 7:
-            return print("\nThanks for play :)")
+            print("\nThanks for play :)")
+            sys.exit()
 
     def _validate_data(self, action):
         email = input(self._email_text[action])
@@ -279,9 +294,9 @@ class Directory:
         name_to_delete = input("\nEnter the name of the contact that you want delete: ")
         if name_to_delete in self._contact_names:
             contact_index = self._contact_names.index(name_to_delete)
+            self._update_table(self._contact_list[contact_index], "delete")
             self._contact_list.remove(self._contact_list[contact_index])
             self._contact_names.remove(name_to_delete)
-            self._update_table(self._contact_list[contact_index], "delete")
             self._update_csv()
             print("\nContact successfully removed")
             time.sleep(2)

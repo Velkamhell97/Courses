@@ -2,3 +2,7 @@ daniel_dir
 david_dir
 camilo_dir
 monica_dir
+teresa_dir
+gerardo_dir
+damian_dir
+damian

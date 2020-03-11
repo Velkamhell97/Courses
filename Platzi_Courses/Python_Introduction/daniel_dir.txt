@@ -1,5 +1,5 @@
-Daniel,danielvalencia97@gmail.com,3183794733
-david,david@gmail.com,3153158988
-monica,monica@gmail.com,3183794733
-gerardo,gerardo@gmail.com,3173178822
-camilo,camilo@gmail.com,3173180022
+gerardo,gerardo@gmail.com,3143145544
+monica,monica@gmail.com,3143145544
+pedro,pedro@gmail.com,3143145544
+daniel,daniel@gmail.com,3143142233
+david,david@gmail.com,3133143322
