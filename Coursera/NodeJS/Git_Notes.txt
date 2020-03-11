@@ -1,0 +1,4 @@
+git config --list: Despliega los parametros configurados de git como el nombre de usuario, correo, url remota, etc
+git log --oneline: muestra todos los mensajes que se han pasado al momento de hacer un commit (para salir q)
+git add .: escribiendo solo un punto se agregan (add) todos los archivos
+git log: Muestra los mensaje que se han pasado al momento de hacer un commit con mas detalles (para salir q)
