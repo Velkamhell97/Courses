@@ -3,3 +3,7 @@ git log --oneline: muestra todos los mensajes que se han pasado al momento de ha
 git add .: escribiendo solo un punto se agregan (add) todos los archivos
 git log: Muestra los mensaje que se han pasado al momento de hacer un commit con mas detalles (para salir q)
 git checkout [commit_ID] [FileName]: elmimina el ultimo commit identificado con el ID, en el archivo 
+git reset HEAD [FileName]: cuando se utiliza el checkout el archivo vuelve a quedar en el limbo del commit
+para evitar esto se utiliza el git reset, para que este tenga que volver a ser añadido y commitado.
+git checkout -- [FilaName]: Para que la modificacion se vaya tambien de la seccion de agregar, se utiliza
+este comando, el cual descarta los cambios realizados.
