@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tutorial.css">
+    <script src="https://kit.fontawesome.com/58b1e579d6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="border" style="background-color: lightgrey; padding: 20px 0px; font-family: Arial, Helvetica, sans-serif;">
+        La propiedad background-color cambia el color de fondo (pendiente lograr colocar una imagen bacground dentro de un div y que sea
+        responsive,), a continuacion se vera una imagen de fondo que e repite y ademas se mantienen el numero de repeticiones segun el tamaño
+    </div>
+    <div class="border" style="height: 300px; background-image: url('zelda_wpp2.jpg'); padding: 5px; background-repeat: round;"></div>
+    <div class="rounded_div">
+        Tambien podemos hacer que los bordes sean redondos y con la opcion auto que se centre horizontalmente en el contendor, anque este tarbajo
+        es mas del padding que del margin
+    </div>
+    <h1 style="margin-bottom: 50px;">Las margenes de arriba y abajo no se suman entre elementos, es decir, el valor de margen un elemento colocado</h1>
+    <h1 style="margin-top: 20px;">Encima del otro sera el valor mas grande entre el bottom del primero y el top del segundo, no la suma</h1>
+    <div class="padding-unbox">
+        El paddin crea espacio entre el elemento y el contenido, agrandando el tamaño del contenedor
+    </div>
+    <div class="padding-box">
+        A pesar de los dos tener las mismas propiedades, el box-sizing hace que el padding no afecte el tamñao predefinido del contenedor
+    </div>
+    <div class="width-div-percent">
+        A pesar de que el elemento tiene un ancho del 50%, que es donde se ubica el contenido, la etiqueta div ocupa todo el ancho y rellena
+        con div
+    </div>
+    <div class="width-div-px">
+        Este elemento crea un scrollbar horizontal cuando el viewport super el valor de width
+    </div>
+    <br>
+    <div class="width-div-max">
+        Para este caso, Se seleccion un max-widht y un min-widht, de manera de que se comporte responsive hasta un min-widht y ningun contenido
+        como lo seria una imagen, haga que se supere el tamaño del max-widht
+    </div>
+    <br>
+    <div class="outline-div">
+        Aqui vemos la diferencia entre el borde y el outline
+    </div>
+    <br>
+    <div class="font-div">
+        Aqui veremos algunos tipos de fuente y  otros atributos similares
+    </div>
+    <br>
+    <div class="icons-container">
+        <i class="fab fa-facebook-f icon"></i>
+        <i class="fab fa-instagram icon"></i>
+        <i class="fab fa-twitter icon"></i>
+        <i class="fab fa-github icon"></i>
+        <i class="fab fa-linkedin-in icon"></i>
+        <i class="fab fa-google icon"></i>
+    </div>
+    <br>
+    <div class="link-container">
+        <a class="link1" href="#">Link 1</a>
+        <a class="link2" href="#">Link 2</a>
+    </div>
+    <br>
+    <div class="button-div-container">
+        <a href="#" class="links">Home</a>
+        <a href="#" class="links">Characters</a>
+        <a href="#" class="links">Resources</a>
+        <a href="#" class="links">More</a>
+        <a href="#" class="links">Logout</a>
+    </div>
+    <ul style="border: 2px solid black; background-color: lightgrey;" class="unordened-list-container">
+        <!--En html existen las listas desordenadas o unordened list, en donde los elementos no tienen una etiqueta que defina un orden 
+            como un numero, las listas crean un margin top y bottom-->
+        <li>Link</li> <!--Los elementos de la lista o list items, son los valores de la lista-->
+        <li>Zelda</li>
+        <li>Navi</li>
+    </ul>
+    <ol style="border: 2px solid black; background-color: lightgrey;" class="ordened-list-container">
+        <!--Por otra parte las ordened list, los elementos llevan una etiqueta que define un orden como numeros (decimales o romanos)-->
+        <li>Circuitos DC</li>
+        <li>Electronica analogica</li>
+        <li>Electronica digital</li>
+    </ol>
+    <br>
+    <table id="customers"> <!--Esta etiqueta corresponde a la tabla en si-->
+    <caption>Tabla 1.1 Ejemplo de tabla</caption>
+        <tr> <!--Este elemento siginifica table-row, es decir, una fila-->
+            <th>Company</th> <!--Este elemento es table-header o encabezados-->
+            <th>Contact</th> <!--Estos headers se centran segun el contenido de las celdas-->
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Toshiba</td> <!--Este elemento corresponde  una table-cell o celda-->
+            <td>Pastrana</td><!--las celdas toman un ancho total de la celda con el contenido mas ancho-->
+            <td>Colombia</td>
+        </tr>
+        <tr>
+            <td>Berglunds snabbköp</td>
+            <td>Christina Berglund</td>
+            <td>Sweden</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Ernst Handel</td>
+            <td>Roland Mendel</td>
+            <td>Austria</td>
+          </tr>
+          <tr>
+            <td>Island Trading</td>
+            <td>Helen Bennett</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>Königlich Essen</td>
+            <td>Philip Cramer</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Yoshi Tannamuri</td>
+            <td>Canada</td>
+          </tr>
+          <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Giovanni Rovelli</td>
+            <td>Italy</td>
+          </tr>
+          <tr>
+            <td>North/South</td>
+            <td>Simon Crowther</td>
+            <td>UK</td>
+          </tr>
+          <tr class="last-row">
+            <td>Paris spécialités</td>
+            <td>Marie Bertrand</td>
+            <td>France</td>
+          </tr>
+    </table>
+    <br>
+    <div class="table-div">
+        <table id="customers">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+            <th>Points</th>
+          </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+            <td>94</td>
+          </tr>
+          <tr>
+            <td>Adam</td>
+            <td>Johnson</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+            <td>67</td>
+          </tr>
+        </table>
+      </div>
+    <br>
+    <div class="div-static">
+      Este contenedor tiene positicon static lo que indica que se comporta normalmente como un div
+    </div>
+    <br>
+    <div class="div-relative">
+      Este contenedor se ubica en una posicion relativa a su posicion static, por lo que se puede desplazar por la pagina, si se sale del 
+      viewport el contendor no se vera por completo dando la sensacion de que no es responsive.
+    </div>
+    <br>
+    <div class="relative-container">
+      Este es el elemento padre, con el position relative
+      <div class="div-absolute">
+        Con el position absolute, el contenedor o elemento se ubicara en una posicion relativa a otro elemento y no a su posicion por defecto,
+        respecto al body, por lo tanto tendra los mismos parametros que el relative solo que se aplicaran respecto al contenedor padre
+        para que esta propiedad haga efecto su contenedor padre debe tener el position relative (no seguro)
+      </div>
+    </div>
+    <div class="div-fixed">
+      Este contendor esta ubicado en la esquina del cuerpo y se movera con el cursor para permanecer aferrado a las coordenadas respecto al body
+    </div>
+    <br>
+    <div class="relative-container2">
+      <h2 style="margin: 0; padding: 35px 0 0 15px;">The Legend Of Zelda - Ocarina Of Time</h2>
+      <img src="link_sword.png" class="absolute-img">
+    </div>
+    <br>
+    <div style="border: 2px solid black; background-color: lightgrey; z-index: 0; width: 50%;">
+      <h3 style="margin: 0; padding: 10px 0 0 0;">No es necesario que el contenedor tenga la propiedad position relative
+      pero si es muy comun ya que un relative sin propiedades es como un static</h3>
+      <div style="position: relative; height: 250px; margin-top: 5px;">
+        <div style="position: absolute; top: 0; left: 0; height: 100px; width: 100px; background-color: yellow; opacity: 0.5;
+        border: 1px solid black; z-index: 1;">
+          z-index = 1
+        </div>
+        <div style="position: absolute; top: 10%; left: 8%; height: 100px; width: 100px; background-color: green; opacity: 0.5;
+        border: 1px solid black; z-index: 2;">
+          z-index = 2
+        </div>
+        <div style="position: absolute; top: 20%; left: 16%; height: 100px; width: 100px; background-color: red; opacity: 0.5;
+        border: 1px solid black; z-index: 3;">
+          z-index = 3
+        </div>
+        <div style="position: absolute; top: 30%; left: 24%; height: 100px; width: 100px; background-color: blue; opacity: 0.5;
+        border: 1px solid black; z-index: 4;">
+          z-index = 4
+        </div>
+      </div>
+    </div>
+    <br>
+    <div style="border: 2px solid black; background-color: lightgrey;">
+      <h3>Acontinuacion de este h2 hay otro h3 que aunque no se ve ocupa el espacio</h2>
+      <h3 style="visibility: hidden;">Yo soy ese h3 y no ocupo espacio por la propiedad visibility:hidden</h2>  
+      <h3>Encima de este texto esta el otro escondido, y abajo hay otro texto pero este ni se ve ni ocuoa espacio</h2>
+      <h3 style="display: none;">Este elemento no se ve ni ocupa espacio por la propiedad display:none</h3>
+    </div>
+    <br>
+    <div class="overflow-visible">
+      Este contenedor tiene dimensiones fijas por lo tanto al no ser responsive, el contenido supera la capacidad del contenedor y este primero
+      se desborda tal y como se puede apreciar
+    </div>
+    <br>
+    <br>
+    <div class="overflow-hidden">
+      Para este caso todo el contenido que no quepa en el contenedor, es decir que supere sus dimensiones, sera ocultado, de manera que no sera
+      visible como el caso anterior
+    </div>
+    <br>
+    <div class="overflow-scroll">
+      Con esta opcion automaticamente el contenedor creara un scrollbar, tanto horizontal como vertical, para que, en caso de que el contenido
+      supere la capacidad del contenedor este no se desborde ni se oculte sino que se pueda visualizar desplazando una scroll bar
+    </div>
+    <br>
+    <div class="overflow-auto">
+      Esta propiedad es similar a la anterior, con la diferencia que no se crean los scrollbar automaticamente sino unicamente, cuando estos
+      sean necesarios.
+    </div>
+    <br>
+    <div style="border: 2px solid black; background-color: lightgrey;">
+      <img src="kokiri_forest.png" class="img-float">
+      <p>
+        In the vast, deep forest of Hyrule... Long have I served as the guardian spirit... I am known as the Deku Tree...
+        The children of the forest, the Kokiri, live here with me. Each Kokiri has his or her own guardian fairy. However, 
+        there is one boy who does not have a fairy...
+        Navi... Navi, where art thou? Come hither.... Oh, Navi the fairy... Listen to my words, the words of the Deku Tree... 
+        Dost thou sense it? The climate of evil descending upon this realm... 
+        Malevolent forces even now are mustering to attack our land of Hyrule... 
+        For so long, the Kokiri Forest, the source of life, has stood as a barrier, deterring outsiders and maintaining the order of the world...
+        But... before this tremendous evil power, even my power is as nothing...
+        It seems the time has come for the boy without a fairy to begin his journey... The youth whose destiny it is to lead Hyrule to the path 
+        of justice and truth... Navi...go now! Find our young friend and guide him to me... I do not have much time left. Fly, Navi, fly!
+        The fate of the forest, nay, the world, depends upon thee!
+        Oh... Navi... Thou hast returned... Link... Welcome... Listen carefully to what I, the Deku Tree, am about to tell thee... 
+        Thy slumber these past moons must have been restless, and full of nightmares...
+        As the servants of evil gain strength, a vile climate pervades the land and causes nightmares to those sensitive to it... 
+        Verily, thou hast felt it... Link... The time has come to test thy courage... I have been cursed... 
+        I need you to break the curse with your wisdom and courage. Dost thou have courage enough to undertake this task?
+      </p>
+    </div>
+    <br>
+    <div style="border: 2px solid black; background-color: lightgrey;">
+      <img src="kokiri_forest.png" class="img-clear">
+      <p>
+        In the vast, deep forest of Hyrule... Long have I served as the guardian spirit... I am known as the Deku Tree...
+        The children of the forest, the Kokiri, live here with me. Each Kokiri has his or her own guardian fairy. However, 
+        there is one boy who does not have a fairy...
+        Navi... Navi, where art thou? Come hither.... Oh, Navi the fairy... Listen to my words, the words of the Deku Tree... 
+        Dost thou sense it? The climate of evil descending upon this realm... 
+        Malevolent forces even now are mustering to attack our land of Hyrule... 
+        For so long, the Kokiri Forest, the source of life, has stood as a barrier, deterring outsiders and maintaining the order of the world...
+        <strong>Como podemos observar para este caso cuando la imagen es mayor que el texto, esta no ancha en contenedor sino que
+          se desborda
+        </strong>
+      </p>
+    </div>
+    <br><br><br><br>
+    <div style="border: 2px solid black; background-color: lightgrey;">
+      <img src="kokiri_forest.png" class="img-clear2">
+      <p class="div-clear">
+        In the vast, deep forest of Hyrule... Long have I served as the guardian spirit... I am known as the Deku Tree...
+        The children of the forest, the Kokiri, live here with me. Each Kokiri has his or her own guardian fairy. However, 
+        there is one boy who does not have a fairy...
+        Navi... Navi, where art thou? Come hither.... Oh, Navi the fairy... Listen to my words, the words of the Deku Tree... 
+        Dost thou sense it? The climate of evil descending upon this realm... 
+        Malevolent forces even now are mustering to attack our land of Hyrule... 
+        For so long, the Kokiri Forest, the source of life, has stood as a barrier, deterring outsiders and maintaining the order of the world...
+        <strong>Como podemos observar para este caso cuando la imagen es mayor que el texto, esta no ancha en contenedor sino que
+          se desborda
+        </strong>
+      </p>
+    </div>
+    <br>
+    <div style="border: 2px solid black; background-color: lightgrey; padding: 5px;">
+      <img src="kokiri_forest.png" class="img-float">
+      <p>Como se puede observar la imagen, no ajusta el tamaño del div para que esta quepa completamente, en vez de eso, la imagen 
+        se desborda por fuera del contenedor dando un mal aspecto a esta pagina
+      </p>
+    </div>
+    <p style="border: 2px solid black; background-color: lightgrey; clear: right;">
+      Para poner este parrafo aparte de la imagen, es decir que esta no haga parte de esta parrafo, podemos seleccionar la opcion div-clear
+      para que este parrafo ocurra debajo de la imagen, ahora bien una vez separado el parrafo de la imagen, mostraremos como auto ajustar 
+      el tamaño del div al tamaño de la imagen, como se muestra acontinuacion: 
+    </p>
+    <div class="float-fit-container">
+      <img src="kokiri_forest.png" class="img-float">
+      <p>Para este caso el contenedor completo aumento su tamaño ajustandose al tamaño de la imagen, esto permite que el diseño de la pagina
+        sea mas responsive y que el contenedor se expanda segun el largo de la imagen, todo con la propiedad overflow
+      </p>
+    </div>
+    <div style="height: 300px;"></div>
+</body>
+</html>

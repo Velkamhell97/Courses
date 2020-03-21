@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Tutorial</title>
+</head>
+<body>
+    <header>
+        Este encabezado tambien hace parte de loe elementos semanticos que generalmente tiene el titulo y muestra su contenido
+        en una navbar
+    </header>
+    <header>TITULO 
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Opcion 1</a>
+            <a href="#">Opcion 2</a>
+        </nav>
+    </header>
+    <h1>Este es un titulo H1</h1>
+    <h6>Este es un titulo H6</h6>
+    <p>Este es un <i>Parrafo</i> &lt;p&gt;</p> <!--Para escribir etiquetas como texto plano utilizamos &lt; y &gt;-->
+    <p>Este es otro <b>Parrafo</b></p> <!--La etiqueta <b> pone en negrilla y <i> en italica-->
+    <p>Dentro de este parrafo hay un <a href="https://www.google.com/">link</a> que te lleva a google</p>
+    <div style="border: 0.1em solid #000000;"> <!--Siempre predomina el css declarado dentro del elemento-->
+        <p style="border: 0.1em solid #000000;">Este parrafo se encuentra dentro de un bloque</p>
+        <figure>
+            <img src="zelda_logo.jpg" alt="zelda_logo" width="150px" height="200px" style="border: 0.1em solid #000000;">
+            <figcaption>Fig.1 - Zelda Logo</figcaption>
+        </figure>
+        
+        <p style="border: 0.1em solid #000000;">La imagen anterior y este parrafo tambien estan dentro del mismo bloque</p>
+        <h1 style="border: 0.1em solid #000000;">Lo que escriba en un div ocupa toda el area disponible</h1>
+        <span style="border: 0.1em solid #000000;"> y ademas cada elemento tiene salto de linea</span>
+        <span style="border: 0.1em solid #000000;">Sin embargo el estilo de las otras etiquetas puede sobreescribir este comportamiento</span>
+    </div>
+    <span style="border: 0.1em solid #000000; background-color: burlywood;">
+        <span style="border: 0.1em solid #000000;">La etiqueta span organiza los elementos linealmente</span>
+        <img src="zelda_logo.jpg" alt="zelda_logo" width="150px" height="200px"style="border: 0.1em solid #000000;">
+        <span>y solo ocupa lo que ocupen los elementos</span>
+    </span>
+    <div style="border: 0.1em solid #000000;">
+        <span style="border: 0.1em solid #000000; background-color: burlywood;">
+            Con algunas excepciones, las etiquetas que no se puedan poner al lado de otra por propiedades por defecto van a 
+            generar un contenedor vacio
+        </span>
+        <p>Sin embargo una etiqueta parrafo puede tener un comportamiento tipo inline</p>
+        <p style="display: inline;">como este caso </p><p style="display: inline;">que escribo dos parrafos sin salto de linea</p>
+    </div>
+    <div style="border: 0.1em solid #000000;">
+        Tambien podemos modificar la organizacion de los elementos de diferntes manera, este es un texto inline
+        <p style="border: 0.1em solid #000000; display: inline-block">Este parrafo (block) da un salto de linea</p>
+        pero el texto que sigue queda inline
+    </div>
+    <aside>
+        <h3>Contenido de Aside</h3>
+        <p>Le falta el estilo pa que se ubique en un costado de la pagina</p>
+    </aside>
+    <h1>Como jugar Minecraft</h1>
+    <section style="border: 0.1em solid #000000;">
+        <h2>Descarga</h2>
+        <p>Primero descargar</p>
+    </section>
+    <section style="border: 0.1em solid #000000;">
+        <h2>Instalar</h2>
+        <p>Segundo descargar</p>
+    </section>
+    <article style="border: 0.1em solid #000000;">
+        <h1>Clima en ciudades</h1>
+        <article style="border: 0.1em solid #000000;">
+            <h2>03 de marzo de 2018</h2>
+            <p>Lluvia</p>
+        </article>
+        <article style="border: 0.1em solid #000000;">
+            <h2>04 de marzo de 2018</h2>
+            <p>Lluvia leve</p>
+        </article>
+    </article>
+    <footer>Esta etiqueta representa la informacion adicional de la pagina que se encuentra siempre al final</footer>
+</body>
+</html>
+
+
+<!-- HTML
+    * La etiqueta p hace referencia a los parrafos todos los p colocados tendran un salto de linea en la pagina
+    * Todo lo que esta dentro del Head lo lee el navegador Web
+    * Las etiquetas con h son titulos van del 1 al 6 y su nivel de importancia (Tamaño) disminuye con el numero
+    * La etiqueta a crea un link que redirecciona a alguna direccion en caso de darle click
+    * Las etiquetas div son divisiones que sirven para agrupar contenido y etiquetas, esta etiqueta ocupa la totalidad del espacio disponible
+    asi no se este usando, ademas los elementos dentro de un div general
+    * La etiqueta span es para colocar elementos uno seguido del otro sin embargo si otro elemento sobreescribe su propiedad el contenedor
+    solo tomara a los elementos que se adecuan a sus propiedades, una imagen de mayor tamaño estara dentro del contenedor pero se saldra
+    de los limites superiores, ya que el span solo ocupa el ancho que haya de contenido
+    * Las etiquetas div generalmente se usan como contenedor de otras etiquietas, mientras que la etiqueta span se utiliza mas que todo
+    para contener algun texto y dale un formato
+    * Existen otras etiquetas que actuan como contenedoras y sirven para organizar semanticamente el contenido de la pagina, por ejemplo
+    la etiqueta section que especifica una seccion del documento en general, como un capitulo o unos resultados, un parrafo etc, al igual
+    que el div ocupa todo el espacio disponible, el elemento div no tiene ningun significado en la estructura del cuerpo solo se usa
+    como ultimo recurso para agrupar elementosy darles estilos
+    * La etiqueta article se usa para crear secciones que puedan ser independientes del contenido de la pagina e independientes, que se 
+    pueda colocar en cualquier lugar de la pagina, como un post, o una entrada de blog, las etiquetas article y section se usan
+    indistintamente, un article puede tener sections y viceversa.
+    * La etiqueta header es un encabezado se utiliza cuando se presenta algun titulo o presentacion de la pagina, puede venir acompañado
+    de una navbar
+    * La etiqueta footes se utiliza para establecer un pie de pagina o seccion al final de la pagina para ofrecer la informacion
+    de contacto u otro tipo de informacion adicional
+    * La etiqueta nav establece una barra de navegacion con links para navegar por los servicios de la pagina
+    * La etiqueta aside es un elemento que se ubica a un lado o costado de la pagina, como una sidebar, permite organizar la pagina 
+    y darle estilo
+    A las imagenes le podemos poner descripcines con la etiqueta figcaption, dentro de la etiqueta figure
+-->
+
+<!--CSS
+    * El atributo border recibe 3 parametros, ancho de borde, estilo que puede ser solido, con puntos, flotante, doble etc y el color, estos
+    atributos se asignan dejando un espacio, se puede asignar cada uno independientemente
+    * La etiqueta div tiene por defecto el estilo display:block, en donde los elementos se ubican uno debajo del otro, aunque tambien influye
+    el estilo por defecto de la etiqueta, por ejemplo la etiqueta p siempre se ubicara debajo de otro
+    * La etiqueta span tiene por defecto el estilo display:inline, lo que indica que los elementos se ubican uno seguido del otro, pero al igual
+    que el div el estilo por defecto de cada etiqueta puede afectar el comportamiento.
+    la propiedad background-color determina el color de fondo de la etiqueta o contenedor
+    * Esta propiedad display puede cambiar el comportamiento por defecto de las etiquetas de acuerdo a nuestras necesidades, no es recomendable
+    usar etiquetas con display block dentro de contenedores con display inline, ya que esto causara un contenedor vacio, los valores
+    de la propiedad display tambien modificara los valores de margenes en la etiqueta
+    * El contenido (texto) dentro de las etiquetas vistas en este documento son tipo responsive, lo que indica
+    que a medida que la ventana se encoge o se expande el texto se acomoda para seguirse leyendo completamente
+-->

@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box; /*Esta propiedad hace que cuando se declare ancho y largo se mantengan estos valores independiente
+    del padding y border*/
+}
+
+body {
+    margin: 0;
+}
+
+div.border {
+    border: 0.1em solid black; /* La propiedad border solo recibe: (ancho) (estilo) (color)*/
+    margin: 0 0 1em 0; /* La propiedad margin recibe las margenes de: (arriba) (derecha) (abajo) (izquierda)*/
+}
+
+.flex-container-column {
+    display: flex; /*Esta propiedad se aplica al contenedor que contendra los elementos flex*/
+    background-color: dodgerblue; /*Por defecto los elementos se acomodaran en columnas*/
+    flex-wrap: nowrap; /*Con esta propiedad evitamos que los elementos se reorganizen cuando no tienen espacio*/
+}
+
+.flex-container-column > div {
+    background-color: #f1f1f1;
+    width: 100px; /*Ancho u largo del elemento*/
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 70px; /*Para centrar verticalmente*/
+}
+
+.flex-container-row {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: dodgerblue;
+    flex-direction: column; /*Con esta propiedad establecemos el orden de los elmentos por defecto se muestran en filas (row)*/
+}
+
+.flex-container-row > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.flex-container-row-reverse {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: dodgerblue;
+    flex-direction: column-reverse; /*Tambien podemos modificar el orden de los elementos para que se muestren al reves*/
+}
+
+.flex-container-row-reverse > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.flex-container-column-wrap {
+    display: flex;
+    flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
+    flex-direction: row; /*Tambien podemos modificar el orden de los elementos para que se muestren al reves*/
+    flex-flow: row wrap; /*Este comando es para declarar en una sola linea el sentido y el reagrupamiento, no tendra efecto aqui*/
+}
+
+.flex-container-column-wrap > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.flex-container-center {
+    display: flex;
+    height: 600px;
+    flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
+    flex-direction: row; /*Tambien podemos modificar el orden de los elementos para que se muestren al reves*/
+    justify-content: center; /*Con esta propiedad los elementos se mostraran centrados en el contenedor, tambien se puede a los costados
+    con flex-start, o flex-end, o igualmente espaciados con space-arround O space-between*/
+    align-content: space-between; /*Tambien podemos centrarlos verticalemente dejando un espaciado, hay mas opciones, como el space-around
+    justtify-content: organizar horizontalmente, align-content: organizar verticalmente*/
+}
+
+.flex-container-center > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center; 
+}
+
+.flex-container-middle {
+    display: flex;
+    flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
+    flex-direction: row; /*Tambien podemos modificar el orden de los elementos para que se muestren al reves*/
+    height: 200px;
+    align-items: stretch; /*Al igual que el justify content podemos hacer que el contenido se muestre en la parte superior, centro o inferior
+    center, flex-start, y flex-end, tambien se puede hacer que las celdas se alargen tanto como el contenedor stretch
+    tambien esta el baseline que alinea los elementos verticalmente sin importar que tengan contenedores de diferente tamaño
+    estos comportamientos pueden ser sobreescritos con el metodo align-self, que ubica a un elemento en particular*/
+    justify-content: space-around;  /*Con esta propiedad los elementos adquieren un espaciado diferente*/
+    /*La propiedad justify content define la posicion en la cual se muestran los elementos con direccion row, se aplica al contenedor flex
+    (elementos igual tamaño - height)*/
+    /*La propiedad aling-self, se aplica unicamente al elemento en especifico que este en row para posicionarlo verticalmente
+    (elementos igual tamaño - height, generalmente el contenedor tiene un heigt mayor)*/
+    /*La propiead align-items actua igual que el align-self pero se aplica al contenedor y modifica la posicion de todos los elementos row
+    (elementos de diferente tamaño, heigt - el estrech lo alarga, se usa para alinear verticalmente los items, 
+    generalmete height de contedor mayor, esta propiedad tiene por defecto un space around lo que indica que si el wrap esta activad
+    los elementos se mostraran espaciados entre si, diferente del aling content)*/
+    /*La propiedad aling-content, centra elementos row verticalmente (elementos de diferente width, alinear las lineas flex, no los items,
+    esto quiere decir que los elementos se centran verticalmente sin space around, no hay espaciado entre las filas)*/
+    /*A pesar que se setee un widht los elementos aumentaran o reduciran este valor de forma responsive (cuando no se utiliza flex-basis)*/
+    /*Cuando se cambia la direccion del flex, generalmetne las propiedades que centran vertical ahora centran horizontal y viceversa*/
+    /*El aling self se utiliza para centrar elementos dentro de un contenedor heigh mayor y con elementos tambien de mayor heugh, como 
+    por defecto los elementos tienen un comportamiento stretch con esta propiedad activada adoptan un menor tamaño para ubicarse*/
+}
+
+.flex-container-middle > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.flex-container-items {
+    display: flex;
+    flex-wrap: nowrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
+    height: 200px; /*el comportamiento stretch esta por defecto activado, los items se alargan segun du contendor*/
+}
+
+.flex-container-items > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
+    padding: 0 4px;
+}
+
+
+.flex-column {
+    flex: 25%; /*Esta propiedad define que porcentaje de espacio utilizara cada celda*/
+    max-width: 25%; /*Con esto aseguramos que las celadas no superen el 25% de espacio*/
+    padding: 0 4px;
+}
+
+.flex-column > div {
+    background-color: #f1f1f1;
+    margin-top: 8px;
+}
+
+.responsive-row { /*Se crea el contenedor que mostrara los elementos uno segudio del otro*/
+    display: flex;
+    flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
+}
+
+.responsive-column {
+    flex: 25%; /*Como no se ha seteado la propiedad shinrk, el tamaño del elemento o de la columna sera responsive*/
+    max-width: 25%; /*Esto asegura que nigun elemento provoque que se desborde la columna (mas del 25%) */
+    padding: 0 4px; /*Este es un espaciado entre las columnas*/
+}
+
+.responsive-column img {
+    margin-top: 8px; /*margen superior*/
+}
+
+@media (max-width: 800px) {
+    .responsive-column {
+        flex: 50%; /*Con esta opcion establecemos que cada columna ocupara un 50% de la fila, dando lugar a solo dos imagenes*/
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .responsive-column {
+        flex: 100%; /*Con esta opcion establecemos que cada columna ocupara un 50% de la fila, dando lugar a solo dos imagenes*/
+        max-width: 100%;
+    }
+}
+
+.row_final { /*Comenzamos seleccionando una fila que puede ser un contenedor*/
+    display: flex;
+    flex-wrap: wrap; /*Cuando los elementos tiene un porcentaje de ancho no se pueden saltar*/
+}
+
+.header_final { /*Este elemento se centra verticalmente y horizontal con el padding*/
+    flex: 100%; /*Ocupa una fila completa y es responsive*/
+    max-width: 100%;
+    background-color: #1abc9c;
+    text-align: center;
+    padding: 60px; /*Padding para centrar*/
+}
+
+.nav_final { /*Esta barra tambien ocupa 1 fila, sin embargo le damos mas espacio a los div (vertical)*/
+    flex: 100%; /*Ocupa 1 fila*/
+    background-color: #333333;
+    padding: 14px 0px;
+}
+
+.nav_final a { /*Los link tambien deben estar espciados entre ellos*/
+    color: white; 
+    text-decoration: none; /*quitamos el subrayado*/
+    text-align: center; /*Alineamos el centro*/
+    padding: 14px 20px; /*agregamos el padding*/ 
+}
+
+.nav_final a:hover { /*Cuando ponemos el cursor*/
+    color: black; /*Cambiamos el color de la letra*/
+    background-color: #f1f1f1; /*Cambiamos el color de fondo*/
+}
+
+.aside_final { /*El aside ocupa el 25%*/
+    flex: 25%;
+    max-width: 25%;
+    background-color: #f1f1f1;
+    padding: 20px; /*le damos un centrado parcial con el paddinf*/
+}
+
+.menu_final { /*El menu principal ocupa el 70%*/
+    padding: 20px; 
+    flex: 75%;
+    max-width: 75%;
+    background-color: #ffffff;
+}
+
+.footer_final { /*El footer final ocupa el 100%*/
+    flex: 100%;
+    text-align: center;
+    background-color: #DDDDDD;
+    padding: 20px;
+}
+
+@media (max-width:700px) { /*cambiamos el porcentaje de filas y mostramos los link como bloques, quitamos padding*/
+    .aside_final {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .menu_final {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .nav_final {
+        padding: 0px;
+    }
+
+    a {
+        display: block;
+    }
+}

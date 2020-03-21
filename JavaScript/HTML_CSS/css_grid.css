@@ -1,0 +1,149 @@
+/*---- ESTILOS PARA LOS DISPLAY MAS COMUNES: NONE, INLINE. BLOCK, INLNE-BLOCK ----*/
+div.border {
+    border: 0.1em solid black; /* La propiedad border solo recibe: (ancho) (estilo) (color)*/
+    margin: 0 0 1em 0; /* La propiedad margin recibe las margenes de: (arriba) (derecha) (abajo) (izquierda)*/
+}
+p { color: red; } /*La propiedad color se refiere al contenido de la letra*/
+p.Snone { display: none; }
+p.Sinline { display: inline; }
+p.Sblock { display: block; }
+p.Sinline_block { display: inline-block; }
+/*------------------------------------------------------- ------------------------*/
+
+/*------------------------- ESTILOS PARA LOS DISPLAY: TABLE ---------------------*/
+div.Stable{ display: table; }
+div.Stable_row { display: table-row; }
+div.Stable_cell { display: table-cell; }
+/*-------------------------------------------------------------------------------*/
+
+/*------------------------- ESTILOS PARA LOS DISPLAY: GRID ---------------------*/
+
+
+.Sgrid_header { grid-area: header; } /* Estas propiedades definen un nombre al una area o seccion que deseemos marcar*/
+.Sgrid_menu { grid-area: menu; } /* En el contenedor podemos entonces definir el numero de columnas y cuantas de estas*/
+.Sgrid_main { grid-area: main; } /* Columnas utilizara cada seccion de nuestro documento, en este punto solo definimos las secciones*/
+.Sgrid_right { grid-area: right; } /* El punto indica que esta propiedad se aplica al elemento con la clase Sgrid_right*/
+.Sgrid_footer { grid-area: footer; }
+
+.Sgrid_container {
+  display: grid; 
+  grid-template-areas:
+    'header header header header header header' /* Como dice la propiedad el template indica cuantas filas tendra el layou y cuantas columnas tendra cada area */
+    'menu main main main right right' /* En este ejemplo hay tres filas y  columnas hay algunas areas que ocupan mas que otras*/
+    'menu footer footer footer footer footer'; /*si en vez de footer ponemos un punto habra un espacio vacio*/
+  gap: 10px; /* Esta propiedad define la distancia que hay entra las columnas de la malla o grid*/
+  background-color: #2196F3; /* Esta propiedad define el color de fondo del contenedor*/
+  padding: 10px; /* Esta propiedad crea un espacio o relleno en todas las direcciones (por especificar solo un parametro)*/
+  /*Cuando se quieren dejar areas vacias o celdas vacias, se puede poner un . en el template-areas*/
+}
+
+.Sgrid_container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0; /*El pading se utiliza para hacer crecer el contendor y se vea algo centrado verticalment*/
+  font-size: 30px;
+}
+
+.Sgrid_container2 { 
+  display: grid;
+  grid-template-columns: auto auto auto 150px; /*El numero de atributos es el numero de columnas, el auto quiere decir igual tamaño (ancho)*/
+  background-color: #2196F3; /* Tambien pueden especificarse anchos en pixeles px*/
+  grid-template-rows: auto auto 150px; /*Con el template rows se especifica el largo de cada celda, tambien se pueden poner porcentaje*/
+  padding: 10px;  /*La propiedad grid-auto-columns/rows especifica con que caracteristicas se crean las columnas que contienen la celda
+                  si esta se desborda de las lineas posibles, ejemplo grid-column: 5/6, si no existe la tabla hasta esa columna se crean;*/
+  gap: 5px;
+  /*align-items: center;
+  justify-items: center;*/
+  /*si por ejemplo tenemos 3 columnas, cuando se agregen 4 elementos se agregara una fila, cuando seteamos el ancho por defecto de las filas,
+  esto hara efecto si el numero de filas puede almacenar todos los elementos, si agrgamos mas elementos de manera que se cree otra fila, la cual
+  no se le declaro valor por defecto o template-row, el ancho de esta nueva fila sera auto*/
+  /*Para el caso del justify-content, hace lo mismo que en el flex, centra las celdas horizontalmente, dependiendo del valor (center, space)
+  el problema es que en este caso si debemos establecer un widht fijo de las columnas ya que si se dejan auto modificaran su widht
+  al contenido de ese elemento*/
+  /*Para el caso del aling-content, este actua igual que en el flex, centra los items en alguna posicion flotante, pero manteniendolos unidos
+  las filas entre si, a menos que se seleccione una opcion space,*/
+}
+
+.Sgrid_container2 > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  /*vertical-align: middle;*/
+  text-align: center;
+}
+
+.Sgrid_item1 { 
+  grid-column-start: 1; /*Con este atributo una celda puede ocupar mas columnas o mas filas, las lineas son las divisiones de la tabla*/
+  grid-column-end: 3;
+  grid-row: 1 / 3; /*Con esta propiedad podemos asignar los valores de grid-row-start / grid-row-end de una sola linea;*/
+  /*tambien con la propiedad grid-area se establecen los cuatro lados (column-start y row-start)*/
+  /*align-self: center;   /*Con este atributo podemos centrar verticalmente pero se pierde algo de background*/
+  line-height: 200px; /*Asignandole a este atributo un valor mayor al tamaño de fuente del texto se puede centrar verticalmente 
+  un texto de una sola linea*/
+}
+
+.Sgrid_item7 {
+  line-height: 100px;
+}
+
+.Sgrid_container3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*La propiedad auto-fill establece por si misma el numero de columnas segun
+  el espacio disponible y las agrupa cuando se estrecha la pantalla, el minmax establece un ancho minimo y el valor por defecto, cuando no
+  se cumple esta condicion*/
+  /*el key-word auto fill, permite crear un comportamiento wrap, el espaciado que escoge es por defecto, sin embargo la funcion minmax, establece
+  el valor minimo que puede tomar el elmento (200px) y el valor maximo sera de el tamaño necesario para quedar equidistantes sin embargo 
+  este valor se selecciona automaticamente, pero no se cumple en todos los casos, ya que si el valor minimo es muy por debajo del valor
+  o ancho del contenedor no se espaciara equitativamente, este error se peude corregir con la opcion auto-fit, que si equidistancia los elemteos
+  sin importar el tamaño minimo de estos, esto ocurre porque el auto fit crea columnas vacias del tamaño minimo para llenar el contenedor
+  el auto-fit llena el contenedor creando  nuevas columnas pero comprimiendolas*/
+  padding: 10px;
+  background-color: #2196F3;
+  gap: 10px;
+}
+
+.Sgrid_container3 > div {
+  background-color: cyan;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.Sgrid_container4 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  background-color: #2196F3;
+  gap: 10px;
+}
+
+.Sgrid_container4 > div {
+  background-color: cyan; /*La propiedad backgrourd-color cambia el color de fondo*/
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.item1 { grid-area: 1 / 3 / 2 / 4;} /*determina donde empieza y termina la celda pero con coordenadas
+flotantes, es decir se seleccionan los puntos de inicio y final dentro de toda la tabla, para este ejemplo
+el item 1 empieza en la fila 1, columna 3 y se estira hasta la segunda linea de filas y 4 linea de columnas*/
+.item2 { grid-area: 2 / 3 / 2 / 4;}
+
+@media only screen and (max-width: 500px) { /*Con esta propiedad se puede modificar compoartamientos segun el tamaño de la pantalla*/
+  .Sgrid_container4 {
+    background-color: blueviolet;
+  }
+  .item1 {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+  .item2 {
+    grid-area: 3 / 3 / 3 / 4;
+  }
+  .item5 {
+    grid-area: 3 / 1 / 3 / 2;
+  }
+  .item4 {
+    grid-area: 2 / 2 / 4 / 3;
+  }
+}

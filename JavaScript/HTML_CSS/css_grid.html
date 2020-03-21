@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css_display.css">
+</head>
+<body>    
+    <div class="border">
+        Dentro de este contendor se encuentra un elemento con la propiedad <p class="Snone">(display : none)</p>
+        Como se observa el elemento <b>no se muestra en pantalla</b>, ni ocupa espacio
+    </div>
+    <div class="border">
+        Dentro de este contendor se encuentra un elemento con la propiedad <p class="Sinline">(display : inline)</p>
+        Como se observa el elemento se crea <b>en linea</b> con los demas elementos
+    </div>
+    <div class="border">
+        Dentro de este contendor se encuentra un elemento con la propiedad <p class="Sblock">(display : block)</p>
+        Como se observa el elemento se crea <b>en bloque</b> con los demas elementos, es decir, aparte.
+    </div>
+    <div class="border">
+        Dentro de este contendor se encuentra un elemento con la propiedad <p class="Sinline_block">(display : inline_block)</p>
+        Como se observa el elemento se crea <b>en linea y luego en bloque</b>, combinando las dos anteriores
+    </div>
+    <div class="Stable border"> <!--Estos display tablas y el item-list se pueden reemplazar por unas etiqueta propia de html-->
+        <div class="Stable_row border">
+            <div class="Stable_cell border">display: table -></div>
+            <div class="Stable_cell border">display: table-row -></div>
+            <div class="Stable_cell border">display: table-cell</div>
+        </div>
+        <div class="Stable_row">
+            <div class="Stable_cell border">Celda 1</div>
+            <div class="Stable_cell border">Celda 2</div>
+            <div class="Stable_cell border">Celda 3</div>
+        </div>
+    </div>
+    <div class="border">
+        <h2>Grid Layour</h2>
+        <p>El siguiente conenedor tiene 3 filas y 6 columnas, formando 5 areas especificas
+            el display grid tiene un contenedor y unos elementos, esta es una forma de organizar 
+            la grid por medio de etiquietas o areas:
+        </p>
+        <div class="Sgrid_container">
+            <div class="Sgrid_header">Header</div>
+            <div class="Sgrid_menu">Menu</div>
+            <div class="Sgrid_main">Main</div>
+            <div class="Sgrid_right">Right</div>
+            <div class="Sgrid_footer">Footer</div>
+        </div>
+        <p>No importa el orden en que coloque los elementos en el html el estilo los organizar
+            segun las etiquetas (template-area)
+        </p>
+    </div>
+    <div class="border">
+        <p>En este ejemplo se utilza otro template o modelo de grid que es mas similar a una tabla: </p>
+        <div class="Sgrid_container2">
+            <div class="Sgrid_item1">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="Sgrid_item7">7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+        <p>Podemos definir el numero de columnas (template-column) o el numero de filas (template-row)
+            con el atributo auto estas tendran igual dimension, se puede tambien especificar el espaciado vertical u horizontal
+        </p>
+    </div>
+    <div class="border">
+        <p>En este ejemplo utilizmos el keyword fr que indica el tamaño de las columnas en terminos de fracciones, acontinuacion
+            al ser cada columna, si se le especifica un ancho de 1fr cada un tendra un tamaño de 1/4 de la tabla
+        </p>
+        <div class="Sgrid_container3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+    </div>
+    <div class="border">
+        <p>En este ejemplo con el keyword grid-area podemos agrupar los elementos de forma diferente
+            de la que se ordenan cuando se declaran:
+        </p>
+        <div class="Sgrid_container4">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div>3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div>6</div>
+        </div>
+    </div>
+    <div>
+        Los elementos antes vistos tiene un comportamiendo responsive, en donde su contenido (texto) se adecua al tamaño de la pantalla
+        tambien se pueden hacer transisiones con este tipo de layouts
+    </div>
+</body>
+</html>

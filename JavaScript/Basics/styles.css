@@ -1,0 +1,18 @@
+
+.Sgrid_container {
+    display: grid;
+    grid-template-areas: /* Como dice la propiedad el template indica cuantas filas tendra el layou y cuantas columnas tendra cada area */
+        'header header header header header header' /* En este ejemplo hay tres filas y  columnas hay algunas areas que ocupan mas que otras*/
+        'menu main main main right right'
+        'menu footer footer footer footer';
+    gap: 10px; /* Esta propiedad define la distancia que hay entra las columnas de la malla o grid*/
+    background-color: #2196F3; /* Esta propiedad define el color de fondo del contenedor*/
+    padding: 10px; /* Esta propiedad crea un espacio o relleno en todas las direcciones (por especificar solo un parametro)*/
+} 
+.Sgrid_container > div { /* El > indica que este estilo se aplicara a todos los div que esten adentro de un elemento con clase Sgrid_container*/
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center; /* Esta propiedad define la ubicacion del texto en el contendor (derecha, izquierda, centro)*/
+    padding: 20px 0; /* Si se especifican solo dos parametros seria: (arriba y abajo) (derecha e izquierda)*/
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}

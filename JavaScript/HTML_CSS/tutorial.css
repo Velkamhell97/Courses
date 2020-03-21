@@ -1,0 +1,443 @@
+body {
+    /*el keyword background puede establecer: imagen posicion/tamaño (px) repeat attachment origin clip color*/
+    background-image: url('zelda_wpp.jpg'); /*Esta imagen al ser coincidir con la resolucion de la pantalla la ocupa toda*/
+    background-image: url('zelda_wpp2.jpg');  /*Esta imagen al ser mas pequeña se repite en x como en y*/
+    
+    background-repeat: round; /*Estrecha la imagen para que las repeticiones no se corten*/
+    background-repeat: space; /*Crea espacios para que las repeticiones no se corten*/
+    background-repeat: repeat-x; /*Solo se repite en X*/
+    background-repeat: repeat-y; /*Solo se repite en Y*/
+    background-repeat: no-repeat; /*No se repite y aparece solo una vez en la esquina*/
+    background-position: 200px 400px; /*Si se da en valores quiere indicar cuando de derecha a izquierda y cuanto de arriba a abajo*/
+    background-position: 50% 0%; /*Especifica el porcentaje de derecha a izquierda y de arriba hacia abajo pero del contenedor, en el caso
+    del body el contenedor son la suma de todos los contenedores*/
+    background-position: center top; /*Lo mismo que los casos anteriores pero con coordenadas, de igual manera la referencia es el contendor 
+    del body*/
+    background-size: 400px 300px; /*Con el size cambiamos el tamaño de la imagen, sin embargo esta puede pixelarse*/
+    background-size: cover; /*Esta opcion especifica que la imagen siempre se adapte al tamaño del contenedor
+    asi la imagen se deforme o se pierdan algunos bordes, no es completamente responsive, esta propiedad no se preocupa que 
+    la imagen salga completa como seleccionando 100% de porcentaje sino que solo muestra la imagen lo necesario para cubrir todo el viewport*/
+    background-size: contain; /*Esta opcion siempre muestra la imagen a su resolucion original asi sobre espacio*/
+    background-size: 50%; /*Tambien podemos especifica en porcentajes del contenedor el tamaño de la imagen, al tratarse del body este efecto
+    no se notara tan bien al igual que como ocurre con la propiedad cover, ya que el tamaño del contenedor body es limitado, tampoco
+    es 100% responsive*/
+    /*Tambien podemos colocar unades relativas: em-relativo al tamaño de la letra, rem- relativo al tamaño de la letra del elemento padre
+    vw - relativo al 1% del ancho del viewport (pantalla disponible), vh - relativo al 1% del largo del viweport (pantalla disponible)
+    el viweport es el tamaño de la pantalla del navegador si esta tiene 50cm de ancho  1vhw = 0.5cm, las medidas relativas
+    mas usadas para crear sitios responsive son em y rem*/
+    background-repeat: repeat-y;
+    background-attachment: scroll; /*Con esta opcion la imgagen no es movible con el desplzamiento de la pantalla*/
+    background-attachment: fixed; /*Con esta opcion la imagen es movible con el desplazamiento de la pantalla*/
+    background-attachment: local; /*Con esta opcion la imagen es similar a el scroll, pero con elementos con scroll bar internos*/
+    background-origin: content-box; /*Con esta opcion se define si la imagen se dibuja en el contenedor incluyendo bordes, paddin o contenido*/
+    background-clip: content-box; /*Esta opcion en vez de ajustar la imagen a la propiedad como origin, ajusta la propiedad a la imagen, 
+    cortandola si es necesario para que solo muestre lo que se especifica*/
+    background: linear-gradient(black,white); /*Esto crea un fondo graiente, negro y blanco, que se repetira apenas cubra los elementos*/
+    background: radial-gradient(circle, black, white); /*Crea un fondo gradiente pero radial, que se repetira apenas cubra los elementos*/
+    background: url("no_exist.jpg") blue; /*Si no se encuentra el archivo se puede colocar un color po defecto*/
+    background: 
+        url("zelda_wpp2.jpg") bottom center no-repeat, /*Podemos establecer dos imagenes y sus propiedades*/
+        url("zelda_wpp.jpg") repeat; /*Primero se coloca la imagen de encima*/
+    /*El backgorund-image solo hace que la imagen pasada se adapte al tamaño del contendor, mas no el 
+    contenedor al tamaño de la  imagen, cuando la imagen es mucho mas pequeña que el body o contenedor, esta
+    empieza a repetirse horizontar y verticalmente, lo cual se puede arreglar con otras propiedades, 
+    tambien se pueden seleccionar backgrounds gradientes, o multiples*/
+}
+
+.border { 
+    border: 0.5px solid #000000; /*La propiedad border recibe 3 parametros, el ancho, el estilo (solid, punteado, etc) y el color*/
+    border-width: 2px 3px; /*Este parametro es igual que el margin o padding, recibe 1, 2, 3 o 4 parametros dependiendo del ancho del borde
+    en cada lado*/
+    border-bottom: 2px dotted red; /*Tambien podemos establecer las propiedades de los bordes independientes*/
+    margin-top: 5px;
+}
+
+.rounded_div{
+    border: 2px solid red;
+    margin: auto; /*Con esta propiedad se centra el elemento horizontalmente en el contenedor*
+    tambien existe inherit que hereda el margin del elemento padre*/
+    border-radius: 10px;
+    width: 300px; /*Asi seleccionemon ancho fijo, el contenedor div ocupara toda la pantalla solo que agregara el margin necesario
+    para que el contenido tenga un ancho maximo de 300 en este caso*/
+    /*El margin es creado para crear espacios entre elmentos, mientras que el padding se utiliza para crear espacio entre el elemento y 
+    el contenido, la direccion de las cuatro propiedades es en el sentido de las maneccillas del reloj (12,3,6,9)*/
+}
+
+.padding-unbox{
+    border: 2px solid black;
+    padding: 25px 25px;
+    background-color: aquamarine;
+    width: 500px; /*Cuando definimos una dimension en un elemento esta se ve afectada por el valor del padding, para este caso el ancho 
+    cambia de 500 a 554 con el padding y el border, el contenido se mantiene en los 500 px pero el contenedor se agranda 54 px mas*/
+}
+
+.padding-box {
+    margin-top: 5px;
+    border: 2px solid black;
+    padding: 25px 25px;
+    background-color: aquamarine;
+    width: 500px; 
+    box-sizing: border-box; /*Con esta propiedad el ancho del elemento no se ve afectada por el padding, obligando al contenido a comprimirse
+    de manera que la sumatoria del tamañao del contenido y al padding sea el especificado, en este caso 500px*/
+}
+
+.image_div{ /*Pendiente ajustar*/
+    background-image: url('space.jpg'); /*Colocamos la imagen de fondo*/
+    /*Cuando la imagen tiene mucha menor medidas (resolucion) que la pantalla, esta empieza a repetirse, dentro 
+    del contenedor en el que se encuentre*/
+    background-size: 100%;
+    width: 660px;
+    height: 330px;
+    
+}
+
+.width-div-percent {
+    width: 50%; /*Tanto el ancho como el largo se puede especificar en %, pixeles etc, estos valores no incluyen el padding ni el margin
+    cuando establecemos un porcentaje el ancho varia de acuerdo al espacio disponible, teniendo un efecto responsive*/
+    border: 2px solid green;
+    margin-top: 5px;
+}
+
+.width-div-px {
+    width: 500px; /*Cuando se establece un widht fijo este valor no es responsive y crea una barra horizontal para desplazarse*/
+    height: 100px;
+    border: 2px solid green;
+    margin-top: 5px;
+}
+
+.width-div-max {
+    max-width: 500px; /*Establece un valor maximo de widht, de manera que el contenedor no cresca mas, ideal para imagenes en donde su tamaño
+    puede varias, esta propiedad sobreescribe la propiedad width*/
+    min-width: 300px; /*Con esta propiedad, se establece, el ancho minimo del contenedor, despues de este punto el contenedor ya no sera 
+    responsive y actuara como si tuviera un width fijo de 300px*/
+    height: 100px; /*Cuando tenemos un heigh fijo, se corre el peligro de que cuando la ventana se encoga el contenido sobrepase el contenedor*/
+    text-align: justify; /*Con esta propiedad justificamos el texto*/
+    text-indent: 10px; /*Con esta propiedad especificamos un espacio o identacion en la primera linea de texto
+    si el ident es my alto el texto puede sobrepasar su contenedor*/
+    line-height: 20px; /*Este elemento utilizado para centrar un texto, tambien indica la separacion entre lineas
+    ademas del margin los elmeentos se puedes separar con una etiqueta br*/
+    border: 2px solid green;
+    word-spacing: 10px; /*Esto indica la separacion entre palabras*/
+}
+
+.outline-div {
+    color: black; /*Esta propiedad ajusta el color del texto*/
+    text-align: center; /*Con esto podemos centrar el texto horizontalmente*/
+    text-decoration: underline; /*Con esto se crean decoraciones al texto, en este caso un subrayado como el de los a*/
+    height: 100px;
+    letter-spacing: 2px; /*Como su nombre lo indica especifica el espaciado entre las letras*/
+    text-transform: uppercase; /*Tambien podemos cambiar la forma del texto como poner en mayusculas*/
+    font-size: 18px;    
+    font-weight: bold; /*Con esto podemos poner en negrilla el texto*/
+    border: 2px solid black; 
+    outline: 2px dotted green; /*El atributo outline establece un borde mas externo que el borde normal, este esta en el exterior del elemento
+    tiene las mismas opciones que border*/
+    outline-offset: 5px; /*Esta opcion crea un espacio entre el borde outline, y el borde normal, sin embargo al no crear un margin o padding,
+    este suele sobreponerse en otros elementos*/
+    text-shadow: 2px 3px red; /*Esta propiedad crea una sombra en el texto, los parametros que recibe son: posision de la sombra horizontal
+    (3px) posicion de la sombre vertical (2px) color*/
+    font-family: Arial, Helvetica, sans-serif; /*Esta propiedad define las posibles fuentes de texto, si no puede cargar la primera, seguira 
+    con la otra y asi*/
+}
+
+.font-div {
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgrey;
+    font-style: italic; /*Como su nombre lo indica el estilo italiano*/
+    font-size: 1.2em; /*La unidades em son las mas recomendadas ya que son una unidad relativa del tamaño de la fuente por defecto
+    permitiendo establecer el tamaño de la letra en la mayoria de navegadores*/
+    /*Una practica comun es seleccionar el tamaño de fuente, font-size:100% en el body y despues si seleccionar por indepenndiente el valor
+    del tamaño de fuente de cada elemento, siendo funcional en todos los navegadores*/
+    font-size: 10vw; /*Tambien se pueden usar las medidas del vw, las cuales establecen el texto, en este caso a un 10% del tamaño, disponible
+    en pantalla, dandole un efecto responsive*/
+    font-size: 100%; /*A diferencia del viewport, es establecer un tamaño en porcentaje, este tiene como referencia el valor por defecto
+    de la fuente, en este caso 16px*/
+    font-variant: small-caps; /*Un formato de texto que convierte las mayusculas en mayusculas grandes y minusculas en mayusculas*/
+    /*Tambien podemos declarar la mayoria de las propiedades vistas anteriormente con el atributo font*/
+}
+
+.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+    border: 2px solid black;
+    background-color: lightgray;
+
+}
+
+.icon {
+    padding: 0px 7px;
+    font-size: 30px; /*Podemos cambiar el tamaño del icono con esta propiedad
+    tambien podemos extraer iconos de otras fuentes y agregarles propiedades*/
+}
+
+.link-container {
+    border: 2px solid black;
+    background-color: lightgray;
+    padding: 10px 0px;
+}
+
+
+.button-div-container {
+    background-color: blueviolet;
+    display: inline-block; /*Esta propiedad hace que los elementos tengan un comportamiento tio flex, con este display el div
+    se ajusta al contenido*/
+}
+
+.links {
+    color: white;
+    padding: 15px 20px; /*como el elemento ya es inline block, estos agrandan el contenedor*/
+    display: inline-block; /*Lo elementos inline, estos elementos no afectan a otros incluyendo los padres verticalmente, por lo que si 
+    se quiere que el padding haga crecer el contenedor debemos cambiarle el display */
+    text-decoration: none; /*le quitamos el subrayado*/
+    text-align: center; /*alineamos el texto*/
+    font-size: 1.5em; /*aumentamos el tamaño de la fuente*/
+    font-family: Arial, Helvetica, sans-serif; /*cambiamos el tipo de fuente*/
+    /*los liknk llevan de por si un espaciado entre ellos un margen*/
+}
+
+.links:link { /*links no visitados*/
+    color: white;
+}
+
+.links:visited { /*links visitados*/
+    color: black;
+}
+
+.links:hover { /*links con cursor encima*/
+    background-color: #6D0062;
+    text-decoration: underline;
+}
+
+.links:active { /*links presionados*/
+    background-color: #6D0062;
+    color: yellow;
+    text-decoration: underline;
+}
+
+.unordened-list-container { 
+    list-style-type: circle; /*La viñeta o etiqueta de los elementos de la lista es un circulo*/
+    list-style-type: square; /*La viñeta en este caso es un cuadrado*/
+    list-style-image: url('zelda_bullet.gif');
+    list-style-position: inside; /*Las viñetas hacen parte del texto (aparentemente)*/
+    list-style-position: outside; /*Las viñetas no hacen parte del texto*/
+    list-style: square outside url('zelda_bullet.gif'); /*Este es el keyword corto: typo position imagen*/
+}
+
+.ordened-list-container { 
+    list-style-type: upper-roman; /*La viñeta para esta lista ordenada son numeros romanos*/
+    list-style-type: lower-alpha; /*Letras en minuscula*/
+    list-style-type: none; /*Con esta opcion quitamos las viñetas pero queda el espaciado*/
+    margin: 0; 
+    padding: 0;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif; /*Este tipo de letra afecta toda la tabla*/
+    border-collapse: collapse; /*Esta opcion define si hay espaciado (collapse) o no (separated) entre las celdas, el efecto se nota al aplicar
+    los bordes*/
+    border: 2px double black;
+    width: 100%; /*Con esta opcion no aseguramos que la tabla ocupe todo el espacio disponible, este lo reparte entre las columnas, de por si
+    la tabla es responsive y reorganiza su contenido para diferentes tamaños de pantalla*/
+}
+
+#customers td, #customers th { /*aplica para td y th dentro de elementos con id customers*/
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) { /*nth-child(formula) representa el elemento dentro de un grupo de hermanos, en la casilla formula
+    puede ir cualquier serie que indique el elemento que resulta afectado, por ejemplo para el caso even la formular es 2n+1, es decir
+    que cada hermano impar se le aplicara esta propiedad, para el caso odd la formula es 2n, y se pueden especificar mas formulas como
+    5n en la que cada 5 elementos se aplica esta propiedad, tambien puede aplicarse a un solo elemento colocando el valor como 7*/
+    background-color: #f2f2f2;
+}
+
+#customers tr:nth-child(odd) { /*Este es el mismo caso que la propiedad anterior pero ahora solo se aplica  alos pares*/
+    background-color: white;
+}
+
+#customers tr:hover { /*El efecto se aplica cuando alguien ponga el cursor sobre una fila*/
+    background-color: #ddd;
+}
+
+#customers th {
+    padding: 12px 8px; /*al actuar directamente sobre el elemento sobreescribe las otras propiedades como el backgroun colot y el paddin
+    que se declararon anteriormente, sin embargo esto eliminara el efecto del hoover en la fila de los encabezados*/
+    color: white;
+    text-align: left;
+    background-color: #4CAF50;
+}
+
+.last-row {
+
+}
+
+.last-row td {
+    height: 50px;
+    vertical-align: bottom; /*Con esta propiedad se centra un elemento verticalmente dentro de una tabla*/
+}
+
+.table-div {
+    overflow-x: auto; /*Cuando la tabla se coloca en un contenedor div por ejemplo con esta propiedad lo que se logra es que
+    la tabla cree su propio scrollbar cuando esta sobrepase los limites del viewport disponible*/
+}
+
+.div-static {
+    position: static; /*El position por defecto de los div es static, esto hace que los elemento se ubiquen como normalmente, segun el flujo
+    del documento y el tipo de display, con esta propiedad el div, ocupa todo el espacio disponible, y en caso de no especificar widht, o de
+    setear un max-widht el contenedor es responsive al igual que si contenido*/
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+.div-relative {
+    position: relative;
+    left: 30px;  /*Con el position escojemos que tan alejado esta el elemento de su posicion inicial, en general los parametros son las 4
+    direcciones, izquierda, derecha, arria y abajo, el contenedor y contenido seguira siendo responsive, pero si el contenedor sobrepasa
+    los limites del viewport, no se va a ver asi este la pantalla completa o encogida*/
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+.relative-container {
+    position: relative; /*utilizado para actuar como contenedor del hijo cuyo position es absolute*/
+    border: 2px solid black;
+    background-color: lightgrey;
+    height: 200px;
+    max-width: 800px;
+}
+
+.div-absolute {
+    position: absolute; /*Esta propiedad es similar al relative, solo que en vez de que el elemento se posiciones en un lugar relativo a la 
+    psocion por defecto o static, el elemento con esta propiedad de position se posicionara en un lugar relativo al padre o contendor
+    si no tiene un elemento contenedor tomara como contenedor el body*/
+    right: 0px;
+    top: 50px;
+    border: 1px solid black;
+    background-color: lightgrey;
+    height: 140px; /*si se setea un height y un widht o max widht que no pueda ocupar todo el texto del contenido este se desbordara
+    y se saldra del contendor (el texto), igualmente si se setea un widht fijo y se encoge mucho la pantalla el contendor con esta prop
+    iedad absolute se saldra del contendor relative*/
+    max-width: 600px; 
+}
+
+.relative-container2 {
+    position: relative;
+    border: 2px solid black;
+    background-color: lightgrey;
+    height: 200px;
+    max-width: 800px;
+    z-index: 0; /*Para que el color de fondo no tape al elemento que sea enviado atras se setea este valor en el contenedor*/
+}
+
+.absolute-img {
+    position: absolute; /*Cuando no tiene un elemento padre toma como elemento padre el body*/
+    left: 15px;
+    top: 0;
+    z-index: -1; /*Con esta propiedad lo que se hace es mandar al frente o atras un elemento con respecto a otro
+    cada elemento tiene un valor de index y cuando se crea es 1, modificando estos valores podemos sobreponder varias capas o mandar atras*/
+    /*border: 2px solid black;*/
+    /*background-color: lightgrey;*/
+    height: 100px;
+    max-width: 400px;
+    width: 100%; /*Activando estos dos atributos de widht podemos establecer un ancho maximo de imagen, pero al mismo tiempo
+    hacer que la imagen sea responsive, ya que al tratarse de una imagen y no un div, esta no presenta ese comportamiento
+    por defecto*/
+}
+
+.div-fixed {
+    position: fixed;
+    bottom: 0; /*Con esta propiedad nuestro mapa cartesiano es el body y el elemento se ubicara en relacion con todo el cuerpo o la pagina,
+    es diferente al relative o positive en donde el elemento es dezplazado a una poision relativa de su posicion inicial o con respecto
+    a otro elemento, en este caso el elemento se movera con toda la pagina y siempre permanecera en esa ubicacion*/
+    right: 0;  /*El fixed se utiliza casi siempre que se desea posicionar un elemento respecto al body*/
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+.overflow-visible{
+    width: 200px; /*Cuando establecemos valores fijos, el contenido puede desbordarse del contenedor*/
+    height: 100px;
+    border: 2px solid black;
+    background-color: #eee;
+    overflow: visible; /*Este es el atributo por defecto e indica que cuando el contenido supere el contenedor se desborde*/
+}
+
+.overflow-hidden {
+    width: 200px; /*Cuando establecemos valores fijos, el contenido puede desbordarse del contenedor*/
+    height: 100px;
+    border: 2px solid black;
+    background-color: #eee;
+    overflow: hidden; /*Con esta opcion el contenido que se desborde del contenedor se oculta*/
+}
+
+.overflow-scroll {
+    width: 200px; /*Cuando establecemos valores fijos, el contenido puede desbordarse del contenedor*/
+    height: 100px;
+    border: 2px solid black;
+    background-color: #eee;
+    overflow: scroll; /*Con esta opcion se crea automaticamente una scrollbar en ambos sentidos*/
+}
+
+.overflow-auto {
+    width: 200px; /*Cuando establecemos valores fijos, el contenido puede desbordarse del contenedor*/
+    height: 100px;
+    border: 2px solid black;
+    background-color: #eee;
+    overflow: auto; /*Con esta opcion se crea una scrollbar unicamente cuando son necesarias*/
+    /*Tambien se pueden establecer cada una de estas caracteristicas para los ejes x y y por separado con overflow-x, overflow-y*/
+}
+
+.img-float{
+    float: right; /*Con este atributo podemos establecer el lugar donde queda ubicado un elemento que comparte un mismo contenedor con 
+    otro elemento, para este caso esta imagen se mostrara a la deracha del texto con el que comparte el contenedor*/
+    /*Si se pone float: none, la imagen no se ubicara en ninguna posicion a los costados del texto, en ve de esto se ubicara siguiente al 
+    elemento ya que la etiqueta img tiene por defecto la propiedad display en inline*/
+    height: 160px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 12px;
+    margin-top: 16px;
+    margin-bottom: 3px;
+}
+
+.img-clear{
+    float: left;
+    height: 160px;
+    width: 200px;
+    margin: 16px 10px 3px 10px;
+    border: 1px solid black;
+}
+
+.div-clear {
+    border: 2px solid black;
+    background-color: lightgrey;
+    clear: left; /*Al contratio de la propiedad float que establece que elementos pueden flotar alrededor de un elemento, la propiedad clear
+    establece que elementos NO PUEDEN flotar alrededor de un elemento, para este caso seleccionamos que los elementos no se pueden colocar
+    al lado izquierdo de esta etiqueta, por lo que el efecto del float del img-clear2, no tendra efecto y este elemento
+    pasara a queda encima de la imagen ya que no admite elementos a la izquierda de el*/
+}
+
+.img-clear2 {
+    float: left; /*A pesar de activar la propiedad floar, la propiedad clear estaba activdad, lo que implica que la imagen quedara
+    separar del elemento contiguo, mas especificamente arriba de este*/
+    height: 160px;
+    width: 200px;
+    margin: 16px 10px 3px 10px;
+    border: 1px solid black;
+}
+
+.float-fit-container {
+    overflow: auto; /*Para el caso de las imagenes, el overflow auto que activa unas scroll cuando es necesario, cambia su comportamiento
+    para este caso que se aplica sobre una imagen, no se crean unos scroll bar sino que se ancha el contendor permitiendo que la imagen
+    salga completa*/
+    border: 2px solid black;
+    background-color: lightgrey;
+}
+
+/*-El display none, oculta el elemento y no ocupa espacio, por otra parte el visibility hidden, oculta el elemento, pero siguie ocupando espacio
+-basicamente el max-widht, se utiliza para setear un ancho fijo del elemento pero que al mismo tiempo en caso de que la pantalla se encoja, este
+sea responsive y sin la necesidad de ocupar unicamente lo del contenido
+*/
