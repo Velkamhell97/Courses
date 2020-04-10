@@ -1,3 +1,4 @@
+/*---------------------------------------------------------------------------------------------BACKGROUND IMAGE (BODY)---------------------------------------------------------------------------------------------*/
 body {
     /*el keyword background puede establecer: imagen posicion/tamaño (px) repeat attachment origin clip color*/
     background-image: url('zelda_wpp.jpg'); /*Esta imagen al ser coincidir con la resolucion de la pantalla la ocupa toda*/
@@ -43,13 +44,47 @@ body {
     empieza a repetirse horizontar y verticalmente, lo cual se puede arreglar con otras propiedades, 
     tambien se pueden seleccionar backgrounds gradientes, o multiples*/
 }
+/*---------------------------------------------------------------------------------------------BACKGROUND IMAGE (BODY)---------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------BORDERS (AND RADIUS)-----------------------------------------------------------------------------------------------*/
+.border-class {
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+}
+
+.border-class-grey{
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
+.border-class-light {
+    border: 1px solid black;
+    background-color: #f2f2f2;
+}
+
+.title-section {
+    margin: 0;
+    text-align: center;
+    font-family: Verdana;
+
+}
 
 .border { 
     border: 0.5px solid #000000; /*La propiedad border recibe 3 parametros, el ancho, el estilo (solid, punteado, etc) y el color*/
     border-width: 2px 3px; /*Este parametro es igual que el margin o padding, recibe 1, 2, 3 o 4 parametros dependiendo del ancho del borde
     en cada lado*/
     border-bottom: 2px dotted red; /*Tambien podemos establecer las propiedades de los bordes independientes*/
-    margin-top: 5px;
+    background-color: lightgrey;
+    padding: 20px 0px; 
+    font-family: Arial;
+}
+
+.border-img {
+    height: 300px; 
+    background-image: url('zelda_wpp2.jpg');
+    padding: 5px; 
+    background-repeat: round;
 }
 
 .rounded_div{
@@ -62,7 +97,21 @@ body {
     /*El margin es creado para crear espacios entre elmentos, mientras que el padding se utiliza para crear espacio entre el elemento y 
     el contenido, la direccion de las cuatro propiedades es en el sentido de las maneccillas del reloj (12,3,6,9)*/
 }
+/*----------------------------------------------------------------------------------------------BORDERS (AND RADIUS)-----------------------------------------------------------------------------------------------*/
 
+/*--------------------------------------------------------------------------------------------MARGIN AND MARGIN COLLAPSE-------------------------------------------------------------------------------------------*/
+.margin-collapse1 {
+    margin-bottom: 50px;
+    border: 1px solid;
+}
+
+.margin-collapse2 {
+    margin-top: 20px;
+    border: 1px solid;
+}
+/*--------------------------------------------------------------------------------------------MARGIN AND MARGIN COLLAPSE-------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------PADDING AND BOX-SIZING---------------------------------------------------------------------------------------------*/
 .padding-unbox{
     border: 2px solid black;
     padding: 25px 25px;
@@ -80,7 +129,9 @@ body {
     box-sizing: border-box; /*Con esta propiedad el ancho del elemento no se ve afectada por el padding, obligando al contenido a comprimirse
     de manera que la sumatoria del tamañao del contenido y al padding sea el especificado, en este caso 500px*/
 }
+/*----------------------------------------------------------------------------------------------PADDING AND BOX-SIZING---------------------------------------------------------------------------------------------*/
 
+/*-----------------------------------------------------------------------------------------------WIDTH AND MAX-WIDTH-----------------------------------------------------------------------------------------------*/
 .image_div{ /*Pendiente ajustar*/
     background-image: url('space.jpg'); /*Colocamos la imagen de fondo*/
     /*Cuando la imagen tiene mucha menor medidas (resolucion) que la pantalla, esta empieza a repetirse, dentro 
@@ -119,7 +170,9 @@ body {
     border: 2px solid green;
     word-spacing: 10px; /*Esto indica la separacion entre palabras*/
 }
+/*-----------------------------------------------------------------------------------------------WIDTH AND MAX-WIDTH-----------------------------------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------------------------------BORDER AND OUTLINE-----------------------------------------------------------------------------------------------*/
 .outline-div {
     color: black; /*Esta propiedad ajusta el color del texto*/
     text-align: center; /*Con esto podemos centrar el texto horizontalmente*/
@@ -139,7 +192,9 @@ body {
     font-family: Arial, Helvetica, sans-serif; /*Esta propiedad define las posibles fuentes de texto, si no puede cargar la primera, seguira 
     con la otra y asi*/
 }
+/*------------------------------------------------------------------------------------------------BORDER AND OUTLINE-----------------------------------------------------------------------------------------------*/
 
+/*-------------------------------------------------------------------------------------------------FONT PROPERTIES-------------------------------------------------------------------------------------------------*/
 .font-div {
     border: 2px solid black;
     font-family: Arial, Helvetica, sans-serif;
@@ -149,14 +204,16 @@ body {
     permitiendo establecer el tamaño de la letra en la mayoria de navegadores*/
     /*Una practica comun es seleccionar el tamaño de fuente, font-size:100% en el body y despues si seleccionar por indepenndiente el valor
     del tamaño de fuente de cada elemento, siendo funcional en todos los navegadores*/
-    font-size: 10vw; /*Tambien se pueden usar las medidas del vw, las cuales establecen el texto, en este caso a un 10% del tamaño, disponible
-    en pantalla, dandole un efecto responsive*/
     font-size: 100%; /*A diferencia del viewport, es establecer un tamaño en porcentaje, este tiene como referencia el valor por defecto
     de la fuente, en este caso 16px*/
+    font-size: 2vw; /*Tambien se pueden usar las medidas del vw, las cuales establecen el texto, en este caso a un 10% del tamaño, disponible
+    en pantalla, dandole un efecto responsive*/
     font-variant: small-caps; /*Un formato de texto que convierte las mayusculas en mayusculas grandes y minusculas en mayusculas*/
     /*Tambien podemos declarar la mayoria de las propiedades vistas anteriormente con el atributo font*/
 }
+/*-------------------------------------------------------------------------------------------------FONT PROPERTIES-------------------------------------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------------------------------------ICONS------------------------------------------------------------------------------------------------------*/
 .icons-container {
     display: flex;
     flex-wrap: wrap;
@@ -171,13 +228,14 @@ body {
     font-size: 30px; /*Podemos cambiar el tamaño del icono con esta propiedad
     tambien podemos extraer iconos de otras fuentes y agregarles propiedades*/
 }
+/*------------------------------------------------------------------------------------------------------ICONS------------------------------------------------------------------------------------------------------*/
 
+/*-------------------------------------------------------------------------------------------------LINKS AND LISTS-------------------------------------------------------------------------------------------------*/
 .link-container {
     border: 2px solid black;
     background-color: lightgray;
     padding: 10px 0px;
 }
-
 
 .button-div-container {
     background-color: blueviolet;
@@ -202,7 +260,7 @@ body {
 }
 
 .links:visited { /*links visitados*/
-    color: black;
+    color: red;
 }
 
 .links:hover { /*links con cursor encima*/
@@ -226,13 +284,13 @@ body {
 }
 
 .ordened-list-container { 
-    list-style-type: upper-roman; /*La viñeta para esta lista ordenada son numeros romanos*/
-    list-style-type: lower-alpha; /*Letras en minuscula*/
     list-style-type: none; /*Con esta opcion quitamos las viñetas pero queda el espaciado*/
-    margin: 0; 
-    padding: 0;
+    list-style-type: lower-alpha; /*Letras en minuscula*/
+    list-style-type: upper-roman; /*La viñeta para esta lista ordenada son numeros romanos*/
 }
+/*-------------------------------------------------------------------------------------------------LINKS AND LISTS-------------------------------------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------------------------------------TABLES-----------------------------------------------------------------------------------------------------*/
 #customers {
     font-family: Arial, Helvetica, sans-serif; /*Este tipo de letra afecta toda la tabla*/
     border-collapse: collapse; /*Esta opcion define si hay espaciado (collapse) o no (separated) entre las celdas, el efecto se nota al aplicar
@@ -283,7 +341,9 @@ body {
     overflow-x: auto; /*Cuando la tabla se coloca en un contenedor div por ejemplo con esta propiedad lo que se logra es que
     la tabla cree su propio scrollbar cuando esta sobrepase los limites del viewport disponible*/
 }
+/*------------------------------------------------------------------------------------------------------TABLES-----------------------------------------------------------------------------------------------------*/
 
+/*-----------------------------------------------------------------------------------------------------POSITION 1---------------------------------------------------------------------------------------------------*/
 .div-static {
     position: static; /*El position por defecto de los div es static, esto hace que los elemento se ubiquen como normalmente, segun el flujo
     del documento y el tipo de display, con esta propiedad el div, ocupa todo el espacio disponible, y en caso de no especificar widht, o de
@@ -323,6 +383,16 @@ body {
     max-width: 600px; 
 }
 
+.div-fixed {
+    position: fixed;
+    bottom: 0; /*Con esta propiedad nuestro mapa cartesiano es el body y el elemento se ubicara en relacion con todo el cuerpo o la pagina,
+    es diferente al relative o positive en donde el elemento es dezplazado a una poision relativa de su posicion inicial o con respecto
+    a otro elemento, en este caso el elemento se movera con toda la pagina y siempre permanecera en esa ubicacion*/
+    right: 0;  /*El fixed se utiliza casi siempre que se desea posicionar un elemento respecto al body*/
+    border: 1px solid black;
+    background-color: lightgrey;
+}
+
 .relative-container2 {
     position: relative;
     border: 2px solid black;
@@ -347,16 +417,33 @@ body {
     por defecto*/
 }
 
-.div-fixed {
-    position: fixed;
-    bottom: 0; /*Con esta propiedad nuestro mapa cartesiano es el body y el elemento se ubicara en relacion con todo el cuerpo o la pagina,
-    es diferente al relative o positive en donde el elemento es dezplazado a una poision relativa de su posicion inicial o con respecto
-    a otro elemento, en este caso el elemento se movera con toda la pagina y siempre permanecera en esa ubicacion*/
-    right: 0;  /*El fixed se utiliza casi siempre que se desea posicionar un elemento respecto al body*/
-    border: 1px solid black;
+.zindex-container {
+    border: 2px solid black; 
     background-color: lightgrey;
+    z-index: 0; 
+    width: 50%;
 }
 
+.zindex-box {
+    position: absolute; 
+    height: 100px; 
+    width: 100px;
+    opacity: 0.5;
+    border: 1px solid black;
+}
+/*-----------------------------------------------------------------------------------------------------POSITION 1---------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------DISPLAY NONE AND VISIBILITY-------------------------------------------------------------------------------------------*/
+.h3-hidden {
+    visibility: hidden;
+}
+
+.h3-none {
+    display: none;
+}
+/*--------------------------------------------------------------------------------------------DISPLAY NONE AND VISIBILITY-------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------OVERFLOW----------------------------------------------------------------------------------------------------*/
 .overflow-visible{
     width: 200px; /*Cuando establecemos valores fijos, el contenido puede desbordarse del contenedor*/
     height: 100px;
@@ -389,7 +476,9 @@ body {
     overflow: auto; /*Con esta opcion se crea una scrollbar unicamente cuando son necesarias*/
     /*Tambien se pueden establecer cada una de estas caracteristicas para los ejes x y y por separado con overflow-x, overflow-y*/
 }
+/*------------------------------------------------------------------------------------------------------OVERFLOW----------------------------------------------------------------------------------------------------*/
 
+/*------------------------------------------------------------------------------------------------FLOAT AND CLEARFIX------------------------------------------------------------------------------------------------*/
 .img-float{
     float: right; /*Con este atributo podemos establecer el lugar donde queda ubicado un elemento que comparte un mismo contenedor con 
     otro elemento, para este caso esta imagen se mostrara a la deracha del texto con el que comparte el contenedor*/
@@ -411,15 +500,6 @@ body {
     border: 1px solid black;
 }
 
-.div-clear {
-    border: 2px solid black;
-    background-color: lightgrey;
-    clear: left; /*Al contratio de la propiedad float que establece que elementos pueden flotar alrededor de un elemento, la propiedad clear
-    establece que elementos NO PUEDEN flotar alrededor de un elemento, para este caso seleccionamos que los elementos no se pueden colocar
-    al lado izquierdo de esta etiqueta, por lo que el efecto del float del img-clear2, no tendra efecto y este elemento
-    pasara a queda encima de la imagen ya que no admite elementos a la izquierda de el*/
-}
-
 .img-clear2 {
     float: left; /*A pesar de activar la propiedad floar, la propiedad clear estaba activdad, lo que implica que la imagen quedara
     separar del elemento contiguo, mas especificamente arriba de este*/
@@ -429,6 +509,15 @@ body {
     border: 1px solid black;
 }
 
+.p-clear {
+    border: 2px solid black;
+    background-color: lightgrey;
+    clear: left; /*Al contratio de la propiedad float que establece que elementos pueden flotar alrededor de un elemento, la propiedad clear
+    establece que elementos NO PUEDEN flotar alrededor de un elemento, para este caso seleccionamos que los elementos no se pueden colocar
+    al lado izquierdo de esta etiqueta, por lo que el efecto del float del img-clear2, no tendra efecto y este elemento
+    pasara a queda encima de la imagen ya que no admite elementos a la izquierda de el*/
+}
+
 .float-fit-container {
     overflow: auto; /*Para el caso de las imagenes, el overflow auto que activa unas scroll cuando es necesario, cambia su comportamiento
     para este caso que se aplica sobre una imagen, no se crean unos scroll bar sino que se ancha el contendor permitiendo que la imagen
@@ -436,6 +525,4707 @@ body {
     border: 2px solid black;
     background-color: lightgrey;
 }
+/*------------------------------------------------------------------------------------------------FLOAT AND CLEARFIX------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------AFTER AND BEFORE-------------------------------------------------------------------------------------------------*/
+.p-after::after { /*El pseudo elemento o selector after permite agregar contenido adicioanl al final de un elemento como se aprecia acontinuacion*/
+    content: "- Este es el contenido adicional"; /*Al finalizar el texto del parrafo se agregara este texto al final del mismo*/
+    color: red;
+    background-color: yellow;
+}
+
+.p-before::before { /*El selector before hace lo contrario al selector after, este agrega contenido al inicio del elemento*/
+    content: "\0002b"; /*Al comenzar el texto del parrafo se agregara este texto al inicio del mismo*/
+    
+}
+ 
+.div-tooltip { /*Primeros establecemos las caracteristicas iniciales de nuestro contenedor*/
+    width: 340px;
+    background-color: #727272;
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    line-height: 20px; /*separacion entre renglones*/
+    position: relative; /*Esta propiedad es necesaria para poder mover la flecha que vamos a poner*/
+    margin: 0 auto; /*Cuando se establecen dos valores estos son arriba ya abajo, izquierda derecha*/
+}
+
+.div-tooltip::before { /*En este punto creamos el triangulo del tooltip*/
+    content: ""; /*Este atributo es necesario ya que si no se agrega un contenido que 
+    estilizar no tendria efecto el selector, asi sea un contenido vacio, se puede
+    jugar con el espaciado que crea aparentemente*/
+    position: absolute; /*Con esta opcion establecemos que el espacio vacio se pueda mover 
+    sobre el area del contenedor que vendria siendo el mismo div*/
+    border-top: 12px solid transparent; /*Con estas pociones de borde y teniendo en cuenta que el
+    espacio que ocupa este espacio son solo eso, bordes se puede jugar con estas 
+    confifuraciones para crear un tipo de triangulo*/
+    border-bottom: 12px solid transparent; /*el borde superior e inferior se colocan transparentes*/
+    border-right: 12px solid #727272; /*y el de la derecha del color del contenedor
+    para dar ele efecto que hace parte de este, con el ancho de los bordes
+    se puede establecer el ancho del triangulo pero entre mas grande este, mas
+    tendra que correrse hacia la izquierda*/
+    /*Seleccionando dirente configuraciones de bordes podemos crear triangulos
+    hacia cualquier direccion y ubicarlos en cualquier sitio con el absolute*/
+    top: 16px; /*finalmente lo posicionamos donde se desee gracias a la posision absollute*/
+    left: -12px; /*hacemos que el borde sobresalga para que de el efecto de triangulo*/
+    /*este efecto tambien se podria hacer con el after gracias a la priopiedad absolute
+    tambien se pueden hacer comillas en los textos con el after y el before*/
+}
+
+.span-tooltip[data-description] { /*el data-description es un atributo que se puede definir
+    en la etiquieta html, asi no sea un atributo por defecto estos se pueden crear*/
+    color: #00F;
+    text-decoration: underline;
+    position: relative; /*siempre que pensemos usar el after o before usar la position
+    relative*/
+    cursor: help; /*esta propieda lo que hace es establecer el la forma en que el cursor
+    se ve cuando se para sobre este elemento*/
+}
+
+.span-tooltip[data-description]:hover::after {
+    content: attr(data-description); /*con esta propiedad podemos conectar el css con el html
+    e imprimir o mostrar en pantalla el valor de la propiedad seleccionada*/
+    position: absolute;
+    left: 0;
+    top: 24px;
+    min-width: 100px;
+    max-width: 200px;
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    background-color: #ffffcc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+/*-------------------------------------------------------------------------------------------------AFTER AND BEFORE-------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------FLOAT AND CLEARFIX 2-----------------------------------------------------------------------------------------------*/
+.clearfix::after { 
+    content: ""; /*con esta opcion agregamos contenido despues del div, al ser un elemento
+    con display block, el contenido se agregara en un renglon aparte*/
+    clear: both; /*con esta propiedad alejamos las imagenes a los costados del contenido
+    adicional haciendo que este ya no quede alineado con la imagen desbordada
+    sino que debajo de esta, agarandando el contenedor y causando que la imagen siempre
+    quepa en el*/
+    display: block; /*Cuando seleccionamos esta opcion se crea un contenedor vacio
+    que previene que la imagen lo sobrepase ya que al tener la propiedad block siempre
+    debera ir despues de esta, tambien funciona con display table*/
+}
+
+.clearfix > div {
+    box-sizing: border-box; /*Si no especificamnos que el padding sea parte de la dimension total de los contendores estos se desbordaran, ya que al ocupar el 33.33% el hechoi
+    de agregarles padding superaria este porcentaje causando que se desborden, esto tambien hace efecto en el ejemplo de las imagenes,
+    el problema del box-sizing es que cuando se comprime mucho el contenido y tiene padding el contenido acaba por desbordarse*/
+}
+
+.box {
+    float: left /*Si colocamos elementos flotantes uno seguido del otro se iran apilando y cada uno ocupara el espacio dependiendo del elemento y de otras propiedades*/;
+    width: 50%;; /*si queremos hacer cajas o contenedores de igual tamaño y responsive podemos hacer que todas ocupen un espacio igual en porcentaje
+    para que este valor varie con el tamaño del portview, de igual manera si se quiere hacer solo dos cajas el porcentaje seria el 50%*/
+    padding: 50px; /*El padding es otra forma de alinear verticalmente*/
+    text-align: center;
+    background-color: #bbb;
+    height: 300px;
+}
+
+.box2 {
+    float: left /*Si colocamos elementos flotantes uno seguido del otro se iran apilando y cada uno ocupara el espacio dependiendo del elemento y de otras propiedades*/;
+    width: 33.33%;; /*si queremos hacer cajas o contenedores de igual tamaño y responsive podemos hacer que todas ocupen un espacio igual en porcentaje
+    para que este valor varie con el tamaño del portview, de igual manera si se quiere hacer solo dos cajas el porcentaje seria el 50%*/
+    text-align: center;
+    background-color: #bbb;
+    line-height: 300px; /*para alinear verticalmente*/
+    height: 300px;
+}
+
+.box2 > p {
+    line-height: 1.5; /*para alinear verticalmente*/
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.img-box {
+    float: left;
+    width: 33.33%;
+    border: 1px solid #46a049;
+    padding: 5px; /*en este caso los contenedores no tienen backcground y por lo tanto se vera transparentye el padding haciendo el efecto de que estan separados*/
+}
+
+.flex-clearfix {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: dodgerblue;
+}
+
+.flex-box{
+    width: 50%; /*cuando a un contenedor o columna flex lke asignamos un porcentaje el efecto wrap no tendra efecto a menos que le agregemos padding o border, esto es debido
+    a que el tamaño del contenedor decrese con el de la pantalla y este no se ve en la necesidad de hacer wrap, tambien se puede lograr el 25% con la propiedad flex: grow shirk basis, (crece, empequeñece y base)
+    el basis establece wl with inicial del elemento por lo tanto podriamos usar flex: 25% usando solo este parametro*/
+    margin: 10px; /*Para este caso funciona con margin pero mas recomendable usar un padding*/
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+}
+/*-----------------------------------------------------------------------------------------------FLOAT AND CLEARFIX 2-----------------------------------------------------------------------------------------------*/
+@font-face { /*Conn esto podemos incluir nuestras propias fuentes*/
+    font-family: HyliaSerif;
+    src: url('HyliaSerifBeta-Regular.otf');
+}
+
+.header-zks { /*El encabezado es un contenedor div normal con algunas configuraciones*/
+    padding: 62px 20px;
+    /*background-image: url('zks_header.jpg') ;/**/
+    background-color: blanchedalmond;
+    color: black;
+    font-family: HyliaSerif;
+    font-size: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.clearfix-zks::after { /*Este sera el contenedoir que tenga el menu y el cuerpo del documento, se utliza la misma tecnica para que el contenedor crezca con el contenido*/
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.clearfix-zks > div { /*para colocar contenedores de tamaño en porcentaje es necesario que las margenes, bordes y padding haga parte del tamaño total*/
+    box-sizing: border-box;
+}
+
+.menu-zks { /*La seccion de menu sera un contendor flotante a la izquierda que ocupara el 20% agregamos bordes a solo unos lados para que no se sobrepongan*/
+    padding: 15px;
+    width: 20%;
+    float: left;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    background-color: lightgray;
+}
+
+.menu-zks > ul { /*con esto modificamos la apariencia de la lista que tendra el menu*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-zks ul li a { /*con estas propiedades hacemos que los link se vean un poco mas con estilo*/
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-family: HyliaSerif;
+    width: 100%;
+    display: inline-block; /*Con el display inline-block a diferencia que el inline, podemos establecer un width y heigth al elemento, ademas de esto
+    los margenes y padding top y bottom son respetados, a diferencia del inline donde no lo son, por otra parte s diferente tambien al block ya que no agrega
+    un salto de linea con cualquier otro elemento que le siga*/
+}
+
+.menu-zks ul li:hover {
+    background-color: rgb(218, 191, 75);
+    opacity: 0.5;
+    border-radius: 6px;
+}
+
+.game::before{ /*con esta pseudo clase podemos agregar los iconos personalizados a nuestra lista, es muy recomndable usar iconos de paginas web y no recortar imagenes*/
+    content: url('remoto.png');
+    margin-right: 14px;
+}
+
+.items::before{
+    content: url('bow.png');
+    margin-right: 14px;
+}
+
+.weapons::before{
+    content: url('sword.png');
+    margin-right: 14px;
+}
+
+.power-up::before{
+    content: url('bag.png');
+    margin-right: 14px;
+}
+
+.bosses::before{
+    content: url('boss.png');
+    margin-right: 14px;
+}
+
+.content-zks { /*este es el cotenido del layout es igual al menu pero ocupa mas espacio*/
+    padding: 20px 30px;
+    width: 80%;
+    float: left;
+    height: 210px;
+    border-right: 2px solid black;
+    background-color: lightgray;
+    
+}
+
+.footer-zks { /*finalmente se finaliza con el pie de pagina*/
+    padding: 20px;
+    background-color: lightsteelblue;
+    border: 2px solid black;
+}
+
+.table-footer { /*usamos una tabla que puede posicionar los elementos en forma de columnas y controlar su separacion mas facilmente*/
+    width: 25%;
+    margin: 0 auto;
+}
+
+@media (max-width:1100px) {
+    .content-zks { /*cuando la pantalla es muy pequeña ubicamos el contenido abajo del menu, para esto tambien debemos modificar su ancho*/
+        clear: both;
+        width: 100%;
+        border-left: 2px solid black;
+    }
+    
+    .menu-zks { /*lo mismo que con el contenido*/
+        width: 100%;
+        border-bottom: 2px solid black;
+        text-align: center;
+    }
+}
+/*-----------------------------------------------------------------------------------------------FLOAT AND CLEARFIX 2-----------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------VERTICAL AND HORIZONTAL ALIGN------------------------------------------------------------------------------------------*/
+.auto-margin-div {
+    margin: 0 auto;
+    text-align: center; 
+    width: 60%;
+}
+
+.relative-div3 {
+    height: 400px;
+    position: relative;
+}
+
+.relative-span3 {
+    position: relative;
+    color: red;
+}
+
+.relative-container3 {
+    background: yellow; 
+    border: 2px solid black;
+    width: 400px;  
+    position: relative;
+}
+
+.absolute-container3 {
+    background: blue; 
+    border: 2px solid black; 
+    width: 400px;  
+    position: absolute;
+    color: white;
+}
+
+.float-container3 {
+    background: green; 
+    border: 2px solid black; 
+    width: 400px;
+}
+
+.vertically-div0 {
+    padding: 30px 0; 
+    text-align: center;
+    background: lightgrey; 
+    border: 2px solid black; 
+}
+
+.vertically-div {
+    text-align: center;
+    border: 2px solid black;
+    background-color: lightgrey;
+    height: 200px;
+    line-height: 200px; /*se debe colocar un valor igual o mayor al heigt*/
+}
+
+.vertically-div > p {
+    line-height: 1.5; /*Con esto logramos que el line heigh del contenedor no afecte el tamaño del p, sino que solo lo baje verticalmente*/
+    display: inline-block; /*esto lo hacemos para que el elemento se vea afectado por el line-height del padre*/
+    vertical-align: middle; /*con esto se termina de centrar el elemento con la baseline*/
+}
+
+.vertically-div2 { /*se debe recordar que para aplicar la position absolute sin inconvenientes se debe aplicar antes la propiedad relative*/
+    position: relative;
+    height: 200px;
+    border: 2px solid black;
+    background-color: lightgrey;
+    /*la propiedad text-align center no va a afectar al elemento por tener la propiedad absolute*/
+}
+
+.vertically-div2 > p {
+    position: absolute;
+    top: 50%;
+    left: 50%; /*cuando usamos valores en porcentaje para posicionar un elemento con la propiedad absolute o fixed, se debe tener en cuenta que, el eje de estos desplazamientos sera
+    la esquina superior izquierda, es decir, donde comieza a crearse el elemento, es por esto que, estas propiedades no van a centrar los elementos de la manera en que queremos
+    para solucionar esto se utiliza la propiedad trasnform, otra tecnia utilizada era colocar un margin negativo igual a la mitad de las dimensiones del elemento para que este
+    quedara centrado */
+    margin: 0; /*le quitamos la margin para que el translate afecte unicamente al contenido*/
+    transform: translate(-50%, -50%); /*sin embargo cuando nosostros no conocemos las dimensiones del elemento o estas pueden cambiar, podemos utilizar la propiedad de
+    desplazamiento, o traslacion (x,y) de esta manera nos aseguramos de que el contenedor se mueva la mitad de las dimensiones, y de esta manera el top  y left centren el 
+    elemento correctamente*/
+}
+
+.vertically-flex-div {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: lightgrey; 
+    border: 2px solid black; 
+    height: 200px;
+}
+/*-------------------------------------------------------------------------------------------VERTICAL AND HORIZONTAL ALIGN------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------------COMBINATORS---------------------------------------------------------------------------------------------------*/
+/*La diferencia entre div p y div > p esque el primero afecta a todos los p que sean hijos de div, independientemente que estos tengan otro padre, o esten contenidos dentro de otra etiqueta (esta etiqueta 
+debe estar contenida o ser hija del div), para el segundo caso, el estilo solo afectara a lo p que sean hijos directos de p y no que tengan otros padres parciales*/
+
+.selector_plus + p { /*El elemento inmediatamente siguiente al elemento con la clsae .selector-plus*/ 
+    background-color: yellow;
+}
+
+.selector_aprox ~ .p_aprox { /*todos los elementos hermanos del elemento con la clsae .selector_aprox*/
+    background-color: green;
+}
+
+.selector_hover:hover p {/*con esta sintaxis declaramos que este estilo afectara a los p hijos de la clase div con clase selector_hover y que ademas esten con el cursor en este*/
+    display: block;
+}
+
+.p-hover {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+}
+
+.p-first:first-child { /*Varias cosas a tener en cuenta, este selector como su nombre lo dice solo funcionara en aquellos p que sean siempre hijos (no por fuera en el body a menos de ser el primero)
+    lo que indica que si hay cualquiere elemento antes de este p, el efecto no se vera, para este caso el contenedor del p puede ser cualquiera*/
+    color: rebeccapurple;
+}
+
+p i:first-child { /*Este caso es el mismo que el anterior, pero con la diferencia de que ahora el unico contenedor que puede almacenar al icon para que funciones es un p*/
+    color: rebeccapurple;
+}
+
+.p-first:first-child i:first-child { /*este ejemplo basicamnente es una combinacion de ambas formas, ahora afectara el primer icon que se encuentre en un p que sea el primer hijo de un contenedor*/
+    color: rebeccapurple;
+}
+/*----------------------------------------------------------------------------------------------------COMBINATORS---------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------PSEUDO-CLASES--------------------------------------------------------------------------------------------------*/
+.flex-selectors-div {
+    display: flex; 
+    flex-wrap: nowrap; 
+    border: 2px solid black; 
+    background-color: lightgrey;
+}
+
+.div-hover { /*el display flex se establece en el html*/
+    width: 50%; 
+    text-align: center; 
+    background-color: #4CAF50; 
+    margin:10px;
+}
+
+.div-hover > p {
+    font-size: 20px; 
+    color: white;
+     font-family: HyliaSerif;
+}
+
+.div-hover:hover {
+    background-color: #008CBA;
+}
+
+.div-focus { /*con esto hacemos dos contenedores de igual tamaño*/
+    width: 50%;
+    margin: 10px;
+}
+
+.input-focus { /*la entrada o input*/
+    border: 3px solid #ccc; 
+    width: 100%; /*al ser un elemento inline solo ocupa el espacion necesario, es por eso que se debe volver inline-block para poder hacer que ocupe todo el espacio disponible*/
+    box-sizing: border-box; /*como le vamos a poner paddign al elemento este superara el 50% y se desbordara para evitar eso activamos esta opcion*/
+    padding: 17px 20px;
+    font-family: HyliaSerif; 
+    font-size: 20px; 
+    display: inline-block;
+}
+
+.input-focus:focus{ /*esta propiedad se activa cuando se tiene enfocado un elemento, generalmente siempre es a los input*/
+    background-color: grey;
+}
+
+.input-focus:focus::placeholder{ /*con esto podemos modificar las propiedades del texto placeholder*/
+    color: white;
+}
+
+.div-line p::first-line { /*esta propiedad solo puede ser aplicada a elementos con display block*/
+    color: red;
+    font-family: HyliaSerif;
+}
+
+.div-line p::first-letter { /*esta propiedad solo puede ser aplicada a elementos con display block*/
+    color: white;
+    font-family: HyliaSerif;
+    font-weight: bold;
+}
+
+.div-line p::selection { /*tambien solo sirve para elementos display block*/
+    color: purple;
+    background-color: lightblue;
+}
+
+.img-opacity { /**con esto controlamos la transparencia de un elemento*/
+    display: block;
+    opacity: 0.5;
+    /*background-color: rgb(red, green, blue, 0.5); /*tambien se puede declarar la transparencia cuando se declara un background color*/
+}
+
+.img-opacity:hover {
+    opacity: 1;
+}
+/*---------------------------------------------------------------------------------------------------PSEUDO-CLASES--------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------NAVBARS-----------------------------------------------------------------------------------------------------*/
+.flex-nav-container { /*utilizado para hacer layoutstipo columna*/
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.vertical-nav {
+    width: 30%;
+    margin: 10px;
+}
+
+.horizontal-nav{
+    width: 70%;
+    margin: 10px;
+}
+
+.nav-list-vertical {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+}
+
+.nav-list-vertical li a {
+    display: block; /*con esto logramos que ocupe todo el espacio sin especificar el width 100%*/
+    color: #000;
+    /*width: 100%; /*esta propiedad no es necesaria por el display block*/
+    /*box-sizing: border-box; esta propiedad se necesitaba por el width 100% */
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Verdana, sans-serif;
+}
+
+.nav-list-vertical a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav-list-vertical li a:hover:not(.active) { /*con esto especificamos que el hover solo afectara a los elementos que no tienen la clase active*/
+    background-color: #000;
+    color: white;
+    opacity: 0.7;
+}
+
+.nav-list-horizontal1 {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: auto; /*Es necesario recordar que, cuando los elementos tienen la propiedad float, estos no se ajustan al espacio ofrecido por el contenedor, en vez de esto se desbordan y se ubican en la
+    posicion seleccionada sin agrandar el contenedor, ahora bien cuando un contenedor esta vacio como es el caso de este div que no tiene nada de texto y se colocan elementos float, lo que causa es que el contendor
+    quede vacio y que los list items que tienen la propiedad float se ubiquen por fuera del contenedor ya que el ancho de este es 0 al no tener contenido en texto, una de las tecnicas que se vio anteriormente
+    para que el elemento float creciera junto con el contenedor es con la propiedad overflow, seleccionandola en auto el contenedor se adapta al tamaño del elemento y a su crecimiento, por lo tanto en este caso
+    seleccionando la propiedad overflow auto podemos ubicar a los elementos con la propiedad float y que el contenedor ul se adapte al tamaño de la lista de los items hidden tambien sirve*/
+    border: 1px solid black;
+    background-color: #333333;
+}
+
+.nav-list-horizontal1 li {
+    float: left; /*si le colocamos el float a los link sobrara un espacio*/
+}
+
+.nav-list-horizontal1 li a {
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block; /*podemos colocar esta propiedad o la propiedad block para hacer que los elementos ocupen toda el area al cambiar de tamaño la pantalla*/
+    color: white;
+    font-size: 15px;
+    font-family: Verdana,sans-serif;
+}
+
+.nav-list-horizontal1 a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav-list-horizontal1 li a:hover:not(.active) {
+    background-color: black;
+    color: white;
+}
+
+.nav-list-horizontal2 { /*igual que la barra horizontal 1*/
+    margin: 10px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #f3f3f3;
+    border: 0.9px solid black;
+}
+
+.nav-list-horizontal2 li { /*lo mismo que las barras anteriores*/
+    float: left;
+}
+
+.nav-list-horizontal2 li a { /*li mismo que las barras anteriores*/
+    text-decoration: none;
+    padding: 14px 16px;
+    display: block;
+    color: #666666;
+    font-size: 15px;
+    font-family: Verdana,sans-serif;
+}
+
+.nav-list-horizontal2 a.active {
+    background-color: #008CBA;
+    color: white;
+}
+
+.nav-list-horizontal2 li a:hover:not(.active) { /*lo mismo que las barras anteriores*/
+    background-color: #ddd;
+}
+
+@media (max-width: 800px) {
+    .flex-nav-container {
+        flex-wrap: wrap; /*con esto conseguimos que lo elementos se organize uno debajo del otro*/
+    }
+
+    .vertical-nav, .horizontal-nav {
+        width: 100%; /*es necesario modificar su ancho para conseguir el efecto deseado*/
+    }
+}
+
+.navbar-fixed-overflow {
+    width: 75%; 
+    margin: 10px; 
+    height: 200px;  
+    overflow: auto;
+}
+
+/*------------------------------------------------------------------------------------------------------NAVBARS-----------------------------------------------------------------------------------------------------*/
+.fixed-horizontal-list {
+    margin-top: 0; 
+    position: fixed; 
+    width: 100%;
+}
+
+.stcky-nav-container {
+    border: 2px solid black; 
+    display: flex; 
+    background-color: lightgrey; 
+    height: 300px; 
+    margin: 10px;
+}
+
+.sticky-nav-list {
+    margin-top: 0; 
+    position: sticky; 
+    top: 0; 
+    width: 100%;
+}
+
+.responsive-nav1 { /*igual que las barras anteriores solo que ahora se vera los cambio sl variar el ancho de la pantalla*/
+    border: 1px solid black;
+    background-color: white;
+}
+
+.responsive-list1 { /*lo mismo que las barras anteriores*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+}
+
+.responsive-list1 a { /*lo mismo que las barras anteriores*/
+    float: left;
+    display: block; /*seleccionamos el display block para que siga ocupando el espacio disponible cuando se cambia a tamaño de celular*/
+    padding: 14px 16px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.responsive-link-active1 {
+    background-color: #4CAF50;
+}
+
+.responsive-list1 .responsive-link-right1 {
+    float: right;
+}
+
+.responsive-list1 a:hover:not(.responsive-link-active1) {
+    background-color: black;
+}
+
+@media (max-width: 800px) {
+    .responsive-list1 a, .responsive-list1 .responsive-link-right1 {
+        float: none; /*lo unico que se debe hacer para cambiar la lista es cambiar el estilo flotante, de esta manera los li se mostraran en bloque y los a al estar en bloque ocuparan todo el espacio*/
+    }
+}
+
+.flex-nav-list-responsive {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /*esta propiedad sirve sobre las demas right y end*/
+    list-style-type: none;
+    background-color: #00BFFF;
+}
+
+.flex-nav-list-responsive > li > a {
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.flex-nav-list-responsive > li > a:hover {
+    background-color: #1565C0;
+}
+
+@media (max-width: 1200px) {
+    .flex-nav-list-responsive {
+        justify-content: space-evenly;
+    }
+
+    .flex-nav-list-responsive > li {
+        width: 25%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .flex-nav-list-responsive {
+        flex-direction: column;
+    }
+
+    .flex-nav-list-responsive > li {
+        width: 100%;
+    }
+
+    .flex-nav-list-responsive > li > a {
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255,0.3); 
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+.responsive-content2 { /*el contenedor lo movemos 25% a la izquierda para que no se traslape con el fixed navbar, ya que se debe recordar que en la posicion absolute y fixed los elementos no siguen el flujo 
+    normal del documento y por lo tanto para los otros elementos es como si no estuvieran*/
+    margin-left: 25%;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.responsive-list2 { /*Para este caso como necesitamos cambiar de ubicacion la navbar es necesario el uso de position fixed y por lo tanto esta navbar se debe poner
+    dentro de un iframe, ya no se puede hacer como el ejemplo anterior aprovechando la propiedad overflow de un lado del contenido, en este caso ya no utilizamos 
+    el display flex, sino que fijamos la posicion de la navbar, le damos el ancho, pero para que el contenido no se traslape con la nav bar debido a que esta es fixec
+    lo corremos 25% a la derecha con margin, de esta manera ya damos el efecto de la navbar fijada y podemos cambiar mas facilmente entre layouts*/
+    width: 25%; 
+    background-color: lightgrey;
+    height: 100%;
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.responsive-list2 a {
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    color: black;
+    font-size: 18px;
+}
+
+.responsive-list2 .responsive-link-active2 {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.responsive-list2 a:hover:not(.responsive-link-active2){
+    background-color: #555;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .responsive-list2 {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative; /*si no cambiamos esta propiedad el navbar tapara los elementos a menos que agregemos un espaciado fijo, de esta manera 
+        el navbar bajara con los elementos, sin embargo para este ejemplo la navbar no sera fija (fixed)*/
+    }
+
+    .responsive-list2 a {
+        float: left; /*tambien se puede ponder el float al link ??*/
+        padding: 15px;
+    }
+
+    .responsive-content2 {
+        margin-left: 0; /*volvemos el contenido a su posicion inicial, ya que la posicion relative si respeta sus elementos hermanos este se ubicara debajo de ella*/
+    }
+}
+
+@media (max-width: 800px) {
+    .responsive-list2 a {
+        float: none; /*al igual que los efectos anteriores*/
+    }
+
+    .responsive-list2 li {
+        text-align: center;
+    }
+}
+/*------------------------------------------------------------------------------------------------------NAVBARS-----------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------DROPDOWNS---------------------------------------------------------------------------------------------------*/
+.dropdown-container {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.dropdown-list { /*a pesar de tener un dropdown sigue estando dentro de un navbar con las mismas configuraciones*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    overflow: hidden;
+}
+
+.dropdown-list li {
+    float: left; /*esto hace que no exista el espaciado al final (a veces pasa)*/
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-list a {
+    display: inline-block; /*cuando los elementos son inline block, no ocupan todo el ancho disponible como el display block, por lo tanto el float debe ir en los li (no seguro)*/
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.dropdown-list a:hover{
+    background-color: red;
+}
+
+.dropdown-content-div {
+    margin: 10px;
+}
+
+.dropdown-content {
+    display: none; /*con esto logramos que el contenido no ocupe espacio ni sea visto por defecto*/
+    position: absolute; /*cuando un elemento se establece con propiedad absolute este ignorara el display block y ocupa solo el espacio necesario para mostrarse, si no existe un padre con propiedad relative
+    (la propiedad relative sigue manteniendo el diplay original del elemento) el elemento con la propiedad absolute tomara de referencia el body, es decir que con cualquier asignacion de top, left, right etc
+    se posicionara respecto al body, sin embargo cuando se establece una position absolute y no se fija ninguna coordenada, el elemento se ubicara de manera que siga el flujo de la pagina, pero no hara parte
+    de ningun contendor, dependiendo del cual sea el elemento el position absolute respetara el display y el flujo de la pagina (parcialmente porque sera flotante se puede mover), solo si no se le especifica
+    ninguna coordenada, es por esto que los tooltip que generalmente son div aparecen debajo de los elementos porque se respeta el display*/
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /*esto se usa para establecer sombras a los elementos el ancho de la borda en cada lado en sentido de las manecillas*/
+    z-index: 1; /*para que el tooltip se sobreponga sobre los demas elementos*/
+}
+
+.dropdown-content a { /*ya es una lista como las anteriores*/
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content:hover .dropdown-content-div {
+    background-color: red;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /*con esto hacemos que con el hover el elemento ya no se invisible sino que se vuelva a su estado visivbe con el display block*/
+}
+/*------------------------------------------------------------------------------------------------------DROPDOWNS---------------------------------------------------------------------------------------------------*/
+.dropdown-container-example2 {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.dropdown-list-example {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.dropdown-list-example > li { /*se debe tener cuidado con las combinaciones que se utiliza en el css, si no se establece la jerarquia correctamente puede que los estilos no se apliquen como esperabamos*/
+    float: left; /*con esto especificamos que solo los li hijos de esa clase tengan esta propiedad*/
+}
+
+.dropdown-list-example > li > a { /*en este caso se especifica que solo los a que sean hijos de li y que estos sean hijos de la lista, si se coloca solo el link afectara los link del dropdown, ya que  el 
+    combinador .class a afecta a todos los a que esten dentro de la lista, independiente de que tengan otro padre y esto predomina sobre el efecto que queremos asignar especificamente a 1 link especifico*/
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+li.dropdown-item-example:hover a.dropdown-link-example { /*con esto especificamos que este efecto se aplicara especificamente al li con clase dropdown y que dentro tenga un a con clase dropdown, en este punto
+    no necesitamos especifica el combinador > porque especificamos la clase del link por lo tanto no afectara a los link del contenidop que tambien son hijos parciales de este li*/
+    background-color:red;
+}
+
+.dropdown-list-example > li > a:hover { /*con esto especificamos que solo se aplique el estilo a los hijos directos que estan dentro de los li, de este modo no se aplicara a los link del contenido o dropdown*/
+    background-color: red;
+}
+
+.dropdown-content-example {
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /*la sombra inicialmente esta detras del elemento ocupando su misma area, es inicialmente toda de color negro, con los primeros dos parametros establecemos
+    el offset o el corrimiento que tiene esta horizontal y verticalmente respectivamente (correr el cuadro negro que es la sombra respecto al elemento), el tercer parametro es el blur, que viene siendo como 
+    un tipo d filtro que esparce la imagen o el color negro dando un efecto de filtro gausiano como desenfoque con sombras, si se selecciona un valor se notaran las sombras alrededor de todo el elemento
+    asi el ofseet sea grande, el cuarto parametro maneja el tamaño e intensidad en color de las sombras provocadas por el blur a mayor tamaño sombras mas pronunciadas y esparcidas, el ultimo parametro
+    es el color de la sombra, si se coloca un valor rgb, se puede establecer el nivel de opacidad o transparencia de una vez*/
+}
+
+.dropdown-content-example > a { /*al igual que lo anterior, con esto especificamos que solo afecte a los link que sean hijos directos del contenido o dropdown*/
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 18px;
+}
+
+.dropdown-content-example > a:hover { /*y solo a estos especificamente les activamos un efecto*/
+    background-color: #f1f1f1;
+}
+
+.dropdown-list-example > .dropdown-item-example:hover .dropdown-content-example { /*aqui es necesario especificar exactamente los elementos de referencia y el elemento afectado*/
+    display: block;
+}
+/*------------------------------------------------------------------------------------------------------DROPDOWNS---------------------------------------------------------------------------------------------------*/
+.dropdown-container2 {
+    border: 1px solid black;
+    background-color: white;
+    padding: 16px 8px;
+}
+
+.flex-dropdown2 {
+    display: flex;
+    margin: 35px 0;
+}
+
+.text-container {
+    width: 33.33%;
+    margin: auto 0;
+    font-size: 15px; 
+    font-family: Verdana;
+}
+
+.text-container-content {
+    display: none;
+    min-width: 150px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    z-index: 1;
+    padding: 8px 16px;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.text-span { /*paar hacer que el dropdown salga solo cuando se pasa el cursor sobre las letras debemos hacer que este contenedor div, tendra que adaptarse al tamaño de la letra o texto por lo tanto
+    usamos la propiedad display en inline-block*/
+    display: inline-block;
+    vertical-align: middle; /*ajustamos un poco mas el texto con los otros elementos*/
+}
+
+.text-span:hover .text-container-content {
+    display: block;
+}
+
+.dropdown-container-example { /*este es un ejemplo similar al anterior*/
+    width: 33.33%;
+}
+
+.dropdown-container-example ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-container-example a {
+    padding: 16px;
+    color: white;
+    display: inline-block; /*para hacer que los li y a tengan las mismas dimnensiones ambos deben estar en inline block para que se adapten a su contenido*/
+    text-decoration: none;
+    font-size: 17px; 
+    font-family: Verdana;
+}
+
+.dropdown-container-example a:hover {
+    background-color: #46a049;
+}
+
+.dropdown-container-content { /*las mismas opciones que los dropdown anteriores*/
+    display: none;
+    min-width: 160px;
+    background-color: #f9f9f9;
+    z-index: 1;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-li {
+    background-color: #4CAF50;
+    display: inline-block; /*para que el lli no ocupe toda la ul*/
+}
+
+.dropdown-li:hover .dropdown-container-content {
+    display: block;
+}
+
+.dropdown-container-content a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 12px;
+}
+
+.dropdown-container-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-container-image {
+    width: 33.33%;
+    
+}
+
+.span-img {
+    position: relative; /*con esta propiedad podemos subir el texto para que parezca que esta a nivel con la imagen*/
+    bottom: 15px;
+    font-size: 15px;
+    font-family: Verdana;
+}
+
+.img-original { /*para que el div contenedor se adapte al contenido y y para poder mover mas libremente el dropdown con referencia al contenedor usamos position relative
+    al establecer esta caracterica el dropdown no tendra de referencia el body sino el contenido original o contendor original y se puede ubicar en relacion a este*/
+    display: inline-block;
+    position: relative;
+    /*position: relative;/*es necesario hacer esto para que el tooltip tenga la position absolte y ademas para que el contenedor al tener width 100%, solo ocupe
+    lo que necesita la imagen*/
+}
+
+.img-setting {
+    vertical-align: middle; /*la razon por la que sobra un espaciado al final de la imagen esque al tener un display flex, este hace crecer el contenedor al tamaño del contenedor
+    mas grande, para que no sobre espacio se puede utilizar la propiedad float para ubicar cada div o contenedor a la izquierda de los elementosy que no sobre espacio
+    ya que cada contenedor tendra su propio height*/
+}
+
+.img-content {
+    display: none;
+    /*min-width: 100%; /*con esto establecemos que la imagen se mostrara de forma completa, generalmente establecemos un valor fijo de la imagen en miniatura*/
+    background-color: white;
+    z-index: 1;
+    position: absolute; /*recordar que el contendor padre es relative por lo tanto lo podemos ubicar a algun costado*/
+    right: 0; /*con esto establecemos que la imagen se posicionara a la izquierda del contenedor*/
+    /*right: 0; /*con esto especificamos que el tooltip se muestra a la izquierda seleccionamos que se ubique en linea con el borde derecho del contenedor*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.img-original:hover .img-content {
+    display: block;
+}
+
+.img-content p {
+    text-align: center;
+    font-size: 15px;
+    font-family: Verdana;
+}
+
+.img-setting2 {
+    vertical-align: bottom; /*con esta propiedad o con el center quitamos el espacio adicional que crea la img, debido a que esta al igual que los elementos inline, son tratados
+    como caracteres los cuales tienen una linea base esta linea base alinea todas las letras verticalmente , sin embargo algunas letras como j o q que tiene son un poco mas largas
+    deben ocupar un poco mas de espacio abajo para que se visualizen correctamente, para lograr esto la baseline crea un espacio adicional para estas letras que son mas largas
+    por lo tanto con esta propiedad o con la de center ajustamos la linea de base a nuestro elemento en este caso la imagen*/
+}
+
+.div-bottom {
+    font-size: 15px; 
+    font-family: Verdana; 
+    padding: 15px; 
+    text-align: center;
+}
+/*------------------------------------------------------------------------------------------------------DROPDOWNS---------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------POSITION 2--------------------------------------------------------------------------------------------------*/
+.absolute-example-container {
+    border: 2px solid black; 
+    background-color: lightgrey;
+}
+
+.absolute-element-example {
+    background-color: red;
+    position: absolute;
+}
+
+.absolute-example-container:hover .absolute-element-example { /*a pesar de que el absolute se muestre por fuera sigue estando por dentro en el codigo html*/
+    background-color: white;
+}
+/*------------------------------------------------------------------------------------------------------POSITION 2--------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------IMAGE GALLERY (FLEXBOX)----------------------------------------------------------------------------------------------*/
+.image-gallery-container {
+    display: flex;
+    flex-wrap: nowrap; /*cuando se activa esta opcion en wrap se debe activar el box-sizing, sin embargo como esta en porcentaje el width el wrap no funcionara si se usa margin sobre el este contenedor
+    aqui lo fijamos en nowrap para decidir en que momento o en que tamaño de la pantalla los elementos deben de organizarse ;*/
+    /*justify-content: space-between; /* Esto seria una solucion pero los espaciados crecen y disminuyen no se mantienen*/
+}
+
+.image-gallery-box {
+    width: 25%;; /*antes no cogio el efecto ni del wrap ni del porcentaje no se sabe que paso*/
+    padding: 5px 7px;
+}
+
+.final-box-flex {
+    border: 1px solid lightgrey;
+    /*margin: ; /*el elemento contenido si puede tener margin pero el elemento flex que tendra el porcentaje no*/
+}
+
+.image-gallery-picture {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.final-box-flex:hover {
+    border-color: black;
+}
+
+@media (max-width: 1000px) {
+    .image-gallery-container { 
+        flex-wrap: wrap;
+    }
+    
+    .image-gallery-container > * {
+        box-sizing: border-box;
+    }
+
+    .image-gallery-box {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {    
+    .image-gallery-box {
+        width: 100%;
+    }
+}
+ /*de este ejemplo se concluyen 3 cosas, la primera esque si se puede hacer algo responsive con porcentajes y con el display flex, la segunda esque cuando activamos el wrap se debe activar tambien el .box-sizing
+ y la tercera esque el box-sizing solo se aplica para padding, o funciona asi casi en la mayoria de los casos, si se usa margin en vez de padding no funcionara, otra cosa a tener en cuenta esque si queremos hacer
+ o incluir padding este tiene que ser sobre la caja o box que tendra el porcentaje, despues de este padding si se podra incluir el contenido deseado como otro contenedor solo para el contenido del flex-box*/
+/*----------------------------------------------------------------------------------------------IMAGE GALLERY (TABLE)----------------------------------------------------------------------------------------------*/
+.image-gallery-table {
+    width: 100%;
+    border-spacing: 12px; /*esta propiedad controla el espaciado por defecto de las tablas, que no es ni padding ni margin, con esto podemos controlar la separacion entre celdas*/
+
+}
+
+.image-gallery-table td {
+    padding: 0; /*lo hacemos para controlar la separacion solo desde el parametro border-spacing*/
+    border: 1px solid lightgrey;
+}
+
+.image-cell-picture {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.image-gallery-table td:hover{
+    border-color: black;
+}
+/*----------------------------------------------------------------------------------------------IMAGE GALLERY (FLOAT)----------------------------------------------------------------------------------------------*/
+.float-gallery-container {
+    border: 1px solid black;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.float-gallery-container::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.image-gallery-content { 
+    float: left;
+    width: 25%;
+    max-width: 25%;
+    padding: 5px 7px;
+    box-sizing: border-box; /*recordar que cuando se usan porcentajes es necesario establecer este border-box y este efecto unicamente se aplica para padding si se hace un margin se va a desbordar*/
+}
+
+.image-gallery-content > div {
+    border: 1px solid lightgrey;
+}
+
+.image-gallery-content > div:hover {
+    border-color: black;
+}
+
+@media (max-width: 1000px) {
+    .image-gallery-content {
+        width: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {    
+    .image-gallery-content {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/*-------------------------------------------------------------------------------------------------IMAGE GALLERY-------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------IMAGE SRPITE-------------------------------------------------------------------------------------------------*/
+.flex-container-sprit {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-container-sprit > div {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 5px 7px;
+}
+
+.flex-content-sprit {
+    border: 1px solid lightgrey;
+}
+
+.img-sprit-container {
+    padding: 15px 0 5px 0;
+    text-align: center;
+}
+
+.img-sprit-base {
+    background: url('img_navsprites.gif');
+    width: 134px;
+    height: 44px;
+}
+
+.img-sprit1 {
+    background: url('img_navsprites.gif') 0 0; /*la propiedad backgrond establece: color, image, position (x,y), size, repeat, origin, clip, attachment
+    en este caso usamos solo la imagen y position en esta especificamos que tanto debe correrse la imagen, sin embargo esto no la recorta, lo que pasa es que
+    al esteblecer unos valores especificos de width y height la imagen se corre respecto a su propio eje solo en esta area, por lo tanto veremos el efecto
+    como si se hubiera recortado, si ampliamo el largo veremos el resto de la imagen y si se amplia mucho estas se empezara a repetir por ser una backgroun image
+    la imagen que aparece en el html solo es un fondo transparente para que no se note el borde de la imagen*/
+    height: 44px;
+    width: 46px;
+}
+
+.img-sprit2 {
+    background: url('img_navsprites.gif') -47px 0;
+    width: 43px;
+    height: 44px;
+}
+
+.img-sprit3 {
+    background: url('img_navsprites.gif') -91px 0;
+    width: 43px;
+    height: 44px;
+}
+
+.img-sprit-base:hover {
+    background: url('img_navsprites_hover.gif') 0 -45px;
+}
+
+.img-sprit1:hover { /*el efecto hover no solamente debe ser cambiar de color tambien puede ser modificar la misma imagen*/
+    background: url('img_navsprites_hover.gif') 0 -45px;
+}
+
+.img-sprit2:hover { 
+    background: url('img_navsprites_hover.gif') -47px -45px;
+}
+
+.img-sprit3:hover { 
+    background: url('img_navsprites_hover.gif') -91px -45px;
+}
+
+.flex-content-sprit > p {
+    font-family: Verdana;
+    margin: 0;
+    padding: 10px 0px;
+    font-size: 15px;
+    text-align: center;
+}
+/*--------------------------------------------------------------------------------------------------IMAGE SRPITE-------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------ATRIBUTE SELECTOR----------------------------------------------------------------------------------------------*/
+.atribute-container1 > a[target] { /*este selector solo afectara a los link que tengan el atributo html target asi el valor asignado no corresponda a ninguno de los valores validos*/
+    background-color: yellow;
+    display: block;
+    color: black;
+}
+
+.atribute-container2 > a[target=_blank] { /*este selecor si especifica que valor de target debe tener el link para que se le aplique el estilo*/
+    background-color: red;
+    display: block; 
+    color: black;
+}
+
+.atribute-container3 > img {
+    width: 30%;
+    vertical-align: middle;
+}
+
+.atribute-container3 > img[title~=fondo] { /*este selector por su parte afectara a todos los img dentro del contenedor que tengn dentro de su titulo la PALABRA (no valor) fondo no importa el orden*/
+    border: 3px solid rebeccapurple;
+}
+
+.atribute-container4 > img {
+    width: 30%;
+    vertical-align: middle;
+}
+
+.atribute-container4 > *[class|=top] { /*este selector se aplicara al elemento que cuyo atributo class estrictamente empieze con la palabra top, este titulo debe ir sin espaciado por ejemplo
+    top-blanco, no servira top blanco, solo recibe guion medio (no confirmado)*/
+    background-color: hotpink;
+}
+
+.atribute-container6 > *[class$=test] { /*este selector contratio al anterior afecta a los elementos cuyo valor termine en test para este caso*/
+    background-color: darkcyan;
+}
+
+.atribute-container7 > *[class*=te] { /*este selector contratio al anterior afecta a los elementos cuyo valor tenga te, no tiene que ser al inicio o al final*/
+    background-color: goldenrod;
+}
+/*------------------------------------------------------------------------------------------------ATRIBUTE SELECTOR----------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------INPUTS---------------------------------------------------------------------------------------------------*/
+.form-container1 {
+    border: 1px solid black;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.form1 {
+    font-family: Verdana;
+}
+
+.form1 > input[type=text] {
+    display: block;
+    /*max-width: 200px; /*esta propiedad no hace efecto en los inputs y textarea, para establecer un max-width debe estar este input dentro de un contenedor con esta propiedad y el input debe tener width 100%
+    sin embargo se puede usar unicamente el width y funcionara pero no sera responsive (no se sabe si con algun otro elemento ademas de los mencionados ocurra lo mismo)*/
+    width: 200px;
+    background-color: yellow;
+    margin-top: 3px;
+}
+
+.form1 > input[type=button] {
+    width: 200px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-container2 {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 40px;
+    font-family: Verdana;
+}
+
+.form2 > input[type=text], #country {
+    display: block;
+    padding: 12px 20px;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box; /*se debe seleccionar esta opcion en los inputs y text area para que los border y el padding que le pongamos no supere el ya mencionado 100%, recordar que este valor es sobre el contenido
+    por lo tanto si e agregamos mas padding y border sin el box-sizing este se va a desbordar*/
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px #ddd;
+    font-family: Verdana;
+    font-size: 15px;
+    transition: 0.5s; /*con esta propiedad hacemos el cambio de estado entre focus y no focus tenga una duracion de 0.5s por lo tanto se vera la transicion como un tipo de animacion*/
+}
+
+.form2 > input[type=text]::placeholder { 
+    font-family: Verdana;
+    font-size: 15px;
+}
+
+.form2 > input[type=text]:focus, #country:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), /*recordar que las propiedades son option hofset, vofset, blur, spread, color, el primer parametro establece que las sombras no se veran por fuera sino por
+    dentro del contenedor, el segundo es el offset horizontal, el tercero es el offset vertical, el cuarto parametro es el blur, define que tanto se dispersa el efecto sobre el contenedor
+    el otro elemento es el spread que define la intensidad y tamaño de el blur, el quinto y ultimo elemento es el color que en este caso es un negro transparente, esta propiedad permite colocar varias sombras
+    o shadows como se puede observar, la siguiente sombra solo utiliza el ofset horizontal, el vertical, el blur y el color, el segundo shadow ya no estaria en el interior del contenido ya que no tiene
+    la propiedad inset, por lo tanto los efectos de este se verian reflejados por fuera del contenedor*/
+    0 0 8px rgba(102, 175, 233, .6);
+}
+
+.form2 > input[type=button] { 
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    font-family: Verdana;
+    font-size: 15px;
+    padding: 12px 0;
+    border-radius: 5px;
+    border: 1px solid #4CAF50;
+}
+
+.form2 > input[type=button]:hover {
+    background-color: #45a049;
+}
+
+.form-container3 {
+    padding: 10px;
+}
+
+.form3 > input[type=text] {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    padding: 12px 20px 12px 45px;
+    background-image: url('buscar.png');
+    background-position: 12px 6px;
+    background-repeat: no-repeat;
+}
+
+.form3 > input[type=text]::placeholder {
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+.form-container4 {
+    padding: 10px;
+}
+
+.form4 > input[type=text] {
+    width: 140px;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    padding: 12px 20px 12px 45px;
+    background-image: url('buscar.png');/*si queremos poner una imagen antes de un input se utiliza background image y se mueve este fondo a la posicion deseada*/
+    background-position: 12px 6px;
+    background-repeat: no-repeat;
+    transition: width 0.6s ease-in-out; /*en la transision tambien podemos especificar la propiedad o atributo a aplicar, el tiempo y el efecto, los detalles del efecto se veran posteriormente, 
+    */
+}
+
+.form4 > input[type=text]::placeholder {
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+.form4 > input[type=text]:focus {
+    width: 100%;
+    display: block;
+}
+
+.form5 > textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: Verdana;
+    background-color: #f8f8f8;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    height: 150px;
+    resize: none; /*este atributo permite que la zona de texto sea de tamaño ajustable */
+}
+
+.form6 > select {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: Verdana;
+    border: 1px solid lightgrey;
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.form-container7 {
+    padding: 15px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    height: 441px; /*esto lo hacemos para poder hacer que se cree una srcoll solo en el contenedor y no se alargue toda la textarea sin limites, para eso calculamos el heihg requerido para mostrar todos los 
+    elementos*/
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.form7 * {
+    box-sizing: border-box;
+}
+
+.row-flex7 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.label-div-flex7 {
+    width: 30%;
+    margin: auto 0;
+}
+
+.label-div-flex7 > label {
+    font-size: 16px;
+    font-family: Verdana;
+    vertical-align: top;
+}
+
+.input-div-flex7 {
+    width: 70%;
+}
+
+.input-div-flex7 > input,select, textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    font-family: Verdana;
+    font-size: 16px;
+}
+
+.input-div-flex7 > input,textarea::placeholder {
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+#textarea2 {
+    height: 175px;
+    resize: vertical;
+}
+
+.label-textarea-flex7 {
+    width: 30%;
+    margin: 0;
+    font-size: 16px;
+    font-family: Verdana;
+    padding: 12px 0 0 0;
+}
+
+.row-flex-button7 {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button-div-flex7 {
+    text-align: end;
+}
+
+.button-div-flex7 > input {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-family: Verdana;
+    padding: 12px 18px;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    .form-container7 {
+        height: 609px;
+    }
+
+    .row-flex7 {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .label-div-flex7 {
+        margin-bottom: 10px;
+        width: 100%;
+        padding-left: 3px;
+    } 
+
+    .input-div-flex7 {
+        width: 100%;
+    }
+
+    .label-textarea-flex7 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/*------------------------------------------------------------------------------------------------------INPUTS---------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------COUNTERS--------------------------------------------------------------------------------------------------*/
+.counter-container1 {
+    counter-reset: my-h2-counter; /*con esta propiedad inicializamos o reseteamos un contador con el nombre que queramos*/
+    padding: 10px;
+}
+
+.counter-container1 > h2::before {
+    counter-increment: my-h2-counter; /*con esta propiedad incrementamos el contador que creamos anteriormente*/
+    content: "Counter " counter(my-h2-counter) ": "; /*podemos interpolar el valor del contador con el texto que se quiera añadir antes del elemento (gracias a la clase before)*/
+}
+
+.counter-container2 {
+    counter-reset: semestre; /*si se quiere hacer sublistas con los contenedores no se pueden inicializar ambos contadores en el padre, es necesario que haya una jerarquia para que funciones correctamente,
+    en este caso en el contenedor padre creamos en contador para el semestre o los h1, y dentro de los h1 se crea el contador para las materias o h2*/
+    padding: 10px;
+}
+
+.counter-container2 > h1 {
+    counter-reset: materia;
+}
+
+.counter-container2 > h1::before {
+    counter-increment: semestre;
+    content: "Semestre " counter(semestre)": ";
+}
+
+.counter-container2 > h2::before {
+    counter-increment: materia;
+    content: counter(semestre) "." counter(materia) " ";
+}
+
+.counter-container3 {
+    padding: 10px;
+}
+
+.counter-list1 {
+    counter-reset: item;
+    font-size: 14px;
+    font-family: Verdana;
+    list-style-type: none; /*al tratarse de una lista ordenada por defecto esta marcara las viñetas con numeros, pero como el conteo lo haremos con la propiedad counter, eliminamos estos marcadores por defecto*/
+}
+
+.counter-list1 > li::before {
+    counter-increment: item; /*en este punto hacemos un incremento al valor del contador item siempre que se encuentre un li despues del ol, sin embargo como dentro de la lista ol hay mas listas ol
+    estas crean sus propios contadores y los vuelven a inicializar en cero, por lo tanto podemos tener en un solo bloque de elementos varios contadores e interactuar o utilizarlos todos para
+    espeficificar la posicion del elemento en especifico dentro de este bloque*/
+    content: counters(item,".") " "; /*el keyword counters a diferencia de counter no retorna en un string en valor del counter actual, este keyword lo que hace es tomar todos los contadores que tengan un mismo 
+    nombre y separarlos por un string, que recibe como segundo parametro, este join entre contadores lo muestra como un string, es con esto que podemos juntar el contador de una lista padre con el contador de una 
+    lista hija para crear sublistas enumeradas correctamente*/
+}
+
+.counter-container4 {
+    background-color: #616161;
+}
+
+.counter-list2 {
+    background-color: #4CAF50;
+    color: white;
+    list-style-type: none;
+    padding: 20px 10px;
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Segoe UI';
+    max-width: 500px; /*con esta propiedad se consigue un efecto interesante, a diferencia de los porcentajes en donde el elemento disminuye su tamaño a medida que lo hace el contenedor padre, esta propiedad 
+    permite que esta dimension o ancho se mantenga hasta cuando la pantalla ya sea menor que el valor establecido, es decir, que a medida que se encoje el contenedor padre este mantendra esa dimension ocupando
+    el espacio disponible y manteniendose hasta cuando ya la pantalla no de mas de esa resolucion*/
+    margin: 0 auto;
+    counter-reset: item;
+    font-weight: 400;
+}
+
+.counter-list2 > li {
+    padding: 20px 0 20px 18px;
+}
+
+.counter-list2 > li::before {
+    counter-increment: item;
+    border: 1px solid #616161;
+    border-radius: 50px;
+    background-color: #616161;
+    padding: 15px 25px;
+    margin-right: 15px;
+    content: counter(item);
+}
+/*---------------------------------------------------------------------------------------------------COUNTERS----------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------------LAYOUTS----------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------FLEX-EXAMPLES-------------------------------------------------------------------------------------------------*/
+.layouts-div * {
+    box-sizing: border-box;
+}
+
+.flex-section-example1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-section-example1 > div {
+    width: 49.5%;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: dodgerblue;
+}
+
+.flex-section-example1 > div > h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.flex-content-row1 {
+    display: flex; /*por defecto el direction del flex es row*/
+    /*padding: 0 10px 10px 10px;*/
+    border: 1px solid black;
+}
+
+.flex-content-column1 {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.flex-box-example1 {
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 5px;
+    width: 100px;
+    font-size: 30px;
+    line-height: 75px;
+    margin: 10px; /*esta propiedad es la que hace que, por mas elementos que se pongan en una fila sin el wrap activado, estos no se traslapen entre si*/
+    border: 1px solid #f2f2f2;
+}
+
+.flex-box-example2 {
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 5px;
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: 30px;
+    line-height: 75px;
+    margin: 10px; /*esta propiedad es la que hace que, por mas elementos que se pongan en una fila sin el wrap activado, estos no se traslapen entre si*/
+    border: 1px solid #f2f2f2;
+}
+
+.break-box { /*con esta clase podemos crear un salto de linea entre las filas de un flex, se debe tener en cuenta que para que funcione se debe tener activada la propiedad wrap*/
+    flex-basis: 100%; /*con esto indicamos que este elemento ocupara la totalidad de la fila, como esta activado el wrap esto quiere decir que provocara obligatoriamente un salto 
+    de linea*/
+    height: 0; /*con esto hacemos que este elemento no afecte el flujo ni el espacio de los demas*/
+}
+/*-------------------------------------------------------------------------------------------------FLEX-EXAMPLES-------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------GRID-EXAMPLES-------------------------------------------------------------------------------------------------*/
+.grid-section-example1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Si seleccionamos el keyword auto las columnas tendran un ancho basado en el contenido de ambas por lo tanto para que quedaran del mismo ancho
+    tendrian que tener la misma dimension de ancho en el div del contenido y titulo, por otra parte el keyworf fr seria como un flex-grow, se establece la relacion deñ tamaño entre
+    ambas columnas y se distribuye el espacio disponible teniendo en cuenta el gap*/
+    grid-template-rows: auto; /*esto quiere decir que el largo de la fila se adaptara a su contenido*/
+    column-gap: 10px; /*lo bueno del grid es que podemos crear la separacion mediante una propiedad y no por medio de margin, y esta puede ser row-gap, column-gap o gap*/
+}
+
+.grid-section-example1 > div {
+    background-color: dodgerblue;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.grid-content-table1 {
+    display: grid;
+    grid-template-columns: 40px 50px auto 50px 40px; /*es esta sentencia la palabra autoindica que la tercera columna tomara el espacio restante dsponible*/
+    grid-template-rows: auto 200px 200px; /*si establecemos un valor tipo porcentaje a un largo sin que el contenedor tenga un height definido, el contenido se
+    desbordara ya que no hay una referancia en la cual tomar el porcentaje*/
+}
+
+.grid-content-table2 {
+    display: grid;
+    grid-template-columns:  [col1] 40px [linea2] 50px [col3] auto [col4] 50px [linea5] 40px; /*tambien podemos asignarle un nombre a cada columna o fila o linea y despues 
+    asignarle el valor*/
+    grid-template-rows: [row1] auto [row2] 200px [row3] 200px;
+}
+
+.grid-content-table3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 50px; /*elkeyword repeat sirve para cuando queremos declarar columnas o filas con las mismas caracteristicas en 1 sola linea,
+    tambien se puede poner etiqueta o nombre a cada una,  a pesar que seria el msmo, el fr divide el espacio teniendo en cuenta los elementos de ancho fijo, lo que hace
+    que tenga un mejor efecto responsive, mas flexible*/
+    grid-template-rows: repeat(3, 1fr); /*en este caso se armara una tabla de 3x3, como tienen especificado de dimension fr seran de igual tamaño cada celda*/
+}
+
+.grid-content-table4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); /*este ejemplo se vio anteriormente, esta linea de codigo es muy usada porque combina varias propiedades
+    que dan flexibilidad y comportamiento responsive a la tabla grid, en comienzo se tiene el keyword repeat, para que todas las columnas tengan las mismas caracteristicas
+    luego en el parametro que establece el numero de columnas se establece auto-fit, este keyword lo que indica esque habran las el maximo numero de columnas que quepan en una fila
+    con el ancho especificado en el otro parametro, es decir si despues del auto fill establecemos 200px habran la mayor cantidad de columnas de 200px que quepan en el ancho del
+    contenedor, si el numero de columnas no cabe en una fila mantenienido el ancho establecido, automaticamente se creara otra fila para seguir ubicando las celdas alli, manteniendo
+    el mismo ancho, ahora el ultimo parametro minmax, es una funcion que lo que hace es setear el ancho minimo y maximo de las celdas, como ancho minimo recibe 200px, lo que indica
+    que este es el minimo ancho que puede tener una celda, si al añadir una columna mas, se piede este ancho entonces esta celda se añade en otra fila, ahora si se cumple con la
+    propiedad del ancho minimo se setea el ancho maximo que es 1fr, lo que indica que si sobra espacio por encima de los 200px, este se distriuira de manera que las columnas usen
+    todo el espacio disponible*/
+    gap: 10px;
+}
+
+.grid-header5, .grid-menu5, .grid-content5, .grid-footer5 {
+    padding: 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 1px solid black;
+}
+
+.grid-header5 { /*primero definimos el nombre o la etiqueta de cada area*/
+    grid-area: header;
+}
+
+.grid-menu5 {
+    grid-area: menu;
+}
+
+.grid-content5 {
+    grid-area: content;
+}
+
+.grid-footer5 {
+    grid-area: footer;
+}
+
+.grid-content-table5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /*tambien podemos dejar que el template area establezca automaticamente el ancho de las celdas, que tambien es buena opcion*/
+    grid-template-areas:  /*con esto armamos el layout de una manera mas intuitiva, cada vez que colocamos una etiqueta se crea una celda, en total cada fila que escribamos
+    debe tener el mismo numero de celdas ya que asi se forma el layout correctamente, cada celda adopta un tamaño especifico dependiendo de la distribucion que se haga en el template
+    se pueden establecer anchos de columna fijos o con fr para que todas tengan el mismo ancho*/
+        "header header header header header"
+        "menu content content content content"
+        "footer footer footer footer footer";
+}
+
+.grid-content-table6 {
+    display: grid;
+    grid-template-areas:  /*Tambien podemos colocar celdas vacias con un . en este punto quedara un espacio*/
+        "header header header header header"
+        "content content content . menu"
+        "footer footer footer footer footer";
+}
+
+.grid-box-example1 {
+    background-color: #f2f2f2;
+    text-align: center;
+    border: 0.1px solid black;
+}
+
+.grid-box-example2 {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    border: 0.1px solid black;
+}
+
+.grid-item-a1, .grid-item-b1, .grid-item-c1, .grid-item-d1 {
+    background-color: #f2f2f2;
+    border: 1px solid black;
+}
+
+.grid-item-a1 { /*con estos parametros definimos que tantas celdas deben ocupar cada elemento es algo asi como un template area per haciendolo manualmente*/
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.grid-item-b1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grid-item-c1 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grid-item-d1 {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.grid-item-a2, .grid-item-b2, .grid-item-c2 {
+    background-color: #f2f2f2;
+    border: 1px solid black;
+}
+
+.grid-item-a2 {
+    grid-column: 1 / 3; /*tamien esta la forma corta de hacerlo, inicio/fin*/
+    grid-row: 1 / 4;
+}
+
+.grid-item-b2 {
+    grid-column: 3 / 6;
+    grid-row: 1 / 3;
+}
+
+.grid-item-c2 {
+    grid-area: 3 / 3 / 4 / 6; /*esta es la forma mas corta de hacerlo, row start / column start / row end / column end*/
+}
+
+.grid-content-table7 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 60px 60px 60px;
+    justify-items: end; /*para utilizar este comando en una celda especifica se usa la propiedad justify-self, en dicha celda*/
+    /*justify items es para alinear el contenido de las columnas en una posicion horizontal, para ver este efecto el contenido debe ser menos que la caja o este efecto automaticamente
+    la encojera, al igual que el flex los items es para que el efecto se vea sobre cada item, y el content es para que se vea en todo el grupo, a diferencia del flex, que aparece flex-start o flex-end
+    aqui los posibles valores son start and end, habran valores que son validos pero que no saldran por el autocompletado*/
+}
+
+.grid-box-example3 {
+    background-color: #f2f2f2;
+    border: 1px solid black;
+    /*max-width: 200px; esta propiedad solo funciona cuando no se establece un justify items ya que este modifica el ancho de los elementos, en vez de esto se debe usar el width normal*/
+    width: 50%; /*si este tamaño sobrepasa el calculador por la unidad fr esta ultima se ampliara para que el contenedor quepa*/ 
+    padding: 20px;
+}
+
+.grid-content-table8 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 60px 60px 60px;
+    align-items: start; /*para utilizar este comando en una celda especifica se usa la propiedad align-self, en dicha celda*/
+    /*La propiedad align items  organiza le elementos de la fila dentro de una misma posicion vertical, igualmente para ver el efecto el heigh del contenido debera se mayor que el height de la fila,
+    para este caso la propiedad no encoge los elementos*/
+}
+
+.grid-box-example4 {
+    background-color: #f2f2f2;
+    border: 1px solid black;
+    height: 50%;
+}
+
+.grid-content-table9 {
+    display: grid;
+    grid-template-columns: 200px 100px 200px;
+    grid-template-rows: auto auto auto;
+    justify-content: start; /*El jusitfy content alinea toda la tabla en una posicion horizontal, para ver ele efecto el ancho total de la tabla no puede ocupar o debe ser menor que el ancho total del contenedor grid, al igual que las anteriores propiedades grid utilizan start y end no flex-start*/
+}
+
+.grid-content-table10 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 60px 60px 60px;
+    align-content: start; /*Alinea toda la tabla verticalmente, para ver el efecto el largo de la tabla total o de las filas debe ser menor que el largo del contenedor*/
+}
+.grid-content-table11 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #f2f2f2;
+    grid-template-rows: 90px 90px;
+}
+
+.grid-content-table12 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #f2f2f2;
+    grid-template-rows: 90px 90px;
+    grid-auto-columns: 1fr; /*con esta opcion hacemos de que en caso de que se establezca una coordenada que supere las dimensiones de la tabla, se creen las filas y columnas necesarias (vacias) 
+    para que este elemento quede en la tabla, ideal para tablas dinamicas*/
+}
+
+.grid-item-a3, .grid-item-b3 {
+    border: 1px solid black;
+}
+
+.grid-item-a3 {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: orange;
+}
+
+.grid-item-b3 {
+    grid-area: 2 / 5 / 3 / 6;
+    background-color: #00BFFF;
+}
+
+.grid-content-table13 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 60px 60px;
+    background-color: #f2f2f2;
+    grid-auto-flow: row; /*con esto establecemos el flujo de las celdas que notienen coordenadas si se van agrupando llenando las columnas primero o llenando las filas*/
+}
+
+.grid-content-table14 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 60px 60px;
+    background-color: #f2f2f2;
+    grid-auto-flow: column; /*con esto establecemos el flujo de las celdas que notienen coordenadas si se van agrupando llenando las columnas primero o llenando las filas*/
+}
+
+.grid-item-a4, .grid-item-b4 {
+    border: 1px solid black;
+}
+
+.grid-item-a4 {
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: orange;
+}
+
+.grid-item-b4 {
+    grid-area: 1 / 5 / 3 / 6;
+    background-color: plum;
+}
+
+.grid-box-example-last {
+    width: 100%;
+    background-color: tomato;
+}
+/*-------------------------------------------------------------------------------------------------GRID-EXAMPLES-------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------FLOAT LAYOUT--------------------------------------------------------------------------------------------------*/
+.layout-float-container1 {
+    margin: 10px;
+}
+
+.layout-float-container1::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.layout-float-container1 * {
+    box-sizing: border-box;
+}
+
+.float-container-16 {
+    float: left;
+    border-right: 10px solid white; /*esta es una de las formas que podemos aplicar un margin parcial a los elementos, cubrimos el borde con el color del fondo y parecera que hay un margin*/
+    width: 16.5%;
+    height: 250px;
+}
+
+.float-container-67 {
+    float: left;
+    width: 67%;
+    height: 250px;
+    border-right: 10px solid white;
+}
+
+@media (max-width: 800px) {
+    .float-container-16 > h3 {
+        display: none;
+    }
+}
+/*--------------------------------------------------------------------------------------------------FLOAT LAYOUT--------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------FLEX LAYOUT--------------------------------------------------------------------------------------------------*/
+.layout-flex-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Verdana;
+}
+
+.layout-flex-container1 * {
+    box-sizing: border-box;
+}
+
+.flex-container-16 {
+    width: 16.5%;
+    height: 250px;
+    background-color: #eeeeee;
+    border-right: 10px solid white;
+    padding: 94.78px 15px;
+    margin-bottom: 10px;
+}
+
+.flex-container-67 {
+    width: 67%;
+    height: 250px;
+    background-color: #eeeeee;
+    border-right: 10px solid white;
+    padding: 94.78px 15px;
+    margin-bottom: 10px;
+}
+
+.flex-break { /*para hacer salto de linea en display flex, SIN EMBARGO EL DISPLAY FLEX SEGUN LA DOCUMENTACION ES USADO PARA CREAR SOLO FILAS O SOLO COLUMNAS NO TABLAS*/
+ flex-basis: 100%;
+ width: 0;
+}
+
+@media (max-width: 800px) {
+    .flex-container-16 > h3 {
+        display: none;
+    }
+}
+/*--------------------------------------------------------------------------------------------------FLEX LAYOUT--------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------GRID LAYOUT--------------------------------------------------------------------------------------------------*/
+.layout-grid-header1 {
+    grid-area: header;
+    padding: 20px;
+    background-color: #eeeeee;
+}
+
+.layout-grid-nav1 {
+    grid-area: nav;
+    padding: 20px;
+    background-color: #eeeeee;
+}
+
+.layout-grid-left1 {
+    grid-area: left;
+    padding: 94.78px 15px;
+    background-color: #eeeeee;
+}
+
+.layout-grid-right1 {
+    grid-area: right;
+    padding: 94.78px 15px;
+    background-color: #eeeeee;
+}
+
+.layout-grid-main1 {
+    grid-area: main;
+    padding: 94.78px 15px;
+    background-color: #eeeeee;
+}
+
+.layout-grid-footer1 {
+    grid-area: footer;
+    padding: 20px;
+    background-color: #eeeeee;
+}
+
+.layout-grid-container1 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto 250px auto;
+    grid-template-areas: 
+        "header header header header header header"
+        "nav nav nav nav nav nav"
+        "left main main main main right" /*No se pueden poner una misma area en un lugar que no sea seguido o debajo de ella por ejemplo left main left nos arrojaria un error*/
+        "footer footer footer footer footer footer";
+    gap: 10px;
+}
+
+
+@media (max-width: 800px) {
+    .layout-grid-left1 > h3, .layout-grid-right1 > h3 {
+        display: none;
+    }
+}
+/*--------------------------------------------------------------------------------------------------GRID LAYOUT--------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------RESPONSIVE LAYOUT-----------------------------------------------------------------------------------------------*/
+.responsive-layout-container {
+    padding: 15px;
+    background-color: #f1f1f1;
+    font-family: Arial;
+}
+
+.responsive-layout-container * {
+    box-sizing: border-box;
+}
+
+.responsive-layout-header {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+}
+
+.responsive-layout-nav {
+    overflow: auto;
+    background-color: #333333;
+    margin-bottom: 20px;
+}
+
+.responsive-layout-nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.responsive-layout-nav > ul > li {
+    float: left;
+}
+
+.responsive-layout-nav > ul > li:last-of-type {
+    float: right;
+}
+
+.responsive-layout-nav > ul > li > a {
+    padding: 12px 14px;
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+.responsive-layout-nav > ul > li > a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.responsive-layout-body::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.responsive-layout-body > div {
+    float: left;
+    width: 75%;
+    border-right: 15px solid #f1f1f1;
+}
+
+.responsive-layout-body > div:last-of-type {
+    float: left;
+    width: 25%;
+    border: none;
+}
+
+.responsive-body-box {
+    padding: 20px 15px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.responsive-body-box > span {
+    font-weight: bold;
+}
+
+.img-box-left, .img-box-right {
+    background-color: #aaaaaa;
+    padding: 20px;
+}
+
+.img-box-left {
+    height: 200px;
+    margin-top: 15px;
+}
+
+.img-box-right {
+    height: 100px;
+}
+
+.list-box-right {
+    list-style-type: none;
+    background-color: #aaaaaa;
+    padding: 0;
+    margin: 0;
+}
+
+.list-box-right > li {
+    padding: 30px 20px;
+}
+
+.responsive-layout-footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #dddd;
+}
+
+@media (max-width:1000px) {
+    .responsive-layout-body > div {
+        width: 100%;
+        border-right: none;
+    }
+
+    .responsive-layout-body > div:last-of-type {
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {
+    .responsive-layout-nav > ul > li {
+        float: none;
+        text-align: center;
+    }
+    
+    .responsive-layout-nav > ul > li:last-of-type {
+        float: none;
+        text-align: center;
+    }
+}
+/*-----------------------------------------------------------------------------------------------RESPONSIVE LAYOUT-----------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------------LAYOUTS----------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------UNITS-----------------------------------------------------------------------------------------------------*/
+.units-container {
+    background-color: #f1f1f1;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.units-container * {
+    box-sizing: border-box;
+}
+
+.units-vertical-div {
+    position: relative;
+    border-right: 15px solid #f1f1f1;
+    width: 40%;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+.units-vertical-h2 {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    transform: translate(-50%,-50%); 
+    left: 50%; /*cuando el width es muy pequeño, el texto tiende a saltarse y ubicarse en otra linea, porque el contenedor del h2 al aplicar el left 50% queda al limite del contenedor padre, por lo tanto, a pesar
+    de que se mueva atras este seguira con este efecto, para corregirlo se debe dar mas acnho al padre o reducir el texto*/
+    border-right: 1px solid #f1f1f1;
+    width: 100%; /*esto lo hacemos para que pueda ocupar todo el espacio del contenedor disponible, y no solo el contenido inicial*/
+    text-align: center;
+}
+
+.units-viewer-div {
+    padding: 15px;
+    background-color: white;
+    width: 60%;
+    margin-bottom: 15px;
+}
+
+.h1-cm {font-size: 1.5cm;} /*1cm = 37.7953px*/
+.h2-cm {font-size: 1cm;}
+.p-cm {font-size: 0.5cm;}
+
+.h1-mm {font-size: 12mm;} /*1mm = 3.7795px*/
+.h2-mm {font-size: 10mm;} /*10mm = 37.7953px*/
+.p-mm {font-size: 5mm;}
+
+.h1-in {font-size: 1in;} /*1in = 96px*/
+.h2-in {font-size: 0.5in;} 
+.p-in {font-size: 0.2in;}
+
+.h1-px {font-size: 50px;}
+.h2-px {font-size: 25px;} 
+.p-px {font-size: 12.5px;}
+
+.h1-em {font-size: 3em;} /*2em = default tag element font size * 2, la unidad em se calcula en relacion a la fuente del elemento por defecto, si un h2 tiene un font-size por defecto de 16 y le asignamos
+un font size de 2em su nuevo font size sera de 32 para los elementos hijos esta unidad se calcula en relacion a la fuente del padre*/
+.h2-em {font-size: 2em;}
+.p-em {font-size:30px;} /*el span dentro de este p tendra un largo de 30*0.5 = 15px*/
+.span-em {font-size: 0.5em;}
+
+.h1-ch {font-size: 3ch;} /*la unidad ch se calcula en relacion al largo del numero 0*/
+.h2-ch {font-size: 2ch;}
+.p-ch {font-size: 30px;} /*para este caso 2 ch = 30px y 1 ch = 15px*/
+.span-ch {font-size: 2ch;}
+
+.h1-rem {font-size: 3rem;} /*el rem se calcula en relacion al tamaño de la fuente del elemento html el valor por defecto es de 16px por lo tanto seran multiplos de este*/
+.h2-rem {font-size: 2rem;} 
+.p-rem {font-size: 1rem;}
+
+.h1-vw {font-size: 5vw;} /*1vw = 1% del ancho de la pantalla disponible, esta unidad se usa para hacer letras responsiva ya que su tamaño aumenta o disminuye segun la pantalla disponible*/
+.h2-vw {font-size: 2.5vw;} 
+.p-vw {font-size: 1vw;}
+
+.h1-vh {font-size: 5vh;} /*1vw = 1% del largo de la pantalla disponible, esta unidad se usa para hacer letras responsiva ya que su tamaño aumenta o disminuye segun la pantalla disponible*/
+.h2-vh {font-size: 2.5vh;} 
+.p-vh {font-size: 1vh;}
+
+.h1-vmin {font-size: 5vmin;} /*1vmin = 1% de la dimension de pantalla que sea menor, si el ancho es menor que en largo, la letra cambiara con esta dimension, caso contrario cambiara con el largo*/
+.h2-vmin {font-size: 2.5vmin;} 
+.p-vmin {font-size: 1vmin;}
+
+.h1-vmax {font-size: 5vmax;} /*1vmax= 1% de la dimension de pantalla que sea mayor, si el ancho es mayor que en largo, la letra cambiara con esta dimension, caso contrario cambiara con el largo*/
+.h2-vmax {font-size: 2.5vmax;} 
+.p-vmax {font-size: 1vmax;}
+
+
+.p-vper {font-size: 6vw;} 
+.span-vper {font-size: 50%;} /*esta unidad calcula un valor en porcentaje en relacion al elemento padre, este span tendra siempre la mitad del font size del p asi este aumente o disminuya*/
+/*-----------------------------------------------------------------------------------------------------UNITS-----------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------CSS RULES---------------------------------------------------------------------------------------------------*/
+#content-rule-div p{ /*los estilos de ids tienen un valor de 100 puntos, ademas de este define un estilo de elemento o etiqueta lo que sumaria otro punto 101 puntos*/
+    background-color: dodgerblue; /*sin embargo, el elemento tambien tiene definido un estilo en el html lo que le da 1000 puntos, siendo este estilo el que se aplique al tener la mayor puntuacion*/
+}
+
+#content-rule-div2 p { /*el nivel de especifidad es 100 puntos del ID + 1 punto del elemento  = 101 puntos*/
+    background-color: red;
+}
+
+#content-rule-div2 p { /*el nivel de especifidad en este caso es igual que el anterior, sin embargo como se declaro de ultimo este sera el que aplique*/
+    background-color: yellow;
+}
+
+p#content-rule-p1 { /*elemento + id = 1 + 100 = 101  GANADOR*/
+    background-color: green;
+}
+
+#content-rule-p1 { /*id = 100 = 100 segundo puesto*/
+    background-color: rebeccapurple;
+}
+
+p[id=content-rule-p1] { /*elemnto + atributo = 1 + 10 = 11 tercer puesto*/
+    background-color: rgb(218, 191, 75);
+}
+ 
+#content-rule-div4 > .content-rule-p2 { /*el mismo estilo definido en el bloque html style tiene mas peso que este, esto solo aplica para el mismo nivel de especifidad, id+class = 100 + 10 = 110 igual que en bloque
+    style*/
+    background-color: yellow;
+}
+
+#content-rule-div4 > p#content-rule-p3 { /*id + element + id = 100+1+100 = 201 mayor que el bloque style*/ 
+    background-color: tomato;
+}
+/*---------------------------------------------------------------------------------------------------CSS RULES---------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------BORDER RADIUS-------------------------------------------------------------------------------------------------*/
+.border-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.border-flex-container * {
+    box-sizing: border-box;
+}
+
+.border-flex-break {
+    flex-basis: 100%;
+    width: 0;
+}
+
+.border-flex-box-33, .border-flex-box-25 {
+    width: 33.33%;
+    outline: 15px solid white;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.border-flex-box-33 {
+    width: 33.33%;
+}
+
+.border-flex-box-25{
+    width: 25%;
+}
+
+.border-row1, .border-row2 {
+    padding: 15px; 
+    border-radius: 25px; /*esta propiedad es como el margin y el padding recibe 4 parametros y son esquina superior izquierda - esquina superior derecha - esquina inferior derecha
+    y esquina inferior izquierda, al igual que el margin se pueden especificar menos valores*/
+    /*tambien puede recibir valores de este tipo 50px / 15px, en donde se especifican dos dimensiones de cada esquina, por ejemplo si asignamos ese valor a el border-top-left-raduis,
+    que es el borde de la esquina superior izquierda, estas medidas serian distribuidas asi: 50 px para el borde de arriba y 15px para el borde de la izquierda, es decir, en total
+    se pueden modificar o dimensiones de los bordes si se utiliza esta nomenclatura o sintaxis*/
+    /*para dar el efecto de un circulo generalmente se utliza el border radius 50%*/
+    max-width: 200px; 
+    height: 200px; 
+    margin: 0 auto;
+}
+
+.border-row2 {
+    background-color: #73ad21; 
+}
+/*-------------------------------------------------------------------------------------------------BORDER RADIUS-------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------BORDER IMAGE--------------------------------------------------------------------------------------------------*/
+.border-float-container {
+
+}
+
+.border-float-container * {
+    box-sizing: border-box;
+}
+
+.border-float-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.border-float-box-20, .border-float-box-80 {
+    /*outline: 15px solid white; /*esto no funciona para el float*/
+    float: left;
+    background-color: #f1f1f1;
+    padding: 15px;
+    position: relative; /*esto lo establecemos por si se quiere centrar algun elemento con el transform*/
+    margin-bottom: 10px;
+}
+
+.border-float-box-20 {
+    width: 20%;
+    border-right: 7.5px solid white;
+}
+
+.border-float-box-80 {
+    width: 80%;
+    border-left: 7.5px solid white;
+}
+
+.border-image-p1 {
+    position: absolute; /*con esto podemos centrar el elemento, pero hay que tener unas cosas en cuenta, en primer lugar esto afecta el display del elemento,
+    volvinedolo inline-block, en segundo lugar tenemos que quitar el margin por defecto del elemento ya que este afecta la posicion, en tercer lugar, si queremos
+    que el elemento ocupe todo el ancho con widht 100% recordear que este valor se toma en base al ancho del elemento padre y  teniendo en cuenta que no se respeta
+    el padding el widht de este elemento sera mas grande que el contendor, por ultimo al agregarle padding y border al elemento, y el box sizing estar activado, estas propiedades
+    haran parte del width total o del 100% que queremos establecer, por lo tanto se seguira desbordando el elemento, para evitar eso vamos a ver la funcion calc*/
+    margin: 0;
+    top: 50%; /*lo bajamos 50% solo lo queremos centrar verticalmete*/
+    transform: translateY(-50%); /*ajustamos el desfase solo verticalmente*/
+    width: calc(100% - 30px); /*con esta funcion lo que hacemos es calcular en porcentaje el valor deseado, para este caso dijimos que con widht 100% se ocupaba todo el espacio del
+    padre, ahora bien como queremos centrar el elemento dentro del padding del padre debemos restarle este padding de ambos costados para que se ajuste al padding del padre,
+    esto es 15px a la derecha y 15px a la izquierda para un total de 30px*/
+    padding: 15px;
+    border: 10px solid transparent;
+    border-image: url('border.png') 30 round; /*esta propiedad recibe 3 parametros, el primero es la imagen a usar, el segundo es en que punto cortar la imagen, y el tercero
+    es una propiedad que define si las secciones del medio deben repetirse o estirarse (round or strech), esta propiedad es como si abriera la imagen de manera que quedara en linea recta
+    y despues de eso repite mas o menos veces las secciones que uno establezca  */
+}
+
+.border-img-responsive { /*la imagen no le afecta el max-width, por lo tanto con un contenedor esto si funciona*/
+    max-width: 81px;
+    margin: 0 auto;
+}
+
+.border-image-p2 {
+    border-image: url('border.png') 50 round;
+}
+
+.border-image-p3 {
+    border-image: url('border.png') 20% round;
+}
+
+.border-image-p4 {
+    border-image: url('border.png') 30% round;
+}
+
+.border-image-p5 {
+    border-image: url('border.png') 30 stretch;
+}
+/*-------------------------------------------------------------------------------------------------BORDER IMAGE--------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------BACKGROUND---------------------------------------------------------------------------------------------------*/
+.background-div1 {
+    background-image: url('img_flwr.gif'), url('paper.gif'); /*cuando establecemos dos imagenes debemos separarlas con coma y en ese orden se estableceran sus atributos con una sola declaracion de la propiedad*/
+    background-position: bottom right, top left; /*la primera imagen de la flor la ponemos en la esquina inferior derecha y la segunda en la esquina superiod izquierda*/
+    background-repeat: no-repeat, repeat; /*para que la imagen de la flor solo se muestra una vez colocamos no repeta, para que la imagen del papel cubra todo el contenedor repitiendose colocamos repeat*/
+    padding: 15px;
+    /*background: url('img_flwr.gif') bottom right no-repeat, url('paper.gif') top left repeat; Forma corta de declarar todo en una linea */
+}
+
+div[class^=background-div] > ul > li{
+    margin-bottom: 5px;
+}
+
+div[class^=background-div] > ul > li > span {
+    background-color: #f1f1f1;
+    color: #dc143c;
+    padding: 0 5px;
+}
+
+.background-div2 {
+    background-image: url('img_flwr.gif'), url('paper.gif'); 
+    background-position: bottom right, top left; 
+    background-repeat: no-repeat, repeat; 
+    background-size: 149.33px 108px; /*esta propiedad puede definirse en unidades Xpx Ypx, porcentajes % o conver o contain*/
+    padding: 15px;
+}
+
+.background-div3 {
+    display: flex;
+}
+
+.background-div3 * {
+    box-sizing: border-box;
+}
+
+.background-div3 > div {
+    width: 50%;
+    outline: 10px solid white;
+    background-image: url('img_flwr.gif'), url('paper.gif'); 
+    background-repeat: no-repeat, repeat; 
+    padding: 15px;
+    background-size: contain, auto; /*contain escala la imagen lo maximo posible para que aparezca completa en el espacio disponible en el contenedor*/
+}
+
+.background-div3 > div:last-of-type {
+    background-size: cover, auto; /*cover escala la imagen para que ocupe toda el area disponible sin importar si esta se desborda del contenedor*/
+}
+
+
+.background-div4 {
+    color: white;
+    background-image: url('img_man.jpg'); 
+    background-position: center; /*esto es para que la imagen aparezca centrada tanto vertical como horizontalmente*/
+    background-repeat: no-repeat; /*con esto la imagen no se repite y se muestra solo una de ellas*/
+    background-size: cover; /*en este caso sirve mas el efecto cover, porque si el ancho es mucho menor que el largo, entonces la imagen no ocupara toda la pantalla como se desea*/
+    padding: 15px;
+    height: 800px;
+    background-attachment: local; /*este elemento hace que la imagen se mueva junto con el scroll bar, para un background de pagina completa se utiliza el fixed o local cuando se hace sobre un elemento que no es
+    el body*/
+    position: relative;
+}
+
+.background-div4 > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.background-div5 {
+    background-image: url('img_flwr.gif'), url('paper.gif'); 
+    background-position: top right, top left; 
+    background-repeat: no-repeat, repeat; 
+    background-origin: border-box; /*la imagen se empiza a mostrar en base al borde, por defecto la imagen se empieza a mostrar en base al padding*/
+    padding: 15px;
+    background-clip: content-box; /*en este ejemplo se muestra que se puede limitar el area en que aparece el background como la flor se mostraba en base al borde, esta saldra cortada*/
+    border: 15px solid black;
+}
+/*--------------------------------------------------------------------------------------------------BACKGROUND---------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------GRADIENT----------------------------------------------------------------------------------------------------*/
+div[class^=gradient-div] {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.gradient-div1 {
+    background-image: linear-gradient(red,yellow); /*aqui definimos un gradiente que va de rojo a amarillo, por defecto el linear gradient va de arriba a abajo*/
+}
+
+.gradient-div2 {
+    background-image: linear-gradient(to right,red,yellow); /*aqui definimos un gradiente que va de rojo a amarillo, pero ahora de izquierda a derecha*/
+}
+
+.gradient-div3 {
+    background-image: linear-gradient(to bottom right,red,yellow); /*aqui definimos un gradiente que va de rojo a amarillo, pero ahora diagonal de una esquina a otra*/
+}
+
+.gradient-div4 {
+    background-image: linear-gradient(-90deg,red,yellow); /*aqui definimos un gradiente que va de rojo a amarillo, pero ahora con un angulo de aplicacion, -90 grado es de derecha a izquierda
+    los grados se calculan teniendo en cuenta que el segundo color iniciando de arriba hacia abajo es 0 grados por lo tanto -90 grados seria de izquierda a derecha iniciando con el segundo color
+    y 90 grados seria de derecha a izquierda comenzando con el primer color, 180 grados seria de arriba a abajo iniiciando con el primer color*/
+}
+
+.gradient-div5 {
+    background-image: linear-gradient(red,yellow,green); /*se puede establecer multiples colores*/
+}
+
+.gradient-div6 {
+    background-image: linear-gradient(to right,red,yellow,green); /*se puede establecer multiples colores*/
+}
+
+.gradient-div7 {
+    background-image: linear-gradient(to right,rgba(255,0,0,0),rgba(255,0,0,1)); /*tambien puede hacerse uso del opacity para dar un efecto de aparicion*/
+}
+
+.gradient-div8 {
+    background-image: repeating-linear-gradient(red, yellow 10%, green 20%); /*podemos hacer que un mismo gradiante se repita en un background y establecer el porcentaje de espacio que puede ocupar
+    ese color, al color rojo que no se le establecio tomara el que quede*/
+}
+
+.gradient-div9 {
+    background-image: repeating-linear-gradient(to right, red, yellow 7%, green 10%); /*al dismimuir los porcentajes aumentamos el numero de veces que se repite*/
+}
+
+.gradient-div10 {
+    background-image: repeating-linear-gradient(45deg, red, yellow 7%, green 10%); /*ejemplo diagonal 45 grados*/
+}
+
+.gradient-div11 {
+    background-image: repeating-linear-gradient(190deg, red, yellow 7%, green 10%); /*ejemplo diagonal 190 grados*/
+}
+
+.gradient-div12 {
+    background-image: radial-gradient(red, yellow, green); /*Tambien se pueden hacer gradientes radiales*/
+}
+
+.gradient-div13 {
+    background-image: radial-gradient(red 5%, yellow 15%, green 60%); /*Al igual que los linear gradiant podemos especificar el tamaño de cada color*/
+}
+
+.gradient-div14 {
+    background-image: radial-gradient(circle, red, yellow, green); /*tambien se puede especificar la forma que tendra en gradiente, por defecto es una elipse*/
+}
+
+.gradient-div15 {
+    background-image: repeating-radial-gradient( red, yellow 10%, green 15%); /*tambien se puede especificar la forma que tendra en gradiente, por defecto es una elipse*/
+}
+
+.gradient-div16 {
+    background-image: linear-gradient(141deg, #9fb8ad, #1fc8db 51%, #2cb5e8 75%); /*tambien podemos modificar la opacidad de todo el gradiente para darle otro efecto*/
+    opacity: 0.9;
+}
+/*---------------------------------------------------------------------------------------------------GRADIENT----------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------SHADOWNS----------------------------------------------------------------------------------------------------*/
+.shadow-container1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.shadow-container1 > div {
+    background-color: #f1f1f1;
+    text-align: center;
+    margin: auto 0;
+    padding: 10px;
+}
+
+.shadow-container1 > div > h2 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.shadow-example1 {
+    text-shadow: 2px 2px; /*el text-shadow tiene las mismas propiedades del box-shadow*/
+    /*recordar que las propiedades son option hofset, vofset, blur, spread, color, el primer parametro establece que las sombras no se veran por fuera sino por
+    dentro del contenedor, el segundo es el offset horizontal, el tercero es el offset vertical, el cuarto parametro es el blur, define que tanto se dispersa el efecto sobre el contenedor
+    el otro elemento es el spread que define la intensidad y tamaño de el blur, el quinto y ultimo elemento es el color que en este caso es un negro transparente, esta propiedad permite colocar varias sombras
+    o shadows como se puede observar, la siguiente sombra solo utiliza el ofset horizontal, el vertical, el blur y el color, el segundo shadow ya no estaria en el interior del contenido ya que no tiene
+    la propiedad inset, por lo tanto los efectos de este se verian reflejados por fuera del contenedor*/
+}
+
+.shadow-example2 {
+    text-shadow: 2px 2px red; 
+}
+
+.shadow-example3 {
+    text-shadow: 2px 2px 6px red; 
+}
+
+.shadow-example4 {
+    text-shadow: 2px 2px 5px black;
+    color: white; 
+}
+
+.shadow-example5 {
+    text-shadow: 0px 0px 4px #FF0000; 
+}
+
+.shadow-example6 {
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; /*los colores influyen bastante ya que al aplicarle blur a un color no parece el mismo*/
+}
+
+.shadow-example7 {
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; 
+    color: white;
+}
+
+.shadow-example8 { /*tambien podemos crear un borde alrededor de la letra si creamos un borde para cada lado de la misma*/
+    text-shadow: -1px 0 black, 0 -1px black, 1px 0 black, 0 1px black; 
+    color: yellow;
+}
+
+.shadow-example9 {
+    background-color: yellow;
+    box-shadow: 6px 8px black;
+}
+
+.shadow-example10 {
+    background-color: yellow;
+    box-shadow: 6px 8px grey;
+}
+
+.shadow-example11 {
+    background-color: yellow;
+    box-shadow: 6px 8px 5px grey;
+}
+
+.shadow-example12 {
+    border: 1px solid lightgrey;
+    font-size: 32px;
+    margin: 0;
+    padding: 25px;
+    border-radius: 8px;
+    transition: all 200ms ease-out;
+}
+
+.shadow-example12:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+}
+
+.shadow-example13 {
+    margin: 10px;
+    box-shadow: 4px 4px 8px grey;
+}
+
+.shadow-example14 {
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*---------------------------------------------------------------------------------------------------SHADOWNS----------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------TEXT-EFFECT--------------------------------------------------------------------------------------------------*/
+.text-example1 {
+    border: 1px solid black;
+    white-space: nowrap; /*con esta propiedad aseguramos que el texto no haga un salto de linea cuando no tenga suficiente espacio y de esta manera poder apreciar el funcionamiento de la propiedad text-overflow*/
+    width: 750px;
+    text-overflow: clip; /*esta propiedad indica como el texto que no es mostrado en pantalla por vel overflow hidden es presentado, en este caso solo no se tienen ninguna señalizacion solo se corta el texto
+    donde termina el contenedor*/
+    overflow: hidden; /*esta propiedad segura que el texto que se desborda no se vea*/
+}
+
+.text-example2 {
+    border: 1px solid black;
+    white-space: nowrap; 
+    width: 930px;
+    text-overflow: ellipsis; /*en este caso la señalizacion son dos puntos seguidos ..*/
+    overflow: hidden;
+}
+
+.text-example3 {
+    border: 1px solid black;
+    width: 200px;
+    word-wrap: normal; /*cuando las palabras son muy largas estas se saldran del contenedor si se tiene esta propiedad en el valor normal*/
+}
+
+.text-example4 {
+    border: 1px solid black;
+    width: 200px;
+    word-wrap: break-word ; /*cuando las palabras son muy largas estas daran un salto de linea en la mitad de la palabra si se tiene esta propiedad en el valor break word*/
+}
+
+.text-example5 {
+    border: 1px solid black;
+    width: 200px;
+    word-break: keep-all ; /*no corta palabras antes de hacer un salto de linea asi deje espacio en blanco*/
+}
+
+.text-example6 {
+    border: 1px solid black;
+    width: 200px;
+    word-break: break-all ; /*ocupa todo el espacio antes de hacer un salto de linea sin importar si corta palabras*/
+}
+
+.text-example7 {
+    writing-mode: horizontal-tb ; /*este es el comportamiento por defecto del texto horizontal*/
+}
+
+.text-example8 {
+    writing-mode: vertical-lr ; /*este texto se mostrara vertical de izquierda a derecha left to right*/
+}
+/*--------------------------------------------------------------------------------------------------TEXT-EFFECT--------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------2D TRANSFORMS-------------------------------------------------------------------------------------------------*/
+.container1-2D {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: center;
+}
+
+.container1-2D * {
+    box-sizing: border-box;
+}
+
+.container1-2D > div {
+    background-color: #f1f1f1;
+    text-align: center;
+    height: 200px;
+    padding: 50px 10px;
+}
+
+.container1-2D > div > div {
+    background-color: red;
+    opacity: 0.8;
+    max-width: 200px;
+    margin: 0 auto;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.example1-2D:hover {
+    transform: translate(50px, 50px); /*translate define el dezplazamiento en (x,y)*/
+    transition: all 200ms ease-out;
+}
+
+.example2-2D:hover {
+    transform: rotate(360deg);
+    transition: all 500ms ease-out;
+}
+
+.example3-2D:hover {
+    transform: scale(1.5,2); /*define el escalamiento del contenedor (width, height) es decir aumenta 1.5 veces su ancho y 2 veces su largo respecto a las dimensiones originales*/
+    transition: all 300ms ease-out;
+}
+
+.example4-2D:hover {
+    transform: scale(0.5,0.5); /*En este caso se escala a un tamañó menor que el orginal*/
+    transition: all 300ms ease-out;
+}
+
+.example5-2D:hover {
+    transform: scaleX(2); /*Se pueden definir las escalas por independiente*/
+    transition: all 300ms ease-out;
+}
+
+.example6-2D:hover {
+    transform: scaleY(2); 
+    transition: all 300ms ease-out;
+}
+
+.example7-2D:hover {
+    transform: skewX(20deg); /*esta propiedad estira un contenedor en base a los grados que se coloquen, esto lo hace respecto al eje X*/
+    transition: all 200ms ease-out;
+}
+
+.example8-2D:hover {
+    transform: skewY(20deg); /*igual que el anterior pero con respecto al eje Y*/
+    transition: all 200ms ease-out;
+}
+
+.example9-2D:hover {
+    transform: skew(20deg, 10deg); /*Esta propiedad aplica el estiramiento en los dos ejes al tiempo los parametros se reciben en el orden (estiramientoX, estiramientoY)*/
+    transition: all 200ms ease-out;
+}
+
+.example10-2D:hover {
+    transform: matrix(1.5, -0.3, 0, 1.5, 20, 20); /*esta propieda es una forma corta para declarar multiples transformaciones de las vistas anteriormente el orden es el siguiente: 
+    (scaleX, SkewY, SkewX, ScaleY, TranslateX, TranslateY)*/
+    transition: all 200ms ease-out;
+}
+
+.example1-3D:hover {
+    transform: rotateX(180deg); /*este es un efecto 3D el contenedor gira sobre su propio eje X, Y o Z*/
+    transition: all 200ms ease-out;
+}
+
+.example2-3D:hover {
+    transform: rotateY(180deg); 
+    transition: all 200ms ease-out;
+}
+
+.example3-3D:hover {
+    transform: rotateZ(180deg); 
+    transition: all 200ms ease-out;
+}
+/*-------------------------------------------------------------------------------------------------2D TRANSFORMS-------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------TRANSITIONS--------------------------------------------------------------------------------------------------*/
+.transition-container1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.transition-container1 > div {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.transition-container1 > div > div {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.transition-example1:hover {
+    width: 200px;
+    transition: width 2s; /*la propiedad transition establece las pautas para realizar algun cambio en alguna propiedad de algun elemento en los ejemplos anteriores de transformaciones 2d y 3d se vio que se
+    establecia el all para cubrir todas las posibles propiedades a cambiar, ya que como observamos en este ejemplo no todas estan con el autoconpletado a pesar de que sean valores validos, en este caso
+    solo especificamos la propiedad a cambiar y el tiempo*/
+}
+
+.transition-example2:hover {
+    width: 200px;
+    height: 200px;
+    transition: width 2s, height 4s; /*Como podemos ver podemos esablecer las caracteristicas de cada cambio de propiedad por independiente*/
+}
+
+.transition-example3:hover {
+    width: 200px;
+    transition: width 3s;
+    transition-delay: 1s; /*esta propiedad establece cuanto tiempo debe transcurrir antes de que inicie la transicion*/
+}
+
+.transition-example4:hover {
+    width: 300px;
+    transition: width 2s;
+    transition-timing-function: linear; /*Esta propiedad establece el tipo de transicion la lineal no tiene un efecto mas que el de alargar progresivamente el contenedor*/
+}
+
+.transition-example5:hover {
+    width: 300px;
+    transition: width 2s;
+    transition-timing-function: ease; /*Empieza lento, luego rapdio, y finaliza lento, es el efecto por defecto*/
+}
+
+.transition-example6:hover {
+    width: 300px;
+    transition: width 2s;
+    transition-timing-function: ease-in; /*empieza lento*/
+}
+
+.transition-example7:hover {
+    width: 300px;
+    transition: width 2s;
+    transition-timing-function: ease-out; /*termina lento*/
+}
+
+.transition-example8:hover {
+    width: 300px;
+    transition: width 2s;
+    transition-timing-function: ease-in-out; /*empieza lento y termina lento*/
+}
+
+.transition-example9:hover {
+    width: 300px;
+    height: 200px;
+    transform: rotate(180deg);
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.transition-example10:hover {
+    width: 300px;
+    transition: width 2s ease-in-out 1s; /*una manera corta de declarar todas las propiedades, (propiedad, tiempo, funcion, delay)*/
+}
+/*--------------------------------------------------------------------------------------------------TRANSITIONS--------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------ANIMATIONS---------------------------------------------------------------------------------------------------*/
+div[class^=animation-example] {
+    height: 100px;
+    margin-bottom: 15px;
+    border: 1px solid lightgrey;
+}
+
+@keyframes animation1 { /*en esta seccion especificamos las propiedades que van a cambiar*/
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.animation-example1 {
+    background-color: red;
+    animation-name: animation1; /*asignamos el nombre de la animacion programada anteriormente*/
+    animation-duration: 4s; /*es lo uque dura la animacion, esta empieza a correr cuando se recarga la pagina y cuando termina vuelve a su estado original*/
+}
+
+@keyframes animation2 { /*Tambien se pueden establecer diferentes valores mientras la animacion va del 0% al 100%*/
+    0% {background-color: red;}
+    25% {background-color: yellow;}
+    50% {background-color: blue;}
+    100% {background-color: green;}
+}
+
+.animation-example2 {
+    background-color: red; /*el elemento por defecto debe empezar con la misma propiedad que se tiene al  inicio de la animacion*/
+    animation-name: animation2; 
+    animation-duration: 4s;
+}
+
+@keyframes animation3 { /*Aqui vamos a cambiar mas de una propiedad*/
+    0% {background-color: red; left: 0px; top: 0px;}
+    25% {background-color: yellow; left: 200px; top: 0px;}
+    50% {background-color: blue; left: 200px; top: 200px;}
+    75% {background-color: green; left: 0px; top: 200px;}
+    100% {background-color: red; left: 0px; top: 0px;}
+}
+
+.animation-example3, .animation-example4, .animation-example5, .animation-example6, .animation-example7, .animation-example8, .animation-example9 {
+    background-color: red; /*el elemento por defecto debe empezar con la misma propiedad que se tiene al  inicio de la animacion*/
+    animation-name: animation3; 
+    position: relative;
+    width: 200px;
+} 
+
+.animation-example3 {
+    animation-duration: 4s;
+}
+
+.animation-example4 {
+    animation-delay: 4s; /*con el delay establecemos cuanto tiempo esperar antes que comienze la animacion, en este caso comenzara cuando termine la de arriba*/
+    animation-duration: 4s;
+}
+
+.animation-example5 {
+    animation-delay: -2s; /*con los segundos negativos indicamos que la animacion al comenzar debe comenzar como si ya hubiera pasado esa cantidad de segundos, en este caso se intentara alinear con la animacion de 
+    arriba*/
+    animation-duration: 4s;
+}
+
+.animation-example6 {
+    animation-duration: 4s;
+    animation-iteration-count: 2; /*con esta propiedad establecemios cuantas veces se deb repetir la animacion, recibe como valor infinito (infinite)*/
+}
+
+.animation-example7 {
+    animation-duration: 4s;
+    animation-direction: reverse; /*tambien podemos hacer que la animacion vaya en sentido contrario*/
+}
+
+.animation-example8 {
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate; /*con el iteration count y el alternate, la animacion alterna de direccion en cada repeticion*/
+}
+
+.animation-example9 {
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse; /*Tambien puede hacerse en sentido contrario*/
+}
+
+@keyframes animation4 {
+    from {left: 0px;}
+    to {left: 400px;}
+}
+
+.animation-example10, .animation-example11, .animation-example12, .animation-example13, .animation-example14 {
+    background-color: red;
+    animation-name: animation4; 
+    position: relative;
+    width: 200px;
+    animation-duration: 5s;
+    animation-iteration-count: 5;
+}
+
+.animation-example10 {
+    animation-timing-function: linear; /*estos son los mismos efectos que en transform*/
+}
+
+.animation-example11 {
+    animation-timing-function: ease; 
+}
+
+.animation-example12 {
+    animation-timing-function: ease-in;
+}
+
+.animation-example13 {
+    animation-timing-function: ease-out;
+}
+
+.animation-example14 {
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes animation5 { 
+    from {left: 0px; background-color: red;}
+    to {left: 400px; background-color: blue;}
+}
+
+.animation-example15 {
+    background-color: red;
+    animation-name: animation5; 
+    position: relative;
+    width: 200px;
+    animation-duration: 3s;
+    animation-fill-mode: forwards; /*esta propiedad hace que el elemento quede con las propiedades del ultimo keyframe aplicado en este caso el color de fondo azul y desplazado*/
+}
+
+.animation-example16 {
+    background-color: red;
+    animation-name: animation5; 
+    position: relative;
+    width: 200px;
+    animation-duration: 3s;
+    animation-fill-mode: backwards; /*esta deja al elemento con el primer keyframe y lo devuelve*/
+}
+
+.animation-example17 {
+    background-color: red;
+    animation-name: animation5; 
+    position: relative;
+    width: 200px;
+    animation-duration: 3s;
+    animation-fill-mode: both; /*esta hace los dos pero me da a entender que vendria siendo lo mismo que forwards*/
+}
+
+.animation-example18 {
+    background-color: red; 
+    position: relative;
+    width: 200px;
+    animation: animation3 4s linear 2s 5 alternate backwards; /*esta es la forma corta de especificar todas las propiedades (nombre, duracion, funcion, delay, iteraciones, direccion, fill mode)*/
+}
+
+@keyframes animation6 { 
+    0% {transform: rotate(0deg); left: 0px; background-color: #92b901;}
+    25% {transform: rotate(20deg); left: 0px;}
+    50% {transform: rotate(0deg); left: 500px;}
+    55% {transform: rotate(0deg); left: 500px;}
+    70% {transform: rotate(0deg); left: 500px; background-color: #1ec7e6;}
+    100% {transform: rotate(-360deg); left: 0px;}
+}
+
+
+#animation-example19{
+    box-sizing: border-box;
+    width: 70px; 
+    height: 47px; 
+    margin-bottom: 0; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #92b901;
+    color: white; 
+    position: relative;
+    animation: animation6 5s 1; /*esta es la forma corta de especificar todas las propiedades (nombre, duracion, funcion, delay, iteraciones, direccion, fill mode)*/
+}
+/*--------------------------------------------------------------------------------------------------ANIMATIONS---------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------TOOLTIPS----------------------------------------------------------------------------------------------------*/
+.tooltip-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.tooltip-container * {
+    box-sizing: border-box;
+}
+
+.tooltip-container > div {
+    background-color: #f1f1f1;
+    height: 150px;
+    padding: 59.5px 0;
+    text-align: center;
+}
+
+.tooltip-example1 {
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    position: relative;
+    color: #006080;
+}
+
+.tooltip-text1, .tooltip-text2, .tooltip-text3, .tooltip-text4, .tooltip-text5, .tooltip-text6, .tooltip-text7, .tooltip-text8 {
+    display: none;
+    width: 100%; /*es recomendable dejar un texto de tooltip fijo para poder posicionarlos correctamente, tambien podemos anchar el width del padre para que este crezca de igual manera*/
+    padding: 3px 0;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.tooltip-example1:hover div[class^=tooltip] {
+    display: block;
+}
+
+.tooltip-text1 {
+    top: 120%; /*para que supere el borde*/
+}
+
+.tooltip-text2 {
+    top: -3px; /*por el paddin agregado al tooltip*/
+    left: 105%;
+}
+
+.tooltip-text3 {
+    bottom: 100%; /*como no hay borde se nota bien el efecto*/      
+}
+
+.tooltip-text4 {
+    top: -3px; /*cuando estos valores o el margin son positivos tienen a alejar algun elemento que este en esa direccion, en este caso lleva el elemento hacia lejos del top`, cuando el top es negativo
+    el elemento se sube hacia el top, en el caso del margin cuando es un valor negativo, no se mueven los otros elementos si no que se mueve el mismo elemento, esto aplica para cualquier direccion*/
+    right: 105%;
+}
+
+.tooltip-text5 {
+    top: 150%; /*se debe dejar el espacio para el triangulo o flecha*/      
+}
+
+.tooltip-text5::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px; /*por el tamaño del borde de este elemento, para los tooltip verticales como el top o bottom se agrega el margin a los lados, porque el borde que se borra es de los lados,
+    para el caso de los tooltip horizontales como left o right se agrega el margin al top o bottom porque el borde que se borra son los de arriba o abajo, recordar que la position absolute
+    ubica los elementos teneiendo como referencia las esquinas de estos, por lo tanto cuando decimos left 50% no se ubica el cuadro o contenedor al 50% tomando como eje el centro de este sino 
+    que se toma como eje la esquina superior izquierda, por lo tanto debemos restarle los 5px de un lado de borde para que este quede en el centro ya que el cuadro es de 10x10 (5px cada triangulo)*/
+    border-width: 5px;
+    border-color: transparent transparent black transparent;
+    border-style: solid;
+}
+
+.tooltip-text6 {
+    top: -3px;
+    left: 115%;      
+}
+
+.tooltip-text6::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -5px; /*los 5px del borde utilizado en este elemento*/
+    border-width: 5px;
+    border-color: transparent black transparent transparent;
+    right: 100%;
+    border-style: solid;
+}
+
+.tooltip-text7 {
+    bottom: 120%;
+}
+
+.tooltip-text7::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    border-width: 5px;
+    margin-left: -5px; 
+    border-color: black transparent transparent transparent;
+    left: 50%;
+    border-style: solid;
+}
+
+.tooltip-text8 {
+    right: 115%;     
+    top: -3px;     
+}
+
+.tooltip-text8::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    border-width: 5px;
+    margin-top: -5px; /*por el tamaño del borde*/
+    border-color: transparent transparent transparent black;
+    left: 100%;
+    border-style: solid;
+}
+
+.tooltip-text9 {
+    position: absolute;
+    visibility: hidden; /*para hacer un efecto padding u otro efecto de transicion diferente a aparecer y desaparecer se debe usar esta propiedad en vez del display none*/
+    width: 100%; /*es recomendable dejar un texto de tooltip fijo para poder posicionarlos correctamente, tambien podemos anchar el width del padre para que este crezca de igual manera*/
+    padding: 3px 0;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip-text9 {
+    bottom: 120%;
+}
+
+.tooltip-text9::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    border-width: 5px;
+    margin-left: -5px; 
+    border-color: black transparent transparent transparent;
+    left: 50%;
+    border-style: solid;
+}
+
+.tooltip-example1:hover .tooltip-text9 {
+    visibility: visible;
+    opacity: 1;
+}
+/*---------------------------------------------------------------------------------------------------TOOLTIPS----------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------IMAGES 2----------------------------------------------------------------------------------------------------*/
+.image-grid-container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.image-grid-container1 > div {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.image-example1, .image-example2, .image-example3, .image-example4 {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-example1 {
+    border-radius: 8px;
+}
+
+.image-example1:hover {
+    transform: scaleX(-1); /*esto sirve para rotar una imagen flip*/   
+}
+
+.image-example2 {
+    border-radius: 50%; /*generalmente se utiliza para hacer un circulo perfecto*/
+}
+
+.image-example3, .image-example4 {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+}
+
+.image-example4:hover {
+    box-shadow: 0 0 2px 2px lightskyblue;
+}
+
+.complete-row {
+    grid-area: 3 / 1 / 4 / 3 ;
+}
+
+.image-example5 {
+    max-width: 100%; /*cuando ponemos max-width: 100% establecemos que la imagen si puede crezca a lo maximo que pueda de sus dimensiones, cuando se pone width 100% la imagen ocupa el 100% del espacio del contenedor
+    sin importar que este tenga mayores dimensiones que la imagen*/
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-example6, .image-example7, .image-example8, .image-example9 {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.image-example7 { 
+    filter: contrast(180%);
+}
+
+.image-example8 { 
+    filter: grayscale(100%);
+}
+
+.image-example9 { 
+    filter: saturate(7);
+}
+
+.image-overlay1 {
+    position: relative;
+    display: inline-block;
+}
+
+.image-example10, .image-example11, .image-example12 {
+    max-width: 400px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.hidden-content1, .hidden-content2, .hidden-content3, .hidden-content4, .hidden-content5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #008CBA;
+    color: white;
+    font-size: 32px;
+}
+
+.hidden-text1, .hidden-text2, .hidden-text3, .hidden-text4, .hidden-text5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*width: 100%; si activamos esta propiedad el texto no desaparecera hasta que se cierre toda la ventana quitando efecto al estilo*/
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+
+.hidden-content1 {
+    top: 0;
+    opacity: 0;    
+    transition: opacity 0.5s ease-in;
+}
+
+.hidden-content1:hover {
+    opacity: 1;
+}
+
+.hidden-content2 {
+    height: 0;
+    top: 0;
+    transition: height 0.5s;
+    overflow: hidden; /*A pesar de que establezcamos el heigh a 0 el texto seguira saliendo ya que el heigh de este elemento no es cero por lo tanto al ser mayor que el height del elemtno padre este se desbordara
+    por eso activamos esta propiedad para ocultar ese desbordamiento que en este caso seria la letra y asi, cuando aumentemos el height con el hover el texto tendra espacio para colocarse otra vez sin desbordarse*/
+    opacity: 1;
+}
+
+.image-overlay1:hover .hidden-content2{
+    height: 100%;
+}
+
+.hidden-content3 {
+    width: 0;
+    right: 0;
+    top: 0;
+    transition: width 0.5s ease;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.hidden-text3, .hidden-text4 {
+    white-space: nowrap; /*con esto hacemos que cuando el contenedor se este encogiendo la letra no haga un salto de linea y se vea un efecto mas realista, sin embargo es necesario activar el overflow para no mirar
+    el desborde de la palabra*/
+}
+
+.image-overlay1:hover .hidden-content3{
+    width: 100%;
+}
+
+.hidden-content4 {
+    width: 0;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.image-overlay1:hover .hidden-content4{
+    width: 100%;
+}
+
+.hidden-content5 {
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    transition: height 0.5s ease;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.image-overlay1:hover .hidden-content5{
+    height: 100%;
+}
+
+.image-example12 {
+    opacity: 1;
+}
+
+.image-overlay1:hover .image-example12{
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+}
+
+.hidden-content6 {
+    position: absolute;
+    display: inline-block;
+    transition: opacity 0.5s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+.hidden-text6 {
+    background-color: #4CAF50;  
+    font-size: 24px;
+    color: white;
+    padding: 16px 32px;
+}
+
+.image-overlay1:hover .hidden-content6{
+    opacity: 1;
+}
+
+.small-image-container1 {
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.modal-image-small1 { 
+    max-width: 400px;
+    width: 100%;
+}
+
+.small-image-container1:hover {
+    cursor: pointer; /*hacemos que el cursor tenga forma de un link cuando se hace hoover sobre la imagen*/
+    box-shadow: 0 0 2px 1px lightskyblue;
+}
+
+.small-image-container1:hover .modal-image-small1 {
+    opacity: 0.7;
+}
+
+.modal-container1 {
+    background-color: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed; /*esta propiedad ubica al elemento en una posicion absoluta respecto a la pantalla, es decir que al seleccionar top 0 y left 0, no se ira al inicio de la pagina sino al inicio de la pagina
+    o parte de la pagina vista en ese momento, de igual forma si hacemos scrol este contenedor se desplazara con la pagina*/
+    top: 0;
+    left: 0;
+    display: none; /*las animaciones no corren cuando un elemento tiene un display none, arrancan cuando el elemento es visible*/
+    padding-top: 150px;
+}
+
+.modal-big-image1 {
+    max-width: 700px;
+    width: 80%; /*como se tiene establecido el max-width, primero la imagen usara todo el espacio disponible antes de reducirse por debajo de su valor maximo, lo que queremos esque siempre haya un espacio entre 
+    los costados y la imagen para dar un efecto responsive mas realista, por esta razon decimos que cuando la imagen este al 80% de la capadida del contenedor empiece a reducri su tamaño*/
+    display: block;
+    margin: auto;
+    animation: zoom 0.6s;
+}
+
+.modal-caption1 {
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    height: 150px; /*con esto hacemos que al hacer el efecto de zoom pareciera que la letra elga desde abajo*/
+    animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1);}
+    to {transform: scale(1);}
+}
+
+.small-image-container1:active + .modal-container1 { /*como el contanier es hermano del contenedor debemos usar este combinador*/
+    display: block;
+}
+
+.modal-image-small2 {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 4px;
+    transition: 0.3s; /*transicion de la opacidad*/
+}
+
+.modal-image-small2:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.modal-container2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /*hacemos que el contenedor ocupe toda la pantalla*/
+    height: 100%;
+    padding-top: 150px;
+    background-color: rgba(0,0,0,0.9);
+    display: none;
+}
+
+.modal-big-image2 {
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;/*tambien se peude centrar con text align*/
+    width: 100%;
+    animation: zoom 0.6s;
+}
+
+.modal-caption2 {
+    height: 150px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding-top: 15px;
+    animation: zoom 0.6s;
+}
+
+.modal-close {
+    color: white;
+    position: absolute; /*a pesar de que el contenedor es fixed y no relative, podemos usar el absolute para posicionar el elemento respecto a este contenedor que se mueve con la pantalla*/
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: #bbb;
+    cursor: pointer;
+}
+/*---------------------------------------------------------------------------------------------------IMAGES 2----------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------OBJECT FIT---------------------------------------------------------------------------------------------------*/
+.fit-image1, .fit-image2, .fit-image3, .fit-image4, .fit-image5, .fit-image6 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.fit-container1, .fit-container2 {
+    padding: 10px;
+    height: 300px;
+}
+
+.fit-container2::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.fit-image2 {
+    object-fit: cover;
+}
+
+.fit-image3 {
+    object-fit: contain; /*modifica las dimensiones para que la iamgen mantenga su aspect ratio y ademas se muestre toda*/
+}
+
+.fit-image4 { 
+    object-fit: scale-down; /*no modifica tanto la dimension del height*/
+}
+
+.fit-image5 { 
+    object-fit: none; /*no mantiene el aspect ratio y se recorta*/
+}
+
+.fit-image6 { 
+    object-fit: fill; /*esta propiedad es lo mismo que no poner nada, la iamgen se defora como la primera para mantener toda la imagen en el espacio asignado*/
+}
+/*--------------------------------------------------------------------------------------------------OBJECT FIT---------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------BUTTONS-----------------------------------------------------------------------------------------------------*/
+.buttons-container {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.color-button {
+    color: white;
+    padding: 15px 32px;
+    margin: 10px 0; /*los botones crean de por si un espaciado entre ellos ponemos el margin arriba para que cuando se reduzca la pantalla y pasen e otra linea no queden pegados a los demas
+    lo bueno de los botones esque estos se alinean verticalmente entre si porque siguen una misma linea baseline*/
+    border: 0;
+    font-size: 20px;
+    font-family: Verdana;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button-hoverable1 {
+    background-color: #4CAF50;  
+    border: 2px solid #4CAF50; 
+    border-radius: 4px;
+}
+
+.button-hoverable2 {
+    background-color: #008CBA; 
+    border: 2px solid #008CBA; 
+    border-radius: 4px;
+}
+
+.button-hoverable3 {
+    background-color: #f44336;
+    border: 2px solid #f44336;
+    border-radius: 4px;
+}
+
+.button-hoverable4 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336; 
+    border-radius: 4px;
+}
+
+.button-hoverable5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    border-radius: 4px;
+}
+
+.button-hoverable6 {
+    background-color: white;
+     color: black; 
+     border: 2px solid #555555; 
+     border-radius: 4px;
+}
+
+.buttons-hoverables > .button-hoverable1:hover {
+    background-color: white;
+    color: black;
+}
+
+.buttons-hoverables > .button-hoverable2:hover {
+    background-color: white;
+    color: black;
+}
+
+.buttons-hoverables > .button-hoverable3:hover {
+    background-color: white;
+    color: black;
+}
+
+.buttons-hoverables > .button-hoverable4:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.buttons-hoverables > .button-hoverable5:hover {
+    background-color: #e7e7e7;
+    color: white;
+}
+
+.buttons-hoverables > .button-hoverable6:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.shadown-button1 {
+    background-color: #4CAF50;
+    margin-right: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.shadown-button2 {
+    background-color: #4CAF50;
+}
+
+.shadown-button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.normal-button1 { 
+    background-color: #4CAF50;
+}
+
+.normal-button1:focus { 
+    box-shadow: 0 0 2px 1px lightskyblue;
+}
+
+.normal-button1:last-of-type {
+    cursor: not-allowed; /*esto desabilita el boton aunque el efecto del focus funciona no se si tambien tendra el efecto del click*/
+    opacity: 0.5;
+}
+
+.button-clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.button-clearfix > button {
+    transition: none;
+}
+
+.button-clearfix > button:hover {
+    background-color: #3e8e41;
+}
+
+.button-clearfix > button:focus {
+    box-shadow: 0 0 1px 1px lightskyblue;
+}
+
+.button-image-container {
+    display: inline-block;
+    position: relative;
+}
+
+.button-img {
+    max-width: 400px;
+    width: 100%;
+}
+
+.button-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #f1f1f1;
+    padding: 20px 32px;
+    z-index: 1;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.button-button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.button-button:focus {
+    box-shadow: 0 0 1px 1px lightskyblue;
+}
+
+.button-animated1 {
+    border: none;
+    display: inline-block;
+    background-color: tomato;
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 28px;
+    max-width: 200px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button-span {
+    cursor: pointer;
+    display: inline-block; /*con esta propieda los afecta el cambio de width*/
+    position: relative; /*recordar que cuando se va a mover el after con absolute se establece el valor relative*/
+    transition: 0.5s;
+}
+
+.button-span::after {
+    content: "\00bb"; /*simbolo de las flechas*/
+    position: absolute;
+    opacity: 0; /*podemos moverlo por el area del espan es decir por el box del contenido del texto*/
+    top: 0;
+    right: -20px; /*escondemos las flechas en un lugar por fuera del texto*/
+    transition: 0.5s;
+}
+
+.button-animated1:hover .button-span{
+    padding-right: 25px; /*primero corremos el texto hacia la izquierda agregandole padding a la derecha*/
+}
+
+.button-animated1:hover .button-span::after {
+    opacity: 1; /*despues mostramos el texto*/
+    right: 0; /*y finalmente lo corremos a una posicion normal pero con el padding agregado a la letra se vera despues de esta*/
+}
+
+.button-animated2 {
+    cursor: pointer;
+    background-color: #4CAF50;
+    position: relative;
+    padding: 20px;
+    max-width: 180px;
+    width: 100%;
+    font-size: 28px;
+    border: 0;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 12px lightgrey;
+    outline-color: transparent; /*con esto quitamos el borde azul que aparece por defecto en los botones cuando quitamos el border normal*/
+}
+
+.button-animated2:hover {
+    background-color: #3e8e41;
+}
+
+.button-animated2:active {
+    box-shadow: 0 6px rgb(80, 78, 78);
+    top: 5px; /*tambien se podia hacer con traslateY*/
+    outline-color: transparent;
+}
+
+.button-animated3 {
+    cursor: pointer;
+    background-color: tomato;
+    opacity: 0.7;
+    padding: 20px;
+    max-width: 180px;
+    width: 100%;
+    font-size: 28px;
+    border: 0;
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+.button-animated3:hover {
+    opacity: 1;
+}
+
+.button-animated4 {
+    border: none;
+    position: relative;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    font-size: 28px;
+    max-width: 200px;
+    width: 100%;
+    overflow: hidden; /*asi escondemos el padding adicional generado en el after, y no afecta la posicion de los elementos*/
+    cursor: pointer;
+    /*transition: 0.4s; al parecer no es necesaria*/
+}
+
+.button-animated4::after {
+    content: "";
+    background-color: #f1f1f1;
+    display: block; /*para que ocupe todo el contendio, no se que tan util sea con el padding*/
+    position: absolute;
+    padding-top: 300%; /*el largo define como abre el efecto hacia arriba y abajo, con este valor se nota un efecto visual adecuado*/
+    padding-left: 350%; /*el ancho define que larga o estirada se ve el efecto del ripple, con este valor se nota un efecto visual muy adecuado*/
+    margin-left: -20px !important; /*es necesario para que funcione, al parecer porque se sobreescribe abajo con el active, los 20px son los que hay de padding para que el ripple empiece al comienzo del contenedor
+    tambien se puede hacer con left:0*/
+    margin-top: -120%; /*posicion absolute ubica el elemento debajo de la letra y con el margin left lo corremos al contenedor, sin embargo sigue estando muy abajo y cuando se estire el padding
+    hacia arriba y la izquierda en contenido en verdad se dezplazara hacia abajo y la derecha, por lo tanto para que se note el efecto completo del ripple en el contenedor, debemos de subir el elemento hasta
+    una posicion que al expandir el padding este alcance a cubrir todo el contenedor y lo demas que se desborde pase desapercibido con el overflow hidden*/
+    opacity: 0; /*cuando soltamos el click el efecto pasa de 1 a 0 por lo tanto queda invisible, con este valor se consigue un efecto visual aceptable*/
+    transition: all 0.8s; /*este es el tiempo que tarda la transicion de ripple, es decir en expandirse el ripple si se pusiera en un valor muy pequeño se notaria muy rapido el efecto*/
+    /*podemos modificar la direccion hacia la que se extiende el margin sencillamente ubicando el recuadro inicial o caja del after en la posicion donde quiere que inicie el ripple, esto se puede hacer
+    facilmente ya que este cuenta con la position absolute, despues lo que tenemos que pensar es hacia que direccion debemos empujar la caja del after con el padding para que se cree el efecto ripple,
+    no en todas las direcciones es necesario el margin top como arriba, tambien se pueden dar valores diferentes de padding que varian el efecto visual del estilo.*/
+}
+
+.button-animated4:active::after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;/*esto es lo que hace que el efecto se vea cuando presionamos el click, ya que cuando presionamos se activa el acive que recoge todos los margen y padding y cuando lo soltamos
+    estos vuelven a la normalidad y da el effecto de ripple, cuando este valor no esta en cero, no no esta colocado, se va a notar como se recogen las margenes al momento de tener presionado el boton
+    algo que no es muy deseable, por eso se establece esta transicion en 0 para que el cambio sea instantaneo y cuando presionemos el boto el usuario no perciba cuando se recogieron las margenes y estan listas
+    para expandirse apenas se suelte, si dejamos solo una transicion y es la de arriba y quitamos esta, la transicion del elemento anterior tambien se aplicara a esta ya que al final estan compartiendo
+    un cambio de estado*/
+}
+
+
+
+.ripple5 {
+    background-position: center; /*para que la animacion del circulo empiece desde el centro, al parecer no es necesario*/
+    transition: all 0.8s;
+}
+
+.button-animated5 {
+    max-width: 150px;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    border: none;
+    outline-color: transparent;
+    font-size: 20px;
+    background-color: #2196f3;
+    text-transform: uppercase; /*transforma el texto a mayuscula*/
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 4px #999;/**/
+}
+
+.button-animated5:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%; /*el primer parametro es el color de fondo al hacer hoover al cual lo afecta la transicion, este colos es uno muy similar al
+     elemento sin hover pero mas claro.
+     como segundo paremetro vemos el radial gradient, el cual se sobrepone sobre el color de fondo asignado, este recibe 3 parametros, el primero es el shape o forma del gradiente que, en este caso sera circular
+     el segundo es el color de inicio el orden de los colores declarados en el gradiente van de adentro  hacia afuera, osea que en este caso que hay dos colores el primero es el del primer circulo y el segundo el 
+     del segundo, el primero al ser transparente dejara ver el color del fondo y el segundo color tambien es el mismo color de fondo por lo tanto en este caso al hacer hovver no se percibira diferencia
+     entre el background normal y el del radial, ahora bien estos parametros tienen unos porcentajes que especifican el porcentaje de spread o esparcimiento, cuando el esparcimiento es muy pequeño no se ve
+     un efecto de gradiente sino que se ve mas bien como dos circulos superpuestos, si el primer valor tiene un valor del 1% y el segudno tambien se vera solo un pequeño circulo del primero y el resto del segundo
+     si se aumenta el segundo con el primero en 1% se vera como se va esparciendo mas el primero cubriendo este mas que el segundo, en este caso como el color transparente  y el siguiente coinciden con el de fondo
+     no se percibira un cambio, ahora bien el efecto se origina del valor transparente, como es 1% sera un pequeño punto en el centro del botton, esta no se notara mientras este el hover porque al ser transparente
+     mostrara el color de fondo que es el mismo que hay que el otro color del gradiente por lo tanto no habra diferencia, luego como ultima propiedad esta el center/x%, divide el numero de elementos del primer
+     color que en este caso son circulos en mas elementos esparcidos por la linea central del botton, es decir, si ponemos center/10% en vez de salir 1 circulo este se divide en 10 partes cada una del 10% de area
+     si se pone 100% solo habra un circulo del tamaño normal si se pone 200% el circulo crecera el doble, este es el efecto de riple el crecimiento de este circulo, por eso esque debemos establecer que ese circulo
+     transparente cubra toda la pantalla y se pase un poco para que el efecto del filter tambien se vea un tipo de desbordado, ahora bien al poner un valor como el de 15000 el circulo transparente cubre todo el 
+     background y como este es trasparente mostrara el background por defecto, es decir no se vera como este circulo cubre todo el fondo al hacer hover, este efecto mientras empieza en el 1% y se pasa al 15000%
+     es el efecto ripple, sin embargo no se puede hacer modificando el porcentaje del primer colo gradiente que hace lo mismo, sino que se debe hacer de esta forma, ahora bien cuando se pasa el cursor el
+     circulo transparente ya cubre todo el boton y se desborda por lo tanto no se notara gran diferencia, ahora viene la parte del active*/
+}
+
+.button-animated5:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: all 0s;
+    /*ahora bien cuando presionamos el botton ya debimos de haber activado la propiedad hover, es decir que el circulo transparente cubre todo el botton y al ahora se este color el color de fondo, se notara un
+    cambio en el color ya que el cirulo es transparente, como esa transcision tiene 0s sera instantanea y no se vera el cambio de color, enter el fondo edl hover y el fondo del activee, ademas de tener en cuenta
+    que son colores muy parecidos, ahora bien cuando presionamos el boton con el hover cubriendo todo el color este cambiaria totalmente por el color de fondo del active, ya que el circulo cubre todo el boton
+    aqui es donde entra el background-size el cual por alguna razon establece el area del circulo transparente al valor definido en el gradiente, es decir el 1% con el size en 100% el circulo va al tamaño original
+    del 1% si se pone 1000% entonces se pasa a como si el valor trasnaparente tuviera 10% y asi sucesivamente, no se sabe el porque de este efecto, ahora bien con esto en mente ya completamos el puzzle
+    cuando se hace hover se crea el circulo transparente que cubre todo el boton del mismo color de fondo que el background del hover por lo que no se nota mucho la transicion, este efecto es instantaneo
+    ya que no se tiene seteado ningun transition, ahora bien cuando presionamos el click y mantenemos el circulo vuelve a su estado del 1% se ve el fondo del hover es decir el segundo color del gradiente 
+    esto es instantaneo por el transition 0s, cuando se suelta el botton el circulo transparente vuelve a su tamaño normal pero en forma progresiva por la transicion mientras cambia de color
+    de nuevo al fondo del hover original, el efecto del crecimiento del circulo es el efecto del ripple, el efecto depende tambien mucho de los coloresbn     */
+}
+/*---------------------------------------------------------------------------------------------------BUTTONS-----------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------PAGINATION-----------------------------------------------------------------------------------------------------*/
+.pagination-container1 {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.pagination-container1:last-of-type {
+    margin-bottom: 0;
+}
+
+.pagination-container1 * {
+    box-sizing: border-box;
+}
+
+.pagination-container1::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.pagination-left1 {
+    float: left; /*cuando se activa esta propiedad no es necesario activar el display inline-block*/
+}
+
+.pagination-list1, .pagination-list2 { /*si no se utiliza un nav o por el contrario muchos float, los link quedaran con un espacio entre ellos, tambien si pudo seleccionar que cada div tuviera float*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pagination-list1 > li, .pagination-list2 > li {
+    float: left;
+}
+
+.pagination-list1 > li > a, .pagination-list2 > li > a {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3    s;
+}
+
+.pagination-list1 > li > a.active {
+    background-color:tomato;
+    color: white;
+}
+
+.pagination-list1 > li > a:hover:not(.active) {
+    background-color: rgb(209, 208, 208);
+}
+
+.pagination-right1 {
+    float: right;
+}
+
+.pagination-right1 > a {
+    padding: 10px 20px;
+    border: 1px solid lightgrey;
+    float: left; /*cuando tenemos un contenedor con la propiedad float y dentro de esta tambien usamos esta propiedad parece que el contenedor no necesitra tener la configuracion clearfix, los elemntos a asi como
+    los button crean unos espacio entre si, para poder ponerlos seguimos utilizamos la propiedad float*/
+    font-weight: bold;
+}
+
+.pagination-list2 > li {
+    border: 1px solid #ddd;
+}
+
+.pagination-list2 > li > a {
+    border-radius: 0;
+}
+
+.pagination-list2 > li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination-list2 > li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination-list2 > li.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50; /*parece que es mejor ponerle los bordes y efectos hover a los li directamente*/
+    
+}
+
+.pagination-list2 > li:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.pagination-list-template {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pagination-list-template > li {
+    float: left;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.example3 > li {
+    margin-right: 10px;
+}
+
+.example3 > li:last-child {
+    margin-right: 0;
+}
+
+.pagination-list-template > li:hover:not(.pagination-active2) {
+    background-color:  #ddd;
+}
+
+li.pagination-active2 {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    color: white;
+}
+
+.example4 > li { 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.example5 {
+    display: inline-block;
+    vertical-align: top; /*con esto se arregla el problema del espaciado que queda con los elementos inline-block*/
+}
+
+.breadcrumb-container {
+    background-color: #f1f1f1;
+}
+
+#example6 > li { 
+    border: none;
+    cursor: context-menu;
+    padding: 10px 10px;
+}
+
+#example6 > li:hover {
+    background-color: transparent;
+}
+
+#example6 > li > a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+}
+
+#example6 > li > a:hover {
+    color: #4CAF50;
+}
+
+#example6 > li.pagination-active3 > a {
+    color: green;
+    cursor: auto;
+    text-decoration: none;
+}
+
+/*-------------------------------------------------------------------------------------------------PAGINATION-----------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------MULTIPLE-COLUMNS--------------------------------------------------------------------------------------------------*/
+.column-div-template {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.column-div1 {
+    columns: 3; /*esto divide al contenedor en tres columnas, pero no crea cajas separadas sino que dentro del mismo contenedor hace la separacion y reparte equitativamente el texto entre estas tres columnas*/
+    
+}
+
+.column-div2 {
+    columns: 3;
+    column-gap: 40px; /*con esto especificamos la separacion entre columnas*/
+}
+
+.column-div3 {
+    columns: 3;
+    column-gap: 40px;
+    column-rule-style: solid; /*especificamos como son los separadores de las columnas, tiene las mismas opciones de un borde*/
+}
+
+.column-div4 {
+    columns: 3;
+    column-gap: 40px;
+    column-rule-style: solid; 
+    column-rule-width: 10px; /*con esto especificamos el ancho del separador o borde*/
+ }
+
+ .column-div5 {
+    columns: 3;
+    column-gap: 40px;
+    column-rule-style: solid; 
+    column-rule-width: 10px; 
+    column-rule-color: lightskyblue; /*y con esto el color del separador o borde*/
+ }
+
+ .column-div6 {
+    columns: 3;
+    column-gap: 40px;
+    column-rule: 5px solid #4CAF50; /*con esto especficiamos las tres propiedades en una sola declaracion*/
+ }
+
+ .column-div7 {
+    columns: 3;
+    column-gap: 40px;
+    column-rule: 2px solid lightblue;
+ }
+
+ .column-div7 > h2 {
+     column-span: all; /*esto especifica si este elemento va encima de las columnas (all) o solo encima de la primera columna (none)*/
+ }
+
+ .column-div8 {
+    columns: 3;
+    column-gap: 40px;
+    column-rule: 2px solid lightblue; 
+ }
+
+ .column-div8 > h2 {
+     column-span: none;
+ }
+
+ .column-div9 {
+    columns: 3;
+    column-width: 100px; /*establece un ancho optimo para las columnas, sin embargo estas ocuparan el espacio disponible*/
+ }
+/*----------------------------------------------------------------------------------------------MULTIPLE-COLUMNS--------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------USER INTERFACE---------------------------------------------------------------------------------------------------*/
+.user-div-template {
+    padding: 20px;
+    border: 2px solid black;
+    width: 300px; /*con los elementos redimensionables podemos establecer un heigh minimo ya que estos se pueden estirar evitando de cierta manera la necesidad de hacerlos responsive, sin embargo
+    hay que tener en cuenta que estos pueden salirse del contenedor padre no tienen un limite para estirarse, por ahora*/
+    overflow: auto;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+}
+
+.user-div1 {
+    resize: horizontal; /*con esto indicamos que el contenedor solo se podra estirar horizontalmente*/
+    max-width: 800px; /*con esto podemos limitar el alargamiento*/
+}
+
+.user-div2 {
+    resize: vertical; /*con esto indicamos que el contenedor solo se podra estirar horizontalmente*/
+    max-height: 200px;
+}
+
+.user-div3 {
+    resize: both; /*con esto indicamos que el contenedor solo se podra estirar horizontalmente, para los elementos que tienen esta propiedad por defecto activada como el text-area, podemos desactivarla con el 
+    valor none*/
+    max-width: 800px;
+    max-height: 200px;
+}
+
+.user-outline-div1 {
+    margin: 20px;
+    border: 1px solid black;
+    outline-color: red;
+    outline-width: 3px;
+    outline-style: solid;
+    outline-offset: 10px;
+}
+
+.user-outline-div2 {
+    margin: 10px;
+    border: 1px solid black;
+    outline: 3px dotted blue;
+    outline-offset: 5px;
+}
+/*-----------------------------------------------------------------------------------------------USER INTERFACE---------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------------VARIABLES---------------------------------------------------------------------------------------------------*/
+:root { /*aqui se definen las variables que probablemente necesitemos*/
+    --myColor: green; /*asignamos un valor, este no se autocompletara sino que el texto se reemplaza textualmente al momento de asignarlo a alguna propiedad, si esta propiedad no acepta este valorç
+    ese estilo no se aplicara*/
+    --myTextColor: blue;
+    --myPadding: 15px
+}
+
+.variables-div-template {
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.variable-div1 {
+    background-color: var(--myColor);
+}
+
+.variable-div2{
+    background-color: var(--myColor);
+    color: var(--myTextColor);
+}
+
+.variable-div3 {
+    padding: var(--myPadding);
+}
+/*----------------------------------------------------------------------------------------------------VARIABLES---------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------BOX-SIZING2--------------------------------------------------------------------------------------------------*/
+.box-sizing-div1 {
+    height: 200px;
+    width: 500px;
+    border: 1px solid blue;
+}
+
+.box-sizing-div2 {
+    height: 200px;
+    width: 500px;
+    padding: 50px; /*este padding se agregara a las dimensiones ya definidas por lo que el height total sera de 300px (50 padding arriba y abajo) y el widht de 600px (50px a la derecha e izquierda)*/
+    border: 1px solid red;
+}
+
+.box-sizing-div3 {
+    height: 200px;
+    width: 500px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+.box-sizing-div4 {
+    height: 200px;
+    width: 500px;
+    border: 1px solid red;
+    padding: 50px; /*a pesar de tener padding y borde este se hace parte del contenido y no agrega mas tamaño al contenedor, con las margenes no sirve esto*/
+    box-sizing: border-box;
+}
+
+.box-sizing-div5 {
+    background-color: #f1f1f1;
+}
+
+.box-sizing-div5 > form > input, .box-sizing-div5 > form > textarea { /*estos elementos al no tener margin o padding que los limite se salen del contenedor por no tener el box-sizing activado*/
+    display: block;
+    width: 100%;
+}
+
+.box-sizing-div6 {
+    background-color: #f1f1f1;
+}
+
+.box-sizing-div6 * {
+    box-sizing: border-box;
+}
+
+.box-sizing-div6 > form > input, .box-sizing-div6 > form > textarea { /*en este ejemplo que se tiene el box-sizing activado si se notara que los elementos se adecuan al 100% del contenedor como se especifica*/
+    display: block;
+    width: 100%;
+}
+/*---------------------------------------------------------------------------------------------------BOX-SIZING 2-------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------MEDIA QUERY--------------------------------------------------------------------------------------------------*/
+.media-div1 {
+    background-color: lightblue;
+    height: 200px;
+}
+
+div[class^=media-div] * {
+    box-sizing: border-box;
+}
+
+.media-div2 {
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap; /*recordar que esta propiedad debe ir en el elemento flex, padre o fila (row), no en los elementos*/
+}
+
+.media-div2 > div {
+    flex: 25%; /*para el caso del flex es mas recomndable indicar los porcentajes com el flex-basis, esta es la forma corta donde esta el flew grow shinrk y basis pero si solo ponemos el porcentaje se aplicara 
+    solo el basism, para el float si es mas recomendable colocar el width*/
+    padding: 20px;
+    background-color: lightseagreen;
+    text-align: center;
+}
+
+.media-div3 {
+    border: 1px solid black;
+}
+
+.media-div3::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.media-div3 > div {
+    float: left;
+    padding: 20px;
+    width: 25%;
+    background-color: lightyellow;
+    text-align: center;
+}
+
+
+.media-div4 {
+    background-color: yellow;
+    padding: 20px;
+}
+
+.media-div5 {
+    font-size: 60px;
+    background-color: #6D0062;
+}
+
+.media-div6 {
+    height: 200px; /*el ancho de la pantalla no debe ser menor que el largo de la pantalla si no que debe ser menor al largo de la misma pantalla*/
+    background-color: #4CAF50;
+}
+
+.media-div7 {
+    background-color: #f1f1f1;
+    height: 200px;
+}
+
+.media-div8 {
+    background-color: #f1f1f1;
+    height: 200px;
+}
+
+.media-div-flex {
+    display: flex;
+    border: 1px solid black;
+    align-items: center; /*con esto podemos hacer que el elemento de menor height se ponga en el centro del contenedor, sin embargo al querer volver una columna una fila con column direction 
+    esta no dejara que el div ocupe el 100% del width*/
+    flex-wrap: wrap;
+}
+
+.media-div-side {
+    flex: 25%;
+}
+
+.media-list1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+}
+
+.media-list1 > li {
+    background-color: #CDF0F6;
+    margin-bottom: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
+
+.media-list1 > li:last-child {
+    margin-bottom: 0;
+}
+
+.media-div-main {
+    flex: 75%;
+    padding-left: 20px;
+}
+
+@media screen and (max-width:1000px) { /*pantallas que tengan menor a 1000px*/
+    .media-div1 {
+        background-color: lightcoral;
+    }
+
+    .media-div2 > div {
+        flex: 50%; /*ajustamo el flex-basis al 50% lo que permite que las columnas se recojan con el flex-wrap activado*/
+    }
+
+    .media-div3 > div {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 700px) { /*pantallas menores a 700px*/
+    .media-div1 {
+        background-color: lightgreen;
+    }
+
+    .media-div2 {
+        flex-direction: column; /*otra forma de hacerlo es modificar la direccion del flex a 100% pero aplicado a los elementos flex (div) no al elemento padre*/
+    }
+
+    .media-div3 > div {
+        width: 100%;
+    }
+
+    .media-div4 { 
+        display: none;
+    }
+
+    .media-div5 { 
+        font-size: 32px;
+    }
+
+    .media-div-flex {
+        flex-direction: column;
+        align-items: initial;
+    }
+
+}
+
+@media screen and (orientation: landscape) {
+    .media-div6 {
+        background-color: rgb(218, 191, 75);
+    }
+}
+
+@media screen and (max-width:1000px) and (min-width:700px) { /*estos estilos afectaran al elemento cuando la pantalla se ecuentre a un ancho entre 1000px y 700px*/
+    .media-div7 {
+        background-color: yellow;
+        padding: 20px;
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:1000px) and (min-width:700px), (min-width:1200px) { /*estos estilos afectaran al elemento cuando la pantalla se ecuentre a un ancho entre 1000px y 700px*/
+    .media-div8 {
+        background-color: yellow;
+        padding: 20px;
+        font-size: 40px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------MEDIA QUERY--------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------RESPONSIVE EXAMPLES----------------------------------------------------------------------------------------------*/
+.responsive-examples * {
+    box-sizing: border-box;
+}
+
+.responsive-example1 {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.responsive-header1 {
+    background-color: #9933CC;
+    color: white;
+    padding: 20px 15px;
+}
+
+.responsive-row1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.responsive-side1 {
+    flex: 100%;
+}
+
+.responsive-side1 > ul {
+    list-style-type: none;
+    padding: 20px 10px 10px 10px;
+    margin: 0;
+    color: white;
+}
+
+.responsive-side1 > ul > li {
+    background-color: #33b5e5;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 5px 2px #ddd;
+    padding: 10px;
+}
+
+.responsive-side1 > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+.responsive-side1 > ul > li:hover {
+    background-color: #0099cc;
+}
+
+.responsive-side-img {
+    display: none;
+    width: 100%;
+    /*height: calc(100% - 224px); /*si ponemos height 100% ocupara el 100% pero de la columna flex, para poder conseguir que el height se adecue al espacio disponible, se puede aprovechar de que el ancho del ul,
+    no cambia en ninguna dimension de dispositivos siempre se mantiene en 194px mas 20 de padding arriba- 10 de padding abajop seria 224px, por lo que el ancho que resta seria 100% - 224px, esto 
+    lo podemos asignar con la funcion calc, sin embargo no es muy profesional, lo mejor seria agregar otro div, flex que sea en columnas ya que estas se reaparten el espacio disponible */
+    height: 256px; /*sin emabrgo este no es el efecto que queremos darle, en vez de eso la idea esque siempre tenga un heigh maximo de este valor*/
+    padding: 0 10px 20px 10px;
+}
+
+.responsive-main1 {
+    flex: 100%;
+    padding: 10px;
+}
+
+.responsive-main-video {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+}
+
+.responsive-aside1 {
+    flex: 100%;
+    padding: 10px 10px 20px 10px;
+    text-align: center;
+    color: white;
+}
+
+.responsive-aside1 > div {
+    background-color: #33b5e5;
+    padding: 10px;
+}
+
+.responsive-footer1 {
+    background-color: #0099cc;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+@media only screen and (max-device-width: 400px) { /*cuando utilizamos el max-device-widht en vez del max-width, el efecto no se aplicara al redimensionar el navegador, sino que busca los dispositivos
+    que por defecto tengan esas dimensiones, para ver el efecto usar la opcion de telefono del navegador*/
+    .responsive-header1 {
+      background-color: yellow;
+    }
+}
+
+@media screen and (min-width:600px) { /*Una buena practica es crear un grupo de columnas que definiran el tamaño de nuestros elementos asi podremos tener esa plantilla para mplementar cualquier tipo de layout
+    teniendo disponible varias dimensiones de columnas, aqui se estableceran 12 posbiles anchos que puedan tomar un elemento flex, estas clases seran aplicadas cuando el dispositivo sea un celular, ya que 
+    como se menciono anteriormente primero se debe diseñar para tablets ya que como se menciono anteriormente los diseños deben realizarse en un comienzo para ceulares primero y despues modiifcar las querys
+    para que se adapaten a tablets o computadores, estas dimensiones solo se aplicaran para dispositivos con un ancho mayor a 600px */
+    .col-s-1 { flex: 8.33%; } /*el sistema de columnas se basa en 12 columnas cada una ofrece un tamaño proporcional a su numero, siendo que la clase 12 ocupa el 100% la 6 el 50% y asi*/
+    .col-s-2 { flex: 16.66%; }
+    .col-s-3 { flex: 25%; }
+    .col-s-4 { flex: 33.33%; } 
+    .col-s-5 { flex: 41.66%; }
+    .col-s-6 { flex: 50%; }
+    .col-s-7 { flex: 58.33%; }
+    .col-s-8 { flex: 66.66%; }
+    .col-s-9 { flex: 75%; }
+    .col-s-10 { flex: 83.33%; }
+    .col-s-11 { flex: 91.66%; }
+    .col-s-12 { flex: 100%; }
+}
+
+@media screen and (min-width:768px) { /*estas son las mismas dimensiones para para los dispositivos con pantallas mas grandes como de escritorio*/
+    .col-1 { flex: 8.33%; }
+    .col-2 { flex: 16.66%; }
+    .col-3 { flex: 25%; }
+    .col-4 { flex: 33.33%; } 
+    .col-5 { flex: 41.66%; }
+    .col-6 { flex: 50%; }
+    .col-7 { flex: 58.33%; }
+    .col-8 { flex: 66.66%; }
+    .col-9 { flex: 75%; }
+    .col-10 { flex: 83.33%; }
+    .col-11 { flex: 91.66%; }
+    .col-12 { flex: 100%; }
+
+    .responsive-side-img {
+        display: inline;
+    }
+    
+}
+/*-----------------------------------------------------------------------------------------------RESPONSIVE EXAMPLES----------------------------------------------------------------------------------------------*/
 
 /*-El display none, oculta el elemento y no ocupa espacio, por otra parte el visibility hidden, oculta el elemento, pero siguie ocupando espacio
 -basicamente el max-widht, se utiliza para setear un ancho fijo del elemento pero que al mismo tiempo en caso de que la pantalla se encoja, este

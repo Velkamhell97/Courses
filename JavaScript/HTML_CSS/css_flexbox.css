@@ -61,10 +61,10 @@ div.border {
 
 .flex-container-column-wrap {
     display: flex;
-    flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
+    /*flex-wrap: wrap; /*Con esta opcion los elementos se reagrupan cuando tienen poco espacio dando un efecto responsive*/
     background-color: dodgerblue; /*Tambien se puede sleccionar wrap-revese si los elemetos se reorganizan al reves*/
     flex-direction: row; /*Tambien podemos modificar el orden de los elementos para que se muestren al reves*/
-    flex-flow: row wrap; /*Este comando es para declarar en una sola linea el sentido y el reagrupamiento, no tendra efecto aqui*/
+    /*flex-flow: row wrap; /*Este comando es para declarar en una sola linea el sentido y el reagrupamiento, no tendra efecto aqui*/
 }
 
 .flex-container-column-wrap > div {
